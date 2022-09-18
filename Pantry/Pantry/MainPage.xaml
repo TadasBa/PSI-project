@@ -13,7 +13,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Add" Clicked="onAddButtonClicked"></Button>
+        <Button Text="Add" Clicked="onAddButtonClicked"/>
     </StackLayout>
 
 </ContentPage>

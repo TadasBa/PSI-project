@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Pantry.models;
 
-namespace Pantrys
+namespace Pantry
 {
     public partial class MainPage : ContentPage
     {
