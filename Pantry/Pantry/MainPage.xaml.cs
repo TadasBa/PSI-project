@@ -28,11 +28,10 @@ namespace Pantry
         {
             string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Products.txt");
 
-            itemList.Add(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Text });
-            string product = ProductName.Text + " " + ExpiryDate.Text;
 
-            
-            
+
+            itemList.Add(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date.ToShortDateString()});
+            string product = ProductName.Text + " " + ExpiryDate.Date.ToShortDateString();
 
         }
 
