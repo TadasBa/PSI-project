@@ -1,2 +1,2 @@
-AdbTarget=-s R5CT132N76W
+AdbTarget=-s emulator-5554
 AdbOptions=

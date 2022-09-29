@@ -7,21 +7,43 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Pantry.models;
+using static System.Net.Mime.MediaTypeNames;
+using System.IO;
 
 namespace Pantry
 {
     public partial class MainPage : ContentPage
     {
-        ObservableCollection<Item> itemList = new ObservableCollection<Item>();
+       
+
+        ObservableCollection<Product> itemList = new ObservableCollection<Product>();
         public MainPage()
         {
             InitializeComponent();
             itemListView.ItemsSource = itemList;
+
         }
 
-        private void onAddButtonClicked(object sender, EventArgs e)
+        private void BtnProductAdd(object sender, EventArgs e)
         {
-            itemList.Add(new Item() { name = "Potato", date = "2022-09-18", imageSource = "https://play-lh.googleusercontent.com/9UDY3O4wSwlBm-kHHfjKf85Yk5GCt0nckL5ZdMR-nYotAfNjODvR4sZ-scPXG3ABVF65" });
+            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Products.txt");
+
+            itemList.Add(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Text });
+            string product = ProductName.Text + " " + ExpiryDate.Text;
+
+            
+            
+
+        }
+
+        private void BtnProductDelete(object sender, EventArgs e)
+        {
+           itemList.Remove((Product)itemListView.SelectedItem);
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            itemListView.ItemsSource = itemList.Where(s => s.productName.StartsWith(e.NewTextValue));
         }
     }
 }

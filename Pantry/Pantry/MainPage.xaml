@@ -4,16 +4,19 @@
              x:Class="Pantry.MainPage">
 
     <StackLayout>
-        <ListView x:Name="itemListView">
+        <SearchBar Placeholder="Iveskite produkta kurio ieskote" TextChanged="SearchBar_TextChanged"/>
+        <ListView x:Name="itemListView" SelectedItem="{Binding selectedProduct}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding name}"
-                               Detail="{Binding date}"
-                               ImageSource="{Binding imageSource}"/>
+                    <ImageCell Text="{Binding productName}"
+                               Detail="{Binding expiryDate}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Button Text="Add" Clicked="onAddButtonClicked"/>
+        <Entry x:Name="ProductName" Placeholder="Iveskite produkta"/>
+        <Entry x:Name="ExpiryDate" Placeholder="Iveskite produkto galiojimo laika"/>
+        <Button Text="Add Product" Clicked="BtnProductAdd"/>
+        <Button Text="Delete Product" Clicked="BtnProductDelete"/> 
     </StackLayout>
 
 </ContentPage>
