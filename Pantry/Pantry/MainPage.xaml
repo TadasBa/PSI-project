@@ -14,7 +14,8 @@
             </ListView.ItemTemplate>
         </ListView>
         <Entry x:Name="ProductName" Placeholder="Iveskite produkta"/>
-        <Entry x:Name="ExpiryDate" Placeholder="Iveskite produkto galiojimo laika"/>
+        <!-- <Entry x:Name="ExpiryDate" Placeholder="Iveskite produkto galiojimo laika"/> -->
+        <DatePicker x:Name="ExpiryDate" Format="MM/dd/yyyy"/>
         <Button Text="Add Product" Clicked="BtnProductAdd"/>
         <Button Text="Delete Product" Clicked="BtnProductDelete"/> 
     </StackLayout>
