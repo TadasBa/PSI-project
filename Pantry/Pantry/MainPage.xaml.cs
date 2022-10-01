@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Pantry.models;
-using static System.Net.Mime.MediaTypeNames;
 using System.IO;
 
 namespace Pantry
@@ -15,32 +14,25 @@ namespace Pantry
     public partial class MainPage : ContentPage
     {
        
-
-        ObservableCollection<Product> itemList = new ObservableCollection<Product>();
         public MainPage()
         {
             InitializeComponent();
-            itemListView.ItemsSource = itemList;
-
+            itemListView.ItemsSource = DataHandler.productList;
         }
 
         private void BtnProductAdd(object sender, EventArgs e)
         {
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Products.txt");
-            
-            itemList.Add(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date.ToShortDateString()});
-            string product = ProductName.Text + " " + ExpiryDate.Date.ToShortDateString();
-
+            DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date});
         }
 
         private void BtnProductDelete(object sender, EventArgs e)
         {
-           itemList.Remove((Product)itemListView.SelectedItem);
+           DataHandler.RemoveProduct((Product)itemListView.SelectedItem);
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            itemListView.ItemsSource = itemList.Where(s => s.productName.StartsWith(e.NewTextValue));
+            itemListView.ItemsSource = DataHandler.productList.Where(s => s.productName.ToLower().StartsWith(e.NewTextValue.ToLower()));
         }
     }
 }

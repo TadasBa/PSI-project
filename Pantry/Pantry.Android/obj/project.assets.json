@@ -3172,20 +3172,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adminas\\.nuget\\packages\\": {}
+    "C:\\Users\\eitvi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
+      "projectUniqueName": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
       "projectName": "Pantry.Android",
-      "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
-      "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
-      "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\obj\\",
+      "projectPath": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
+      "packagesPath": "C:\\Users\\eitvi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eitvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3198,8 +3198,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
-              "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
+            "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry\\Pantry.csproj": {
+              "projectPath": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry\\Pantry.csproj"
             }
           }
         }

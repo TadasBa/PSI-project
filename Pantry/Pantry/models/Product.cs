@@ -4,9 +4,15 @@ using System.Text;
 
 namespace Pantry.models
 {
-    class Product
+    [Serializable]
+    public class Product : IComparable
     {
         public string productName { get; set; }
-        public string expiryDate { get; set; }
+        public DateTime expiryDate { get; set; }
+
+        public int CompareTo(object obj)
+        {
+            return expiryDate.CompareTo(obj);
+        }
     }
 }

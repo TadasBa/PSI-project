@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "j8wjd4OeOswoBvEec+9ovOP2BwcGGJ8SKe5AvoWiycFGtx3MuJNtr/20IlIdzuT5RwuJHJiImn9UVmqhQOQ+xQ==",
+  "dgSpecHash": "7x/AeVc/FFP7Qag8jx957OfgSCfbmPqbqMu9sf5FPzG2nGLAsOVzLfwAHS8+jR2JxW93WISjyYbLjsbP88WJvw==",
   "success": true,
-  "projectFilePath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.iOS\\Pantry.iOS.csproj",
+  "projectFilePath": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry.iOS\\Pantry.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\adminas\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\adminas\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\adminas\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\eitvi\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\eitvi\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\eitvi\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
   "logs": []
 }

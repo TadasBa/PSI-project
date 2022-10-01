@@ -525,19 +525,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adminas\\.nuget\\packages\\": {}
+    "C:\\Users\\eitvi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+      "projectUniqueName": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry\\Pantry.csproj",
       "projectName": "Pantry",
-      "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
-      "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
-      "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\obj\\",
+      "projectPath": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry\\Pantry.csproj",
+      "packagesPath": "C:\\Users\\eitvi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\eitvi\\source\\repos\\Pantry\\Pantry\\Pantry\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\eitvi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -588,7 +588,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
