@@ -47,6 +47,7 @@ namespace Pantry
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                     productList = (ObservableCollection<Product>)bformatter.Deserialize(stream);
+                    foreach (var product in productList) product.Update();
                 }
             }
             catch (FileNotFoundException ex)

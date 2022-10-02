@@ -32,7 +32,12 @@ namespace Pantry
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            itemListView.ItemsSource = DataHandler.productList.Where(s => s.productName.ToLower().StartsWith(e.NewTextValue.ToLower()));
+            IEnumerable<Product> search =
+            from product in DataHandler.productList
+            where product.productName.ToLower().StartsWith(e.NewTextValue.ToLower())
+            select product;
+
+            itemListView.ItemsSource = search;
         }
     }
 }
