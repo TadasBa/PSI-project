@@ -9,6 +9,7 @@ namespace Pantry.models
     {
         public string productName { get; set; }
         public DateTime expiryDate { get; set; }
+        public string color { get; set; }
 
         public int CompareTo(object obj)
         {
