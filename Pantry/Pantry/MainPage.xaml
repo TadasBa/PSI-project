@@ -1,14 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m ="clr-namespace:Pantry.models"
              x:Class="Pantry.MainPage">
+
+    <!--<ContentPage.Resources>
+        <m: ColorConverter x:Key=" ColorConverter"/>
+    </ContentPage.Resources>-->
 
     <StackLayout>
         <SearchBar Placeholder="Iveskite produkta kurio ieskote" TextChanged="SearchBar_TextChanged"/>
         <ListView x:Name="itemListView" SelectedItem="{Binding selectedProduct}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding productName}"
+                    <!--textcolor= "{binding productcolor, converter={staticresource colorconverter}}-->
+                    <ImageCell Text="{Binding productName}" TextColor="{Binding productColor}"
                                Detail="{Binding expiryDate}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -16,7 +22,7 @@
         <Entry x:Name="ProductName" Placeholder="Iveskite produkta"/>
         <!-- <Entry x:Name="ExpiryDate" Placeholder="Iveskite produkto galiojimo laika"/> -->
         <DatePicker x:Name="ExpiryDate" Format="MM/dd/yyyy"/>
-        <Button Text="Add Product" Clicked="BtnProductAdd"/>
+        <Button Text="Add Product" Clicked="BtnProductAdd" Command="{Binding ProductColor}"/>
         <Button Text="Delete Product" Clicked="BtnProductDelete"/> 
     </StackLayout>
 

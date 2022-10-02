@@ -22,7 +22,7 @@ namespace Pantry
 
         private void BtnProductAdd(object sender, EventArgs e)
         {
-            DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date});
+            DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date)});
         }
 
         private void BtnProductDelete(object sender, EventArgs e)
