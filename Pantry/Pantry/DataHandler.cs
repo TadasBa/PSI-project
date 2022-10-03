@@ -1,10 +1,13 @@
 ﻿using Pantry.models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Pantry
@@ -25,6 +28,24 @@ namespace Pantry
         public static void RemoveProduct(Product product)
         {
             productList.Remove(product);
+            WriteData();
+        }
+
+        public static void SortProducts(Product product)
+        {
+            for (int i = productList.Count - 1; i >= 0; i--)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    object o1 = productList[j - 1];
+                    object o2 = productList[j];
+                    if (((IComparable)o1).CompareTo(o2) > 0)
+                    {
+                        productList.Remove((Product)o1);
+                        productList.Insert(j, (Product)o1);
+                    }
+                }
+            }
             WriteData();
         }
 

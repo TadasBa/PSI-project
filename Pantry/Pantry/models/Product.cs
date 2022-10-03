@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml.Linq;
 using Pantry.models;
 using Xamarin.Forms;
 
@@ -18,7 +19,9 @@ namespace Pantry.models
 
         public int CompareTo(object obj)
         {
-            return expiryDate.CompareTo(obj);
+            Product a = this;
+            Product b = (Product)obj;
+            return a.expiryDate.CompareTo(b.expiryDate);
         }
         public void Update()
         {
