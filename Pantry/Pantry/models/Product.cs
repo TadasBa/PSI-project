@@ -23,7 +23,7 @@ namespace Pantry.models
         public void Update()
         {
             productColor = SelectColor.SetColor(expiryDate);
-            daysLeft = SelectColor.displayDaysLeft(expiryDate);
+            daysLeft = SelectColor.DisplayDaysLeft(expiryDate);
         }
 
     }
