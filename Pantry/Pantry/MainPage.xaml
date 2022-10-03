@@ -30,7 +30,8 @@
         <Entry x:Name="ProductName" Placeholder="Iveskite produkta"/>
         <DatePicker x:Name="ExpiryDate" Format="MM/dd/yyyy"/>
         <Button Text="Add Product" Clicked="BtnProductAdd" Command="{Binding ProductColor}"/>
-        <Button Text="Delete Product" Clicked="BtnProductDelete"/> 
+        <Button Text="Delete Product" Clicked="BtnProductDelete"/>
+        <Button Text="Sort Products" Clicked="BtnSort"/>
     </StackLayout>
 
 </ContentPage>

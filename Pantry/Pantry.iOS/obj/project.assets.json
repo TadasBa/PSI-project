@@ -1062,24 +1062,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Erika\\.nuget\\packages\\": {},
+    "C:\\Users\\adminas\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry.iOS\\Pantry.iOS.csproj",
+      "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.iOS\\Pantry.iOS.csproj",
       "projectName": "Pantry.iOS",
-      "projectPath": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry.iOS\\Pantry.iOS.csproj",
-      "packagesPath": "C:\\Users\\Erika\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry.iOS\\obj\\",
+      "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.iOS\\Pantry.iOS.csproj",
+      "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
+      "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Erika\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1093,8 +1093,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
-              "projectPath": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
+            "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
+              "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
             }
           }
         }

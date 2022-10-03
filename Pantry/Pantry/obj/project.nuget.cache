@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "t/J0fehRuB2I1mqZh85hREyF++yS9Pr2iLGM0yycH8fpGfPUsgqvzFFqVZZ8mIrfHsR9sUUeDTpYwWgACs4SUA==",
+  "dgSpecHash": "KRAfTL0+o2977w6L7i+7SvQIWXgiPd8py9fMCgOOs+2bLi8iKbij3VGzyU+Z6yX3Nw1H3cJ9k0OT37d7n2FSXg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+  "projectFilePath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Erika\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Erika\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\Erika\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\Erika\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\Erika\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\adminas\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\adminas\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\adminas\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\adminas\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\adminas\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
   "logs": []
 }

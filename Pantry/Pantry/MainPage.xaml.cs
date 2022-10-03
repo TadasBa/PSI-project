@@ -30,6 +30,11 @@ namespace Pantry
            DataHandler.RemoveProduct((Product)itemListView.SelectedItem);
         }
 
+        private void BtnSort(object sender, EventArgs e)
+        {
+            DataHandler.SortProducts((Product)itemListView.SelectedItem);
+        }
+
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             IEnumerable<Product> search =
