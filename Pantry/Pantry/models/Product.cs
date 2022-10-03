@@ -12,6 +12,7 @@ namespace Pantry.models
         public string productName { get; set; }
         public DateTime expiryDate { get; set; }
         public string productColor { get; set; }
+        public string daysLeft { get; set; }
 
         public ProductType type { get; set; }
 
@@ -19,10 +20,10 @@ namespace Pantry.models
         {
             return expiryDate.CompareTo(obj);
         }
-
         public void Update()
         {
             productColor = SelectColor.SetColor(expiryDate);
+            daysLeft = SelectColor.displayDaysLeft(expiryDate);
         }
 
     }

@@ -13,8 +13,17 @@
         <ListView x:Name="itemListView" SelectedItem="{Binding selectedProduct}">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell Text="{Binding productName}" TextColor="{Binding productColor}"
-                               Detail="{Binding expiryDate, Converter={StaticResource formatDate}}"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5,0,10,0">
+                            <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding productName}" TextColor="{Binding productColor}"/>
+                                <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}"/>
+                            </StackLayout>
+                            <StackLayout Padding ="0, 10, 0, 0">
+                                <Label Text="{Binding daysLeft}" TextColor="{Binding productColor}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
