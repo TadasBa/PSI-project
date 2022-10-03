@@ -50,7 +50,7 @@ namespace Pantry
                     foreach (var product in productList) product.Update();
                 }
             }
-            catch (FileNotFoundException ex)
+            catch (Exception ex)
             {
                 productList = new ObservableCollection<Product>();
             }

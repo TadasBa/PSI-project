@@ -8,6 +8,7 @@ namespace Pantry.models
     {
         private const int daysLimit1 = 1;
         private const int daysLimit2 = 3;
+        private static double daysLeft;
 
         private static double GetDaysLeft(DateTime expiryDate)
         {
@@ -19,7 +20,8 @@ namespace Pantry.models
 
         public static String SetColor(DateTime expiryDate)
         {
-            double daysLeft = GetDaysLeft(expiryDate);
+            daysLeft = GetDaysLeft(expiryDate);
+
 
             if (daysLeft <= daysLimit1)
             {
@@ -36,5 +38,19 @@ namespace Pantry.models
                 return "#00FF00";
             }
         }
+
+        public static String displayDaysLeft(DateTime expiryDate)
+        {
+            if(daysLeft <= 0)
+            {
+                return "Product expired";
+            }
+            else
+            {
+                return "Days left: " + (Math.Round(daysLeft, 1)).ToString();
+            }
+        }
+
+
     }
 }
