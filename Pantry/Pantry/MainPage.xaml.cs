@@ -17,7 +17,7 @@ namespace Pantry
         public MainPage()
         {
             InitializeComponent();
-            itemListView.ItemsSource = DataHandler.productList;
+            DataHandler.productList.CollectionChanged += Update;
         }
 
         private void BtnProductAdd(object sender, EventArgs e)
@@ -30,19 +30,20 @@ namespace Pantry
            DataHandler.RemoveProduct((Product)itemListView.SelectedItem);
         }
 
-        private void BtnSort(object sender, EventArgs e)
-        {
-            DataHandler.SortProducts((Product)itemListView.SelectedItem);
-        }
-
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            IEnumerable<Product> search =
-            from product in DataHandler.productList
-            where product.productName.ToLower().StartsWith(e.NewTextValue.ToLower())
-            select product;
-
-            itemListView.ItemsSource = search;
+            Update(this, null);
         }
+        
+        public void Update(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args)
+        {
+            IOrderedEnumerable<Product> ordered =
+            from product in DataHandler.productList
+            where product.productName.ToLower().StartsWith(SearchFilter.Text)
+            orderby product
+            select product;
+            itemListView.ItemsSource = ordered;
+        }
+
     }
 }

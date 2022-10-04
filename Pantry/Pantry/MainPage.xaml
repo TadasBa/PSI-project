@@ -9,7 +9,7 @@
     </ContentPage.Resources>
 
     <StackLayout>
-        <SearchBar Placeholder="Iveskite produkta kurio ieskote" TextChanged="SearchBar_TextChanged"/>
+        <SearchBar x:Name="SearchFilter"  Placeholder="Iveskite produkta kurio ieskote" TextChanged="SearchBar_TextChanged" Text=""/>
         <ListView x:Name="itemListView" SelectedItem="{Binding selectedProduct}">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -29,9 +29,8 @@
         </ListView>
         <Entry x:Name="ProductName" Placeholder="Iveskite produkta"/>
         <DatePicker x:Name="ExpiryDate" Format="MM/dd/yyyy"/>
-        <Button Text="Add Product" Clicked="BtnProductAdd" Command="{Binding ProductColor}"/>
+        <Button Text="Add Product" Clicked="BtnProductAdd"/>
         <Button Text="Delete Product" Clicked="BtnProductDelete"/>
-        <Button Text="Sort Products" Clicked="BtnSort"/>
     </StackLayout>
 
 </ContentPage>

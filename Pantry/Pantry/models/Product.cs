@@ -19,9 +19,8 @@ namespace Pantry.models
 
         public int CompareTo(object obj)
         {
-            Product a = this;
             Product b = (Product)obj;
-            return a.expiryDate.CompareTo(b.expiryDate);
+            return expiryDate.CompareTo(b.expiryDate);
         }
         public void Update()
         {

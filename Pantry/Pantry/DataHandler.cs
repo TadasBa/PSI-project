@@ -18,6 +18,7 @@ namespace Pantry
         public static DataHandler Instance { get { return instance; } }
 
         public static ObservableCollection<Product> productList { get; private set; }
+
         private static string path;
 
         public static void AddProduct(Product product)
@@ -28,24 +29,6 @@ namespace Pantry
         public static void RemoveProduct(Product product)
         {
             productList.Remove(product);
-            WriteData();
-        }
-
-        public static void SortProducts(Product product)
-        {
-            for (int i = productList.Count - 1; i >= 0; i--)
-            {
-                for (int j = 1; j <= i; j++)
-                {
-                    object o1 = productList[j - 1];
-                    object o2 = productList[j];
-                    if (((IComparable)o1).CompareTo(o2) > 0)
-                    {
-                        productList.Remove((Product)o1);
-                        productList.Insert(j, (Product)o1);
-                    }
-                }
-            }
             WriteData();
         }
 
