@@ -8,13 +8,13 @@ namespace Pantry.models
     {
         private const int daysLimit1 = 1;
         private const int daysLimit2 = 3;
-        private static double daysLeft;
+        private static int daysLeft;
 
-        private static double GetDaysLeft(DateTime expiryDate)
+        private static int GetDaysLeft(DateTime expiryDate)
         {
             TimeSpan interval = expiryDate - DateTime.Now;
 
-            return interval.TotalDays;
+            return (int) Math.Ceiling(interval.TotalDays);
 
         }
 
@@ -47,7 +47,7 @@ namespace Pantry.models
             }
             else
             {
-                return "Days left: " + (Math.Round(daysLeft, 1)).ToString();
+                return "Days left: " + daysLeft.ToString();
             }
         }
 
