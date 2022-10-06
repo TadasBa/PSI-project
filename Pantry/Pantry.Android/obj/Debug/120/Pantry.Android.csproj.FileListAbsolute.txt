@@ -2571,3 +2571,6 @@ C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\android\as
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\android\src\crc643dd37f507f3d9710\PopupPageRenderer.java
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\pliusas.png
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\product_icon.png
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\statistics_icon.png
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\recipe_icon.png

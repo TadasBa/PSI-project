@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.CommunityToolkit.PlatformConfiguration.iOSSpecific;
@@ -18,9 +19,19 @@ namespace Pantry.pages
         {
             InitializeComponent();
         }
+        
         private void BtnProductAddToList(object sender, EventArgs e)
         {
-            DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date)});
+            if(Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$")==true)
+            {
+                DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date) });
+            }
+            else
+            {
+                lblCorrect.IsVisible = true;
+            }    
+
+           
         }
     }
 }

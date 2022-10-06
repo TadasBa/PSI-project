@@ -26,13 +26,34 @@
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="5,0,10,0" Orientation="Horizontal">
+
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical">
                                 <Label Text="{Binding productName}" TextColor="{Binding productColor}" />
                                 <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}" />
                             </StackLayout>
-                            <StackLayout Padding="0,10,0,0">
-                                <Label Text="{Binding daysLeft}" TextColor="{Binding productColor}" />
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label
+                                    Text="{Binding daysLeft}"
+                                    TextColor="{Binding productColor}"
+                                    VerticalOptions="Center" />
+                                <Button
+                                    HeightRequest="40"
+                                    HorizontalOptions="End"
+                                    IsVisible="true"
+                                    Text="?"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+                                <Button
+                                    Clicked="BtnProductDelete"
+                                    HeightRequest="40"
+                                    HorizontalOptions="End"
+                                    Text="-"
+                                    VerticalOptions="Center"
+                                    WidthRequest="40" />
+
                             </StackLayout>
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
