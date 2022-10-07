@@ -1,0 +1,20 @@
+﻿<xct:Popup
+    x:Class="Pantry.pages.DeleteConfirmationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pantry="clr-namespace:Pantry"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:DataType="pantry:MainPage"
+    Size="200,150"
+    Color="Transparent">
+    <Frame CornerRadius="20" HasShadow="True">
+
+        <StackLayout>
+            <Label Text="Are you sure you want to delete this product?" />
+            <StackLayout Orientation="Horizontal">
+                <Button Clicked="DeleteProduct" Text="YES" />
+                <Button Text="NO" />
+            </StackLayout>
+        </StackLayout>
+    </Frame>
+</xct:Popup>
