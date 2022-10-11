@@ -2670,3 +2670,4 @@ C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry.Android\obj\Debug\120\andr
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry.Android\obj\Debug\120\android\src\crc64a0e0a82d0db9a07d\Connectivity_EssentialsNetworkCallback.java
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry.Android\obj\Debug\120\android\src\crc64ee486da937c010f4\LabelAppCompatRenderer.java
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry.Android\obj\Debug\120\android\src\crc64fdbeeba101bd56dc\RgGestureDetectorListener.java
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\filter.jpg

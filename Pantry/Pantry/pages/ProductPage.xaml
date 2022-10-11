@@ -12,12 +12,14 @@
 
 
     <StackLayout Padding="10,10,10,15">
-        <SearchBar
+        <StackLayout Orientation="Horizontal">
+            <SearchBar
             x:Name="SearchFilter"
             Placeholder="Search for specific product"
             Text=""
             TextChanged="SearchBar_TextChanged" />
-        <ImageButton Source="filter.jpg" HeightRequest="50" WidthRequest="50" Margin="-10, 0, 0, 0" Clicked="BtnProductFilter"/>
+            <ImageButton Source="filter.jpg" HeightRequest="50" WidthRequest="50" Margin="-10, 0, 0, 0" Clicked="BtnProductFilter"/>
+        </StackLayout>
         <ListView x:Name="itemListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
