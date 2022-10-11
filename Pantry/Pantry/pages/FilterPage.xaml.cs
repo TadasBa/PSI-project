@@ -68,6 +68,7 @@ namespace Pantry.pages
             {
                 TypePicker.IsEnabled = true;
                 FilterByType.Color = Color.Black;
+                TypePicker.TitleColor = Color.Black;
             }
             else
             {
