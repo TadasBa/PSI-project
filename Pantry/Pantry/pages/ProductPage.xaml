@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Pantry.pages.ProductPage"
+    x:Name="productPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:Pantry.converters">
+    xmlns:converters="clr-namespace:Pantry.converters" xmlns:pages="clr-namespace:Pantry.pages" xmlns:models="clr-namespace:Pantry.models"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Resources>
         <converters:DateTimeToString x:Key="formatDate" />
     </ContentPage.Resources>
@@ -19,20 +21,26 @@
             Margin="10"
             FontSize="Medium"
             HorizontalOptions="Center"
-            Text="Choose a product type" />
+            Text="Serach"/>
         <Picker x:Name="Picker" Title="Product Types" />
-        <ListView x:Name="itemListView" SelectedItem="{Binding selectedProduct}">
+        <ListView x:Name="itemListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="5,0,10,0" Orientation="Horizontal">
+                        <StackLayout Padding="5,0,10,0" Orientation="Horizontal" xct:TouchEffect.LongPressCommand="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}" xct:TouchEffect.LongPressCommandParameter="{Binding .}">
+
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical">
-                                <Label Text="{Binding productName}" TextColor="{Binding productColor}" />
+                                <Label Text="{Binding productName}" TextColor="{Binding productColor}"/>
                                 <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}" />
                             </StackLayout>
-                            <StackLayout Padding="0,10,0,0">
-                                <Label Text="{Binding daysLeft}" TextColor="{Binding productColor}" />
+
+                            <StackLayout Orientation="Horizontal">
+                                <Label
+                                    Text="{Binding daysLeft}"
+                                    TextColor="{Binding productColor}"
+                                    VerticalOptions="Center" />
                             </StackLayout>
+
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

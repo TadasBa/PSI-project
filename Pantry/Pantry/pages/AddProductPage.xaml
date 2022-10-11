@@ -5,8 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pantry="clr-namespace:Pantry"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    x:DataType="pantry:MainPage"
-    Size="300,300"
+    Size="300,400"
     Color="Transparent">
     <Frame CornerRadius="20" HasShadow="True">
         <StackLayout>
@@ -18,7 +17,14 @@
                 x:Name="ProductName"
                 Margin="10"
                 Placeholder="Enter the product" />
+            <Label
+                x:Name="lblCorrect"
+                HorizontalOptions="Center"
+                IsVisible="false"
+                Text="Enter only letters/"
+                TextColor="Red" />
             <DatePicker x:Name="ExpiryDate" Margin="10" />
+            <Picker Title="ProductType" Margin="10" />
             <Button
                 Margin="10"
                 Clicked="BtnProductAddToList"
