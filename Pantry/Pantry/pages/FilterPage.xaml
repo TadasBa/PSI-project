@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pantry="clr-namespace:Pantry.models"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:pages="clr-namespace:Pantry.models"
-    Size="300,425"
+    Size="300,435"
     Color="Transparent">
     <Frame CornerRadius="20" HasShadow="True">
         <StackLayout>
@@ -23,7 +23,7 @@
             </StackLayout>
             <Picker x:Name="TypePicker" Title="ProductType" Margin="10, 0, 0, 0" IsEnabled="False"/>
             <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="FilterByDate" IsChecked="False" CheckedChanged="FilterByDateCheckedChanged" Color="DarkGray" Margin="10, 10, 0, 0"/>
+                <CheckBox x:Name="FilterByDate" IsChecked="False" CheckedChanged="FilterByDateCheckedChanged" Color="DarkGray" Margin="10, 5, 0, 0"/>
                 <Label
                 Margin="10, 10, 0, 0"
                 FontSize="Subtitle"
