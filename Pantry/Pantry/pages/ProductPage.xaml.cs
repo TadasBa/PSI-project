@@ -61,8 +61,6 @@ namespace Pantry.pages
                         orderby product
                         select product;
 
-            IEnumerable<Product> filtered = ordered
-
             itemListView.ItemsSource = ordered;
            
         }
