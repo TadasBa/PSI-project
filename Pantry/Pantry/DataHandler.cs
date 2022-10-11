@@ -29,10 +29,11 @@ namespace Pantry
         public static void RemoveProduct(Product product)
         {
             productList.Remove(product);
+            Console.WriteLine("Removing");
             WriteData();
         }
 
-        private static void WriteData()
+        public static void WriteData()
         {
             using (var stream = new FileStream(path, FileMode.OpenOrCreate))
             {

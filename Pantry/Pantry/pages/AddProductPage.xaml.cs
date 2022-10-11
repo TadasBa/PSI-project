@@ -25,13 +25,12 @@ namespace Pantry.pages
             if(Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$")==true)
             {
                 DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date) });
+                Dismiss("Created");
             }
             else
             {
                 lblCorrect.IsVisible = true;
             }    
-
-           
         }
     }
 }

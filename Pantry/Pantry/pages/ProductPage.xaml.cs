@@ -13,11 +13,28 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductPage : ContentPage
     {
+        public Command LongPressItem { get; }
+
         public ProductPage()
         {
+            LongPressItem = new Command(async (object s) =>
+            {
+                var result = await Navigation.ShowPopupAsync(new EditProduct((Product)s));
+                if(result == "Delete")
+                {
+                    bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).productName, "Delete", "Cancel");
+                    if(res)
+                    {
+                        DataHandler.RemoveProduct((Product)s);
+                    }
+                }
+                Update(this, null);
+            });
+
             InitializeComponent();
-             DataHandler.productList.CollectionChanged += Update;
-             Update(this, null);
+            BindingContext = this;
+            DataHandler.productList.CollectionChanged += Update;
+            Update(this, null);
         }
         
         private void BtnProductAdd(object sender, EventArgs e)
@@ -38,30 +55,15 @@ namespace Pantry.pages
         
         public void Update(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args)
         {
-            IOrderedEnumerable<Product> ordered = null;
-            
-            try
-            {
+            IOrderedEnumerable<Product> ordered =
+                        from product in DataHandler.productList
+                        where product.productName.ToLower().StartsWith(SearchFilter.Text)
+                        orderby product
+                        select product;
 
-                ordered = from product in DataHandler.productList
-                            where product.productName.ToLower().StartsWith(SearchFilter.Text)
-                            orderby product
-                            select product;
-                
-            }
-            catch (NullReferenceException ex)
-            {
+            IEnumerable<Product> filtered = ordered
 
-                ordered = from product in DataHandler.productList
-                            orderby product
-                            select product;
-
-            }
-            finally
-            {
-                itemListView.ItemsSource = ordered;
-            }
-
+            itemListView.ItemsSource = ordered;
            
         }
         
