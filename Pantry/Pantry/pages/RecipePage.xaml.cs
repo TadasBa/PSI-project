@@ -15,6 +15,7 @@ namespace Pantry.pages
         public RecipePage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
     }
 }

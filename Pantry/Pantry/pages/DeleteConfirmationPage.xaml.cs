@@ -18,7 +18,7 @@ namespace Pantry.pages
         }
         private void DeleteProduct(object sender, EventArgs e)
         {
-        
+            
         }
     }
 }

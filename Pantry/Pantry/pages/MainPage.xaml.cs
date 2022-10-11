@@ -17,6 +17,7 @@ namespace Pantry
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = this;
         }
         
     }

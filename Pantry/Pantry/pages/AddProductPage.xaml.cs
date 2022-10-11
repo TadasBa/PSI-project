@@ -1,6 +1,8 @@
-﻿using Pantry.models;
+﻿using Pantry.enums;
+using Pantry.models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -18,13 +20,19 @@ namespace Pantry.pages
         public AddProductPage()
         {
             InitializeComponent();
+            TypePicker.ItemsSource = ProductTypeHandler.values;
         }
-        
+
         private void BtnProductAddToList(object sender, EventArgs e)
         {
             if(Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$")==true)
             {
-                DataHandler.AddProduct(new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date) });
+                string value = (string)TypePicker.SelectedItem;
+                ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
+
+                Product product = new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date), type = selectedType };
+                ProductTypeHandler.setImageSource(product);
+                DataHandler.AddProduct(product);
             }
             else
             {

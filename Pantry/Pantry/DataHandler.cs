@@ -17,6 +17,7 @@ namespace Pantry
         private static readonly DataHandler instance = new DataHandler();
         public static DataHandler Instance { get { return instance; } }
 
+        //private set
         public static ObservableCollection<Product> productList { get; private set; }
 
         private static string path;

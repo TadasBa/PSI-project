@@ -14,8 +14,8 @@ namespace Pantry.models
         public DateTime expiryDate { get; set; }
         public string productColor { get; set; }
         public string daysLeft { get; set; }
-
         public ProductType type { get; set; }
+        public string imageSource { get; set; }
 
         public int CompareTo(object obj)
         {

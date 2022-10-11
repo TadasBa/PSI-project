@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pantry.models;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
