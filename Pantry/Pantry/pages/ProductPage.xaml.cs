@@ -17,6 +17,7 @@ namespace Pantry.pages
         {
             InitializeComponent();
              DataHandler.productList.CollectionChanged += Update;
+             Update(this, null);
         }
         
         private void BtnProductAdd(object sender, EventArgs e)
@@ -26,7 +27,8 @@ namespace Pantry.pages
         
         private void BtnProductDelete(object sender, EventArgs e)
         {
-           DataHandler.RemoveProduct((Product)itemListView.SelectedItem);
+            Navigation.ShowPopup(new DeleteConfirmationPage());
+          // DataHandler.RemoveProduct((Product)itemListView.SelectedItem);
         }
 
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
@@ -36,12 +38,31 @@ namespace Pantry.pages
         
         public void Update(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args)
         {
-            IOrderedEnumerable<Product> ordered =
-            from product in DataHandler.productList
-            where product.productName.ToLower().StartsWith(SearchFilter.Text)
-            orderby product
-            select product;
-           itemListView.ItemsSource = ordered;
+            IOrderedEnumerable<Product> ordered = null;
+            
+            try
+            {
+
+                ordered = from product in DataHandler.productList
+                            where product.productName.ToLower().StartsWith(SearchFilter.Text)
+                            orderby product
+                            select product;
+                
+            }
+            catch (NullReferenceException ex)
+            {
+
+                ordered = from product in DataHandler.productList
+                            orderby product
+                            select product;
+
+            }
+            finally
+            {
+                itemListView.ItemsSource = ordered;
+            }
+
+           
         }
         
     }
