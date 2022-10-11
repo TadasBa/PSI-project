@@ -47,7 +47,6 @@ C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\P
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.AssemblyReference.cache
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\App.xaml.g.cs
-C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.AssemblyInfoInputs.cache
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.AssemblyInfo.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.CoreCompileInputs.cache
@@ -69,3 +68,11 @@ C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipePage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\StatisticsPage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\AddProductPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\DeleteConfirmationPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\MainPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\ProductPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipePage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\StatisticsPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPage.xaml.g.cs
