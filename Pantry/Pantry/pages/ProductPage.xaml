@@ -17,31 +17,24 @@
             Placeholder="Search for specific product"
             Text=""
             TextChanged="SearchBar_TextChanged" />
-        <Label
-            Margin="10"
-            FontSize="Medium"
-            HorizontalOptions="Center"
-            Text="Serach"/>
-        <Picker x:Name="Picker" Title="Product Types" />
+        <ImageButton Source="filter.jpg" HeightRequest="50" WidthRequest="50" Margin="-10, 0, 0, 0" Clicked="BtnProductFilter"/>
         <ListView x:Name="itemListView">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Padding="5,0,10,0" Orientation="Horizontal" xct:TouchEffect.LongPressCommand="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}" xct:TouchEffect.LongPressCommandParameter="{Binding .}">
-
+                            <Image Source="{Binding imageSource}"/>
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical">
                                 <Label Text="{Binding productName}" TextColor="{Binding productColor}"/>
                                 <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}" />
                             </StackLayout>
 
-                            <StackLayout Orientation="Horizontal">
-                                <Label
-                                    Text="{Binding daysLeft}"
-                                    TextColor="{Binding productColor}"
-                                    VerticalOptions="Center" />
-                            </StackLayout>
+                            <Label
+                                Text="{Binding daysLeft}"
+                                TextColor="{Binding productColor}"
+                                VerticalOptions="Center" />
 
-                        </StackLayout>
+                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>

@@ -16,6 +16,7 @@ namespace Pantry.models
         public string daysLeft { get; set; }
 
         public ProductType type { get; set; }
+        public string imageSource { get; set; }
 
         public int CompareTo(object obj)
         {
