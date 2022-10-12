@@ -1,4 +1,5 @@
 ﻿using Pantry.models;
+using Plugin.LocalNotification;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -52,7 +53,12 @@ namespace Pantry
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                     productList = (ObservableCollection<Product>)bformatter.Deserialize(stream);
-                    foreach (var product in productList) product.Update();
+                    foreach (var product in productList)
+                    {
+                        product.Update();
+                        LocalNotificationCenter.Current.Show(Notification.Notifications(product.expiryDate));
+
+                    }
                 }
             }
             catch (Exception ex)
