@@ -10,7 +10,7 @@ namespace Pantry.models
         private const int daysLimit2 = 3;
         private static int daysLeft;
 
-        private static int GetDaysLeft(DateTime expiryDate)
+        public static int GetDaysLeft(DateTime expiryDate)
         {
             TimeSpan interval = expiryDate - DateTime.Now;
 

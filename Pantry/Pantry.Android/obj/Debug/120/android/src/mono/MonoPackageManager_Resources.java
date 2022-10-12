@@ -4,8 +4,17 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Pantry.Android.dll" comes first in this list. */
 		"Pantry.Android.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+		"Microsoft.Extensions.DependencyInjection.dll",
+		"Microsoft.Extensions.Logging.Abstractions.dll",
+		"Microsoft.Extensions.Logging.dll",
+		"Microsoft.Extensions.Options.dll",
+		"Microsoft.Extensions.Primitives.dll",
+		"Newtonsoft.Json.dll",
 		"Pantry.dll",
+		"Plugin.LocalNotification.dll",
 		"Rg.Plugins.Popup.dll",
+		"System.Diagnostics.DiagnosticSource.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
 		"Xamarin.AndroidX.Annotation.Experimental.dll",
@@ -66,6 +75,11 @@ public class MonoPackageManager_Resources {
 		"Xamarin.Forms.Xaml.dll",
 		"Xamarin.Google.Android.Material.dll",
 		"Xamarin.Google.Guava.ListenableFuture.dll",
+		"Xamarin.GooglePlayServices.Base.dll",
+		"Xamarin.GooglePlayServices.Basement.dll",
+		"Xamarin.GooglePlayServices.Location.dll",
+		"Xamarin.GooglePlayServices.Places.PlaceReport.dll",
+		"Xamarin.GooglePlayServices.Tasks.dll",
 	};
 	public static String[] Dependencies = new String[]{
 	};
