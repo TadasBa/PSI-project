@@ -29,5 +29,14 @@ namespace Pantry.models
             daysLeft = SelectColor.DisplayDaysLeft(expiryDate);
         }
 
+        public static T Convert<T>(Product product) where T : Product, new()
+        {
+            T type = new T();
+            type.productName = product.productName;
+            type.expiryDate = product.expiryDate;
+            type.daysLeft = product.daysLeft;
+            type.productColor = product.productColor;
+            return type;
+        }
     }
 }

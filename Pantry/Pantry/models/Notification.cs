@@ -10,19 +10,19 @@ namespace Pantry.models
 
         public static NotificationRequest Notifications(DateTime expiryDate)
         {
-            String message = " ";
+            string message;
             int daysLimit1 = 1;
             int daysLimit2 = 3;
             Random random = new Random();
 
             if (SelectColor.GetDaysLeft(expiryDate) < daysLimit1)
             {
-                message = "You have expired product";
+                message = "You have an expired product";
             }
 
             else if (SelectColor.GetDaysLeft(expiryDate) >= daysLimit1 && SelectColor.GetDaysLeft(expiryDate) <= daysLimit2)
             {
-                message = "Your product will be expired soon";
+                message = "Your product will expire soon";
             }
 
             else

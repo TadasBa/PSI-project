@@ -1,5 +1,6 @@
 ﻿using Pantry.enums;
 using Pantry.models;
+using Pantry.models.types;
 using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
@@ -28,9 +29,10 @@ namespace Pantry.pages
         {
             string value = (string)TypePicker.SelectedItem;
             ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-            Product product = new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date), type = selectedType };
+            Product product = new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date)};
+            BakedGoods g = Product.Convert<BakedGoods>(product);
             
-            if (Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$")==true)
+            if (Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$") == true)
             {
                 ProductTypeHandler.setImageSource(product);
                 DataHandler.AddProduct(product);
