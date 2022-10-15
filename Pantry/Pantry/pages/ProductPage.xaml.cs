@@ -90,7 +90,7 @@ namespace Pantry.pages
                                                                 where product.expiryDate >= startDate && product.expiryDate <= endDate && product.type == selectedType
                                                                 select product;
 
-                itemListView.ItemsSource = filteredByDateAndType;
+                itemCollectionView.ItemsSource = filteredByDateAndType;
 
 
             }
@@ -101,7 +101,7 @@ namespace Pantry.pages
                                                         where product.type == selectedType
                                                         select product;
 
-                itemListView.ItemsSource = filteredByType;
+                itemCollectionView.ItemsSource = filteredByType;
             }
             else if (startDate != null && endDate != null)
             {
@@ -109,12 +109,12 @@ namespace Pantry.pages
                                                         where product.expiryDate >= startDate && product.expiryDate <= endDate
                                                         select product;
 
-                itemListView.ItemsSource = filteredByDate;
+                itemCollectionView.ItemsSource = filteredByDate;
             }
             else
             {
 
-                itemListView.ItemsSource = ordered;
+                itemCollectionView.ItemsSource = ordered;
             }
 
         }
