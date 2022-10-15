@@ -20,28 +20,30 @@
             TextChanged="SearchBar_TextChanged" />
             <ImageButton Source="filter.jpg" HeightRequest="50" WidthRequest="50" Margin="-10, 0, 0, 0" Clicked="BtnProductFilter"/>
         </StackLayout>
-        <ListView x:Name="itemListView">
-            <ListView.ItemTemplate>
+
+        <CollectionView x:Name="itemCollectionView">
+            <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="5,0,10,0" Orientation="Horizontal" xct:TouchEffect.LongPressCommand="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}" xct:TouchEffect.LongPressCommandParameter="{Binding .}">
-                            <Image Source="{Binding imageSource}"/>
-                            <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical">
-                                <Label Text="{Binding productName}" TextColor="{Binding productColor}"/>
-                                <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}" />
+                    <Grid Padding="10">
+                        <Frame CornerRadius="20" HasShadow="True"  BorderColor="DarkGray" Padding="10, 10, 10, 10">
+                            <StackLayout Orientation="Horizontal" xct:TouchEffect.LongPressCommand="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}" xct:TouchEffect.LongPressCommandParameter="{Binding .}">
+                                <Image Source="{Binding imageSource}" HeightRequest="60" WidthRequest="60"/>
+                                <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                                    <Label Text="{Binding productName}" TextColor="{Binding productColor}" FontSize="Medium"/>
+                                    <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}" />
+                                </StackLayout>
+                                <Label
+                                        Text="{Binding daysLeft}"
+                                        TextColor="{Binding productColor}"
+                                        VerticalOptions="Center"
+                                        HorizontalOptions="EndAndExpand"/>
                             </StackLayout>
-
-                            <Label
-                                Text="{Binding daysLeft}"
-                                TextColor="{Binding productColor}"
-                                VerticalOptions="Center" />
-
-                         </StackLayout>
-                    </ViewCell>
+                        </Frame>
+                    </Grid>
                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        
         <ImageButton
             Clicked="BtnProductAdd"
             CornerRadius="50"
