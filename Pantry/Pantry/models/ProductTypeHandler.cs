@@ -23,7 +23,6 @@ namespace Pantry.models
             {
                 string value = pt.ToDescriptionString();
                 values.Add(value);
-
             }
 
             values.Sort();

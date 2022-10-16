@@ -4,6 +4,7 @@ using System.Text;
 
 namespace Pantry.models.types
 {
+    [Serializable]
     public class Seafood : Product
     {
         public enum SubType
