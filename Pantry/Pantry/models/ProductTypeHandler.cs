@@ -21,14 +21,15 @@ namespace Pantry.models
             values = new List<string>();
             foreach (ProductType pt in Enum.GetValues(typeof(ProductType)))
             {
-                String value = pt.ToDescriptionString();
+                string value = pt.ToDescriptionString();
                 values.Add(value);
-
             }
 
             values.Sort();
         }
 
+
+        // DEPRECATED
         public static void setImageSource(Product product)
         {
             switch (product.type)

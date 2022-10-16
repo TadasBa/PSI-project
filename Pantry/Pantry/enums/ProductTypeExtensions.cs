@@ -30,5 +30,15 @@ namespace Pantry.enums
                 throw new Exception();
             }
         }
+
+        public static T Convert<T>(this Product product) where T : Product, new()
+        {
+            T type = new T();
+            type.productName = product.productName;
+            type.expiryDate = product.expiryDate;
+            type.daysLeft = product.daysLeft;
+            type.productColor = product.productColor;
+            return type;
+        }
     }
 }

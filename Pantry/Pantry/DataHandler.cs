@@ -18,11 +18,11 @@ namespace Pantry
         private static readonly DataHandler instance = new DataHandler();
         public static DataHandler Instance { get { return instance; } }
 
-        public static ObservableCollection<Product> productList { get; private set; }
+        public static ObservableCollection<IProduct> productList { get; private set; }
 
         private static string path;
 
-        public static void AddProduct(Product product)
+        public static void AddProduct(IProduct product)
         {
             productList.Add(product);
             WriteData();
@@ -52,7 +52,7 @@ namespace Pantry
                 {
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                    productList = (ObservableCollection<Product>)bformatter.Deserialize(stream);
+                    productList = (ObservableCollection<IProduct>)bformatter.Deserialize(stream);
                     foreach (var product in productList)
                     {
                         product.Update();
@@ -63,7 +63,7 @@ namespace Pantry
             }
             catch (Exception ex)
             {
-                productList = new ObservableCollection<Product>();
+                productList = new ObservableCollection<IProduct>();
             }
         }
         static DataHandler()

@@ -77,7 +77,7 @@ namespace Pantry.pages
      
         public void Update(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args)
         {
-            IOrderedEnumerable<Product> ordered =
+            IOrderedEnumerable<IProduct> ordered =
                             from product in DataHandler.productList
                             where product.productName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
@@ -86,7 +86,7 @@ namespace Pantry.pages
             if (selectedTypeString != null && startDate != null && endDate != null)
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
-                IEnumerable<Product> filteredByDateAndType = from product in ordered
+                IEnumerable<IProduct> filteredByDateAndType = from product in ordered
                                                                 where product.expiryDate >= startDate && product.expiryDate <= endDate && product.type == selectedType
                                                                 select product;
 
@@ -97,7 +97,7 @@ namespace Pantry.pages
             else if (selectedTypeString != null)
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
-                IEnumerable<Product> filteredByType = from product in ordered
+                IEnumerable<IProduct> filteredByType = from product in ordered
                                                         where product.type == selectedType
                                                         select product;
 
@@ -105,7 +105,7 @@ namespace Pantry.pages
             }
             else if (startDate != null && endDate != null)
             {
-                IEnumerable<Product> filteredByDate = from product in ordered
+                IEnumerable<IProduct> filteredByDate = from product in ordered
                                                         where product.expiryDate >= startDate && product.expiryDate <= endDate
                                                         select product;
 

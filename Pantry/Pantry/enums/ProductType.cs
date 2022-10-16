@@ -41,6 +41,9 @@ namespace Pantry.models
         SEAFOOD,
 
         [Description("Vegetables")]
-        VEGETABLES
+        VEGETABLES,
+
+        [Description("Fish")]
+        FISH
     }
 }

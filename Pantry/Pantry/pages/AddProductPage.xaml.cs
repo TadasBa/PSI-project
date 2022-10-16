@@ -1,9 +1,11 @@
 ﻿using Pantry.enums;
 using Pantry.models;
+using Pantry.models.types;
 using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -28,12 +30,17 @@ namespace Pantry.pages
         {
             string value = (string)TypePicker.SelectedItem;
             ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-            Product product = new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date), type = selectedType };
-            
-            if (Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$")==true)
+            Product tempProd = new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date)};
+
+            // Reflectoins used to call generic method with type selectedType
+            MethodInfo method = typeof(ProductTypeExtensions).GetMethod(nameof(ProductTypeExtensions.Convert));
+            MethodInfo generic = method.MakeGenericMethod(Product.valuePairs[selectedType]);
+            object[] args = new object[] { tempProd };
+            var product = generic.Invoke(this, args);
+
+            if (Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$") == true)
             {
-                ProductTypeHandler.setImageSource(product);
-                DataHandler.AddProduct(product);
+                DataHandler.AddProduct((IProduct)product);
 
                 Dismiss("Created");
             }
