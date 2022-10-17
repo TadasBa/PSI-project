@@ -56,7 +56,7 @@ namespace Pantry
                     foreach (var product in productList)
                     {
                         product.Update();
-                        LocalNotificationCenter.Current.Show(Notification.Notifications(product.expiryDate));
+                        LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(product.expiryDate));
 
                     }
                 }

@@ -49,7 +49,7 @@ namespace Pantry.pages
                 lblCorrect.IsVisible = true;
             }
 
-            LocalNotificationCenter.Current.Show(Notification.Notifications(ExpiryDate.Date));
+            LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(ExpiryDate.Date));
         }
     }
 }

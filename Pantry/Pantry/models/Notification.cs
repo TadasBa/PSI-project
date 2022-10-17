@@ -8,7 +8,7 @@ namespace Pantry.models
     static class Notification
     {
 
-        public static NotificationRequest Notifications(DateTime expiryDate)
+        public static NotificationRequest ProductExpirationNotification(DateTime expiryDate)
         {
             string message;
             int daysLimit1 = 1;
