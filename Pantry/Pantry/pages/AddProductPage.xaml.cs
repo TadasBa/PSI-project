@@ -49,7 +49,10 @@ namespace Pantry.pages
                 lblCorrect.IsVisible = true;
             }
 
-            LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(ExpiryDate.Date));
-        }
+            if (SelectColor.GetDaysLeft(ExpiryDate.Date) < 1)
+            {
+                LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(ExpiryDate.Date, titleName: "WARNING", "You added an expired product"));
+            }
+      }
     }
 }
