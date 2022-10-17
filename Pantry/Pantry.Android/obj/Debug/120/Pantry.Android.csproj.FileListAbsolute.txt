@@ -2831,3 +2831,15 @@ C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry.Android\obj\Debug\120\res\drawa
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry.Android\obj\Debug\120\res\drawable\nuts_and_seeds.jpg
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry.Android\obj\Debug\120\res\drawable\seafood.jpg
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry.Android\obj\Debug\120\res\drawable\vegetables.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\baked_goods.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\berries.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\dairy.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\drinks.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\fish.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\fruits.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\grains.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\lugemes.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\meat.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\nuts_and_seeds.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\seafood.jpg
+C:\Univerity\PSI\PSI-project\Pantry\Pantry.Android\obj\Debug\120\res\drawable\vegetables.jpg
