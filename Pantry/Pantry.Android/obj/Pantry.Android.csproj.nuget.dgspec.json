@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj": {}
+    "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj": {
+    "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
+        "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
         "projectName": "Pantry.Android",
-        "projectPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\obj\\",
+        "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
+        "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
+        "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid12.0": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
+              "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
+                "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
               }
             }
           }
@@ -42,6 +42,10 @@
       "frameworks": {
         "monoandroid12.0": {
           "dependencies": {
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.0.2, )"
+            },
             "Xamarin.CommunityToolkit": {
               "target": "Package",
               "version": "[2.0.5, )"
@@ -58,20 +62,20 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
+    "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+        "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
         "projectName": "Pantry",
-        "projectPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\obj\\",
+        "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+        "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
+        "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -104,6 +108,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Plugin.LocalNotification": {
+              "target": "Package",
+              "version": "[10.0.2, )"
             },
             "Rg.Plugins.Popup": {
               "target": "Package",

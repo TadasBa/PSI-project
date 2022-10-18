@@ -361,3 +361,8 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+Pantry\Pantry.Android\obj\
+Pantry\Pantry.Android\bin\
+Pantry\Pantry.iOS\bin\
+Pantry\Pantry.iOS\obj\

@@ -1,4 +1,5 @@
 ﻿using Pantry.models;
+using Plugin.LocalNotification;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -17,11 +18,11 @@ namespace Pantry
         private static readonly DataHandler instance = new DataHandler();
         public static DataHandler Instance { get { return instance; } }
 
-        public static ObservableCollection<Product> productList { get; private set; }
+        public static ObservableCollection<IProduct> productList { get; private set; }
 
         private static string path;
 
-        public static void AddProduct(Product product)
+        public static void AddProduct(IProduct product)
         {
             productList.Add(product);
             WriteData();
@@ -29,10 +30,11 @@ namespace Pantry
         public static void RemoveProduct(Product product)
         {
             productList.Remove(product);
+            Console.WriteLine("Removing");
             WriteData();
         }
 
-        private static void WriteData()
+        public static void WriteData()
         {
             using (var stream = new FileStream(path, FileMode.OpenOrCreate))
             {
@@ -50,13 +52,18 @@ namespace Pantry
                 {
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                    productList = (ObservableCollection<Product>)bformatter.Deserialize(stream);
-                    foreach (var product in productList) product.Update();
+                    productList = (ObservableCollection<IProduct>)bformatter.Deserialize(stream);
+                    foreach (var product in productList)
+                    {
+                        product.Update();
+                        LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(product.expiryDate, titleName: "Notification"));
+
+                    }
                 }
             }
             catch (Exception ex)
             {
-                productList = new ObservableCollection<Product>();
+                productList = new ObservableCollection<IProduct>();
             }
         }
         static DataHandler()
