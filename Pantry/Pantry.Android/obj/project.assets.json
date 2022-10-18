@@ -4351,24 +4351,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adminas\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
       "projectName": "Pantry.Android",
-      "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
-      "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
-      "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry.Android\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\Pantry.Android.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4382,8 +4382,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
-              "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
+            "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj": {
+              "projectPath": "C:\\Users\\User\\Desktop\\PSI-project\\Pantry\\Pantry\\Pantry.csproj"
             }
           }
         }
@@ -4396,14 +4396,6 @@
             "target": "Package",
             "version": "[10.0.2, )"
           },
-          "Plugin.LocalNotification": {
-            "target": "Package",
-            "version": "[10.0.2, )"
-          },
-          "Xamarin.CommunityToolkit": {
-            "target": "Package",
-            "version": "[2.0.5, )"
-          },
           "Xamarin.CommunityToolkit": {
             "target": "Package",
             "version": "[2.0.5, )"
@@ -4411,14 +4403,6 @@
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.3, )"
-          },
-          "Xamarin.Essentials": {
-            "target": "Package",
-            "version": "[1.7.3, )"
-          },
-          "Xamarin.Forms": {
-            "target": "Package",
-            "version": "[5.0.0.2515, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
