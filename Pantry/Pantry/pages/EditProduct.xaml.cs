@@ -20,7 +20,7 @@ namespace Pantry.pages
         {
             BindingContext = this;
             this.product = product;
-            Name = product.productName;
+            Name = product.ProductName;
             Date = product.expiryDate;
 
             InitializeComponent();
@@ -32,10 +32,10 @@ namespace Pantry.pages
 
         public void OnConfirm(object sender, EventArgs args)
         {
-            product.productName = Name;
+            product.ProductName = Name;
             product.expiryDate = Date;
             product.productColor = SelectColor.SetColor(Date);
-            product.daysLeft = SelectColor.DisplayDaysLeft(Date);
+            product.daysLeft = SelectColor.DisplayDaysLeft();
             DataHandler.WriteData();
             ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
             Dismiss("Confirmed");

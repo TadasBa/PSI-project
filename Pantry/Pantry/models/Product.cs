@@ -11,11 +11,15 @@ namespace Pantry.models
     [Serializable]
     public class Product : IComparable, IProduct
     {
-        public string productName { get; set; }
+        private string productName;
+        public string ProductName { 
+            get { return productName; } 
+            set { productName = value[0].ToString().ToUpper() + value.Substring(1); } }
         public DateTime expiryDate { get; set; }
-        public string productColor { get; set; }
-        public string daysLeft { get; set; }
 
+        public string productColor { get; set; }
+
+        public string daysLeft { get; set; }
         public ProductType type { get; set; }
         public string imageSource { get; set; }
 
@@ -27,7 +31,7 @@ namespace Pantry.models
         public void Update()
         {
             productColor = SelectColor.SetColor(expiryDate);
-            daysLeft = SelectColor.DisplayDaysLeft(expiryDate);
+            daysLeft = SelectColor.DisplayDaysLeft();
         }
 
         public static Dictionary<ProductType, Type> valuePairs = new Dictionary<ProductType, Type>
@@ -37,7 +41,7 @@ namespace Pantry.models
             { ProductType.BERRIES,          typeof(Berries) },
             { ProductType.DAIRY,            typeof(Dairy) },
             { ProductType.DRINKS,           typeof(Drinks) },
-            { ProductType.EGGS,             typeof(Eggs) },
+            {ProductType.EGGS,              typeof(Eggs)},
             { ProductType.FISH,             typeof(Fish) },
             { ProductType.FRUITS,           typeof(Fruits) },
             { ProductType.GRAINS,           typeof(Grains) },

@@ -1,5 +1,6 @@
 ﻿using Pantry.enums;
 using Pantry.models;
+using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Pantry.pages
                 var result = await Navigation.ShowPopupAsync(new EditProduct((Product)s));
                 if(result == "Delete")
                 {
-                    bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).productName, "Delete", "Cancel");
+                    bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).ProductName, "Delete", "Cancel");
                     if(res)
                     {
                         DataHandler.RemoveProduct((Product)s);
@@ -41,9 +42,23 @@ namespace Pantry.pages
             Update(this, null);
         }
         
-        private void BtnProductAdd(object sender, EventArgs e)
+        private async void BtnProductAdd(object sender, EventArgs e)
         {
-            Navigation.ShowPopup(new AddProductPage());
+            try
+            {
+                DateTime result = (DateTime)await Navigation.ShowPopupAsync(new AddProductPage());
+
+                if (SelectColor.GetDaysLeft(result) < 1)
+                {
+                    _ = LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(result, titleName: "WARNING", "You added an expired product"));
+                }
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+          
+           
         }
         
         private void BtnProductDelete(object sender, EventArgs e)
@@ -79,7 +94,7 @@ namespace Pantry.pages
         {
             IOrderedEnumerable<IProduct> ordered =
                             from product in DataHandler.productList
-                            where product.productName.ToLower().StartsWith(SearchFilter.Text)
+                            where product.ProductName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
                             select product;
 

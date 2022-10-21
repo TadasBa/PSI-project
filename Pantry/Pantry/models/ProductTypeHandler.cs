@@ -50,10 +50,6 @@ namespace Pantry.models
                     product.imageSource = "";
                     break;
 
-                case ProductType.EGGS:
-                    product.imageSource = "";
-                    break;
-
                 case ProductType.FRUITS:
                     product.imageSource = "";
                     break;

@@ -34,7 +34,7 @@ namespace Pantry.enums
         public static T Convert<T>(this Product product) where T : Product, new()
         {
             T type = new T();
-            type.productName = product.productName;
+            type.ProductName = product.ProductName;
             type.expiryDate = product.expiryDate;
             type.daysLeft = product.daysLeft;
             type.productColor = product.productColor;
