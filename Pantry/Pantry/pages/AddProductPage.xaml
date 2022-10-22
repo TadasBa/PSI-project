@@ -17,13 +17,13 @@
                 x:Name="ProductName"
                 Margin="10"
                 Placeholder="Enter the product" />
-            <Label
+            <!--<Label
                 x:Name="lblCorrect"
                 HorizontalOptions="Center"
                 IsVisible="false"
                 Text="Enter only letters/"
-                TextColor="Red" />
-            <DatePicker x:Name="ExpiryDate" Margin="10" />
+                TextColor="Red" />-->
+            <DatePicker x:Name="ExpiryDate" Margin="10"/>
             <Picker x:Name="TypePicker" Title="ProductType" Margin="10" />
             <Button
                 Margin="10"

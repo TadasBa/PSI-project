@@ -29,7 +29,7 @@
                             <StackLayout Orientation="Horizontal" xct:TouchEffect.LongPressCommand="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}" xct:TouchEffect.LongPressCommandParameter="{Binding .}">
                                 <Image Source="{Binding imageSource}" HeightRequest="60" WidthRequest="60"/>
                                 <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
-                                    <Label Text="{Binding productName}" TextColor="{Binding productColor}" FontSize="Medium"/>
+                                    <Label Text="{Binding ProductName}" TextColor="{Binding productColor}" FontSize="Medium"/>
                                     <Label Text="{Binding expiryDate, Converter={StaticResource formatDate}}" />
                                 </StackLayout>
                                 <Label

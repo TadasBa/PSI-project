@@ -6,7 +6,7 @@ namespace Pantry.models
 {
     public interface IProduct
     {
-        string productName { get; set; }
+        string ProductName { get; set; }
         DateTime expiryDate { get; set; }
         string productColor { get; set; }
         string daysLeft { get; set; }

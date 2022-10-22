@@ -111,40 +111,43 @@
     <AndroidResource Include="Resources\drawable\filter.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\baked_goods.jpg" />
+    <AndroidResource Include="Resources\drawable\vegetables.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\berries.jpg" />
+    <AndroidResource Include="Resources\drawable\seafood.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\dairy.jpg" />
+    <AndroidResource Include="Resources\drawable\nuts_and_seeds.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\drinks.jpg" />
+    <AndroidResource Include="Resources\drawable\grains.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\fish.jpg" />
+    <AndroidResource Include="Resources\drawable\fruits.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\fruits.jpg" />
+    <AndroidResource Include="Resources\drawable\fish.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\grains.jpg" />
+    <AndroidResource Include="Resources\drawable\drinks.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\lugemes.jpg" />
+    <AndroidResource Include="Resources\drawable\berries.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\meat.jpg" />
+    <AndroidResource Include="Resources\drawable\baked_goods.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\nuts_and_seeds.jpg" />
+    <AndroidResource Include="Resources\drawable\legumes.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\seafood.jpg" />
+    <AndroidResource Include="Resources\drawable\dairy.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\vegetables.jpg" />
+    <AndroidResource Include="Resources\drawable\eggs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\meat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
