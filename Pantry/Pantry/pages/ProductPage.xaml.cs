@@ -23,7 +23,7 @@ namespace Pantry.pages
         {
             LongPressItem = new Command(async (object s) =>
             {
-                var result = await Navigation.ShowPopupAsync(new EditProduct((Product)s));
+                string result = (string)await Navigation.ShowPopupAsync(new EditProduct((Product)s));
                 if(result == "Delete")
                 {
                     bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).productName, "Delete", "Cancel");
@@ -77,7 +77,7 @@ namespace Pantry.pages
      
         public void Update(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args)
         {
-            IOrderedEnumerable<IProduct> ordered =
+            IOrderedEnumerable<Product> ordered =
                             from product in DataHandler.productList
                             where product.productName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
@@ -97,7 +97,7 @@ namespace Pantry.pages
             else if (selectedTypeString != null)
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
-                IEnumerable<IProduct> filteredByType = from product in ordered
+                IEnumerable<Product> filteredByType = from product in ordered
                                                         where product.type == selectedType
                                                         select product;
 
@@ -105,7 +105,7 @@ namespace Pantry.pages
             }
             else if (startDate != null && endDate != null)
             {
-                IEnumerable<IProduct> filteredByDate = from product in ordered
+                IEnumerable<Product> filteredByDate = from product in ordered
                                                         where product.expiryDate >= startDate && product.expiryDate <= endDate
                                                         select product;
 

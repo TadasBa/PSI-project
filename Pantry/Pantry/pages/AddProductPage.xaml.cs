@@ -30,17 +30,11 @@ namespace Pantry.pages
         {
             string value = (string)TypePicker.SelectedItem;
             ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-            Product tempProd = new Product() { productName = ProductName.Text, expiryDate = ExpiryDate.Date, productColor = SelectColor.SetColor(ExpiryDate.Date), daysLeft = SelectColor.DisplayDaysLeft(ExpiryDate.Date)};
-
-            // Reflectoins used to call generic method with type selectedType
-            MethodInfo method = typeof(ProductTypeExtensions).GetMethod(nameof(ProductTypeExtensions.Convert));
-            MethodInfo generic = method.MakeGenericMethod(Product.valuePairs[selectedType]);
-            object[] args = new object[] { tempProd };
-            var product = generic.Invoke(this, args);
+            Product product = ProductPrefabs.CreateProduct(selectedType, ProductName.Text, ExpiryDate.Date);
 
             if (Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$") == true)
             {
-                DataHandler.AddProduct((IProduct)product);
+                DataHandler.AddProduct(product);
 
                 Dismiss("Created");
             }
