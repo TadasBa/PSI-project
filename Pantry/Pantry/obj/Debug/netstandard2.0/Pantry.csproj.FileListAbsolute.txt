@@ -86,3 +86,4 @@ C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\Statis
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPage.xaml.g.cs
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipeInfoPage.xaml.g.cs
