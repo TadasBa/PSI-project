@@ -11,27 +11,25 @@ namespace Pantry.models
     [Serializable]
     public class Product : IComparable, IProduct
     {
-        private string productName;
-        public string ProductName { 
-            get { return productName; } 
-            set { productName = value[0].ToString().ToUpper() + value.Substring(1); } }
-        public DateTime expiryDate { get; set; }
+        private string _ProductName;
+        public string ProductName { get; set; }
+        public DateTime ExpiryDate { get; set; }
 
-        public string productColor { get; set; }
+        public string ProductColor { get; set; }
 
-        public string daysLeft { get; set; }
-        public ProductType type { get; set; }
-        public string imageSource { get; set; }
+        public string DaysLeft { get; set; }
+        public ProductType ProductType { get; set; }
+        public string ImageSource { get; set; }
 
         public int CompareTo(object obj)
         {
             Product b = (Product)obj;
-            return expiryDate.CompareTo(b.expiryDate);
+            return ExpiryDate.CompareTo(b.ExpiryDate);
         }
         public void Update()
         {
-            productColor = SelectColor.SetColor(expiryDate);
-            daysLeft = SelectColor.DisplayDaysLeft();
+            ProductColor = SelectColor.SetColor(ExpiryDate);
+            DaysLeft = SelectColor.DisplayDaysLeft();
         }
 
         public static Dictionary<ProductType, Type> valuePairs = new Dictionary<ProductType, Type>
@@ -41,7 +39,7 @@ namespace Pantry.models
             { ProductType.BERRIES,          typeof(Berries) },
             { ProductType.DAIRY,            typeof(Dairy) },
             { ProductType.DRINKS,           typeof(Drinks) },
-            {ProductType.EGGS,              typeof(Eggs)},
+            { ProductType.EGGS,             typeof(Eggs)},
             { ProductType.FISH,             typeof(Fish) },
             { ProductType.FRUITS,           typeof(Fruits) },
             { ProductType.GRAINS,           typeof(Grains) },

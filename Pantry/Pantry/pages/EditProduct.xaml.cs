@@ -13,15 +13,15 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditProduct : Popup
     {
-        public Product product { get; set; }
+        public Product Product { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
         public EditProduct(Product product)
         {
             BindingContext = this;
-            this.product = product;
+            Product = product;
             Name = product.ProductName;
-            Date = product.expiryDate;
+            Date = product.ExpiryDate;
 
             InitializeComponent();
         }
@@ -32,10 +32,10 @@ namespace Pantry.pages
 
         public void OnConfirm(object sender, EventArgs args)
         {
-            product.ProductName = Name;
-            product.expiryDate = Date;
-            product.productColor = SelectColor.SetColor(Date);
-            product.daysLeft = SelectColor.DisplayDaysLeft();
+            Product.ProductName = Name;
+            Product.ExpiryDate = Date;
+            Product.ProductColor = SelectColor.SetColor(Date);
+            Product.DaysLeft = SelectColor.DisplayDaysLeft();
             DataHandler.WriteData();
             ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
             Dismiss("Confirmed");

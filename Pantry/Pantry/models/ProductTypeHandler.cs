@@ -14,72 +14,18 @@ namespace Pantry.models
     public static class ProductTypeHandler
 
     {
-        public static List<string> values { get; set; }
+        public static List<string> Values { get; set; }
 
         static ProductTypeHandler()
         {
-            values = new List<string>();
+            Values = new List<string>();
             foreach (ProductType pt in Enum.GetValues(typeof(ProductType)))
             {
                 string value = pt.ToDescriptionString();
-                values.Add(value);
+                Values.Add(value);
             }
 
-            values.Sort();
-        }
-
-
-        // DEPRECATED
-        public static void setImageSource(Product product)
-        {
-            switch (product.type)
-            {
-                case ProductType.BAKED_GOODS:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.BERRIES:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.DAIRY:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.DRINKS:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.FRUITS:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.GRAINS:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.LEGUMES:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.MEAT:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.NUTS_AND_SEEDS:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.SEAFOOD:
-                    product.imageSource = "";
-                    break;
-
-                case ProductType.VEGETABLES:
-                    product.imageSource = "";
-                    break;
-
-            }
-
+            Values.Sort();
         }
 
     }

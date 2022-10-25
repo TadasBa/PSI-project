@@ -18,10 +18,10 @@ namespace Pantry.pages
         public RecipePage()
         {
             List<Ingredient> ingredientList = new List<Ingredient>();
-            ingredientList.Add(new Ingredient(){ amount= 3, name= "Bread"});
-            ingredientList.Add(new Ingredient(){ amount= 2, name= "Cheese"});
+            ingredientList.Add(new Ingredient(){ Amount= 3, Name= "Bread"});
+            ingredientList.Add(new Ingredient(){ Amount= 2, Name= "Cheese"});
 
-            recipeList.Add(new Recipe() { title = "Cheese sandwich", ingredients = ingredientList, description = "u dont need it" });
+            recipeList.Add(new Recipe() { Title = "Cheese sandwich", Ingredients = ingredientList, Description = "u dont need it" });
             InitializeComponent();
         }
     }

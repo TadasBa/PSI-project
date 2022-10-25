@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Dairy : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             MILK,
             CHEESE,
@@ -15,11 +15,11 @@ namespace Pantry.models.types
             YOGURT
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Dairy()
         {
-            type = ProductType.DAIRY;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.DAIRY;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

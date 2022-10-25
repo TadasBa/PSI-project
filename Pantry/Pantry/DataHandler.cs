@@ -18,18 +18,18 @@ namespace Pantry
         private static readonly DataHandler instance = new DataHandler();
         public static DataHandler Instance { get { return instance; } }
 
-        public static ObservableCollection<IProduct> productList { get; private set; }
+        public static ObservableCollection<Product> ProductList { get; private set; }
 
         private static string path;
 
-        public static void AddProduct(IProduct product)
+        public static void AddProduct(Product product)
         {
-            productList.Add(product);
+            ProductList.Add(product);
             WriteData();
         }
         public static void RemoveProduct(Product product)
         {
-            productList.Remove(product);
+            ProductList.Remove(product);
             Console.WriteLine("Removing");
             WriteData();
         }
@@ -40,7 +40,7 @@ namespace Pantry
             {
                 var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                bformatter.Serialize(stream, productList);
+                bformatter.Serialize(stream, ProductList);
             }
         }
 
@@ -52,18 +52,18 @@ namespace Pantry
                 {
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                    productList = (ObservableCollection<IProduct>)bformatter.Deserialize(stream);
-                    foreach (var product in productList)
+                    ProductList = (ObservableCollection<Product>)bformatter.Deserialize(stream);
+                    foreach (var product in ProductList)
                     {
                         product.Update();
-                        LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(product.expiryDate, titleName: "Notification"));
+                        LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(product.ExpiryDate, titleName: "Notification"));
 
                     }
                 }
             }
             catch (Exception ex)
             {
-                productList = new ObservableCollection<IProduct>();
+                ProductList = new ObservableCollection<Product>();
             }
         }
         static DataHandler()

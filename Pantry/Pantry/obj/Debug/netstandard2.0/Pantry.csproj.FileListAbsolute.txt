@@ -61,7 +61,6 @@ C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\S
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\AddProductPage.xaml.g.cs
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\DeleteConfirmationPage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\AddProductPage.xaml.g.cs
-C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\DeleteConfirmationPage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\MainPage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\ProductPage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipePage.xaml.g.cs

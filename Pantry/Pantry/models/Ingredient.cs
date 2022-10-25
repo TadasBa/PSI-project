@@ -6,8 +6,8 @@ namespace Pantry.models
 {
     public struct Ingredient
     {
-        public string name { get; set; }
-        public float amount { get; set; }
+        public string Name { get; set; }
+        public float Amount { get; set; }
 
     }
 }

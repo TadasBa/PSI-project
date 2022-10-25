@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Grains : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             WHEAT,
             BARLEY,
@@ -18,11 +18,11 @@ namespace Pantry.models.types
 
         }
 
-        public SubType subType { get; set; }
+        public ESubType DubType { get; set; }
         public Grains()
         {
-            type = ProductType.GRAINS;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.GRAINS;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

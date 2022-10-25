@@ -35,9 +35,9 @@ namespace Pantry.enums
         {
             T type = new T();
             type.ProductName = product.ProductName;
-            type.expiryDate = product.expiryDate;
-            type.daysLeft = product.daysLeft;
-            type.productColor = product.productColor;
+            type.ExpiryDate = product.ExpiryDate;
+            type.DaysLeft = product.DaysLeft;
+            type.ProductColor = product.ProductColor;
             return type;
         }
     }

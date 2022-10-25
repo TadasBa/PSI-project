@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Vegetables : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             TOMATO,
             POTATO,
@@ -24,11 +24,11 @@ namespace Pantry.models.types
             BELL_PEPPER
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Vegetables()
         {
-            type = ProductType.VEGETABLES;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.VEGETABLES;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

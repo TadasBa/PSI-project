@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Fruits : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             APPLE,
             PAIR,
@@ -19,11 +19,11 @@ namespace Pantry.models.types
             MANGO
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Fruits()
         {
-            type = ProductType.FRUITS;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.FRUITS;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

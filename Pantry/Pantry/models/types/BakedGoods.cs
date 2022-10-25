@@ -7,18 +7,18 @@ namespace Pantry.models.types
     [Serializable]
     public class BakedGoods : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             PASTRY,
             BREAD
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
 
         public BakedGoods()
         {
-            type = ProductType.BAKED_GOODS;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.BAKED_GOODS;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

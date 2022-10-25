@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Nuts : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             ALMOND,
             HAZELNUT,
@@ -19,11 +19,11 @@ namespace Pantry.models.types
             COCONUT
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Nuts()
         {
-            type = ProductType.NUTS_AND_SEEDS;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.NUTS_AND_SEEDS;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

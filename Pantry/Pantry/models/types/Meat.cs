@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Meat : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             CHICKEN,
             BEEF,
@@ -19,11 +19,11 @@ namespace Pantry.models.types
             RABBIT
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Meat()
         {
-            type = ProductType.MEAT;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.MEAT;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }
