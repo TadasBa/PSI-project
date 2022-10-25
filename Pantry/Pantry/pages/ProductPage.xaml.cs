@@ -78,11 +78,10 @@ namespace Pantry.pages
      
         public void Update(object sender, EventArgs args)
         {
-            IOrderedEnumerable<Product> ordered = 
-                            from product in DataHandler.ProductList
-                            where product.ProductName.ToLower().StartsWith(SearchFilter.Text)
-                            orderby product
-                            select product;
+
+            IOrderedEnumerable<Product> ordered = DataHandler.ProductList
+                                                  .Where(product => product.ProductName.ToLower().StartsWith(SearchFilter.Text))
+                                                  .OrderBy(product => product);
 
             if (selectedTypeString != null && startDate != null && endDate != null)
             {
