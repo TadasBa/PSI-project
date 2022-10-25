@@ -25,21 +25,20 @@ namespace Pantry.pages
         public FilterPage(string typeValue, DateTime? startDate, DateTime? endDate)
         {
             InitializeComponent();
-            TypePicker.ItemsSource = ProductTypeHandler.values;
+            TypePicker.ItemsSource = ProductTypeHandler.Values;
             GetValues(typeValue, startDate, endDate);
 
         }
         private void BtnSetFilter(object sender, EventArgs e)
         {
             SetValues();
-            List<Object> items = new List<Object> { typeValue, startDate, endDate };
+            List<object> items = new List<object> { typeValue, startDate, endDate };
             Dismiss(items);
-
         }
 
         private void BtnResetFilter(object sender, EventArgs e)
         {
-            List<Object> items = new List<Object> { typeValue, startDate, endDate };
+            List<object> items = new List<object> { null, null, null };
             Dismiss(items);
 
         }
@@ -58,7 +57,6 @@ namespace Pantry.pages
                 StartDate.IsEnabled = false;
                 EndDate.IsEnabled = false;
                 FilterByDate.Color = Color.Black;
-
             }
         }
 

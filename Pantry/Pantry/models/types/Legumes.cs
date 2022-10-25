@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Legumes : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             BEANS,
             SOYBEANS,
@@ -15,11 +15,11 @@ namespace Pantry.models.types
             CHICK_PEAS
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Legumes()
         {
-            type = ProductType.LEGUMES;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.LEGUMES;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

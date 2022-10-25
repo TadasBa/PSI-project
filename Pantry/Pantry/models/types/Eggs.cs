@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Eggs : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             CHICKEN,
             GOOSE,
@@ -16,11 +16,11 @@ namespace Pantry.models.types
             TURKEY
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Eggs()
         {
-            type = ProductType.EGGS;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.EGGS;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

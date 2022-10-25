@@ -2,9 +2,13 @@
 using Pantry.models;
 using Pantry.models.types;
 using Plugin.LocalNotification;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -23,27 +27,48 @@ namespace Pantry.pages
         public AddProductPage()
         {
             InitializeComponent();
-            TypePicker.ItemsSource = ProductTypeHandler.values;
+            TypePicker.ItemsSource = ProductTypeHandler.Values;
+            ExpiryDate.MinimumDate = DateTime.Now;
         }
-        
+
         private void BtnProductAddToList(object sender, EventArgs e)
         {
+            string productName = ProductName.Text;
             string value = (string)TypePicker.SelectedItem;
-            ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-            Product product = ProductPrefabs.CreateProduct(selectedType, ProductName.Text, ExpiryDate.Date);
 
-            if (Regex.IsMatch(ProductName.Text, @"^[a-zA-Z]+$") == true)
+            if (string.IsNullOrEmpty(productName) && String.IsNullOrEmpty(value))
             {
-                DataHandler.AddProduct(product);
+                App.Current.MainPage.DisplayAlert("Invalid input", "Please fill all the fields", "Close");
 
-                Dismiss("Created");
+            }else if (string.IsNullOrEmpty(productName))
+            {
+                App.Current.MainPage.DisplayAlert("Invalid input", "Please enter product name", "Close");
+            }
+            else if (string.IsNullOrEmpty(value))
+            {
+                App.Current.MainPage.DisplayAlert("Invalid input", "Please select product type", "Close");
             }
             else
             {
-                lblCorrect.IsVisible = true;
+                ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
+                Product product = ProductPrefabs.CreateProduct(selectedType, ProductName.Text, ExpiryDate.Date);
+
+                //Reflectoins used to call generic method with type selectedType
+
+                if (Regex.IsMatch(productName, @"^[a-zA-Z\s]+$") == true)
+                {
+
+                    DataHandler.AddProduct(product);
+
+                    Dismiss(ExpiryDate.Date);
+
+                }
+                else
+                {
+                    App.Current.MainPage.DisplayAlert("Invalid input", "Please enter letters only", "Close");
+                }
             }
 
-            LocalNotificationCenter.Current.Show(Notification.Notifications(ExpiryDate.Date));
         }
     }
 }

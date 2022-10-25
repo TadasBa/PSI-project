@@ -39,7 +39,7 @@ namespace Pantry.models
             }
         }
 
-        public static String DisplayDaysLeft(DateTime expiryDate)
+        public static String DisplayDaysLeft()
         {
             if(daysLeft <= 0)
             {

@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Drinks : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             SODA,
             JUICE,
@@ -15,11 +15,11 @@ namespace Pantry.models.types
             TEA
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Drinks()
         {
-            type = ProductType.DRINKS;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.DRINKS;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

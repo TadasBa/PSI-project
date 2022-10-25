@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Seafood : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             SQUID,
             CLAM,
@@ -17,11 +17,11 @@ namespace Pantry.models.types
             MUSSEL
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Seafood()
         {
-            type = ProductType.SEAFOOD;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.SEAFOOD;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

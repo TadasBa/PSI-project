@@ -7,7 +7,7 @@ namespace Pantry.models.types
     [Serializable]
     public class Fish : Product
     {
-        public enum SubType
+        public enum ESubType
         {
             SALMON,
             COD,
@@ -17,11 +17,11 @@ namespace Pantry.models.types
 
         }
 
-        public SubType subType { get; set; }
+        public ESubType SubType { get; set; }
         public Fish()
         {
-            type = ProductType.FISH;
-            imageSource = type.ToString().ToLower() + ".jpg";
+            ProductType = ProductType.FISH;
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
         }
     }
 }

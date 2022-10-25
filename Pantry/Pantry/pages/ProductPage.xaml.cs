@@ -1,5 +1,6 @@
 ﻿using Pantry.enums;
 using Pantry.models;
+using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace Pantry.pages
                 string result = (string)await Navigation.ShowPopupAsync(new EditProduct((Product)s));
                 if(result == "Delete")
                 {
-                    bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).productName, "Delete", "Cancel");
+                    bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).ProductName, "Delete", "Cancel");
                     if(res)
                     {
                         DataHandler.RemoveProduct((Product)s);
@@ -37,35 +38,35 @@ namespace Pantry.pages
 
             InitializeComponent();
             BindingContext = this;
-            DataHandler.productList.CollectionChanged += Update;
+            DataHandler.ProductList.CollectionChanged += Update;
             Update(this, null);
         }
         
-        private void BtnProductAdd(object sender, EventArgs e)
+        private async void BtnProductAdd(object sender, EventArgs e)
         {
-            Navigation.ShowPopup(new AddProductPage());
-        }
-        
-        private void BtnProductDelete(object sender, EventArgs e)
-        {
-            Navigation.ShowPopup(new DeleteConfirmationPage());
-          // DataHandler.RemoveProduct((Product)itemListView.SelectedItem);
+            try
+            {
+                DateTime result = (DateTime)await Navigation.ShowPopupAsync(new AddProductPage());
+            }
+            catch (NullReferenceException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private async void BtnProductFilter(object sender, EventArgs e)
         {
-
             try
             {
-                List<Object> items = (List<Object>)await Navigation.ShowPopupAsync(new FilterPage(selectedTypeString, startDate, endDate));
+                List<object> items = (List<object>) await Navigation.ShowPopupAsync(new FilterPage(selectedTypeString, startDate, endDate));
                 selectedTypeString = (string)items[0];
                 startDate = (DateTime?)items[1];
                 endDate = (DateTime?)items[2];
                 Update(this, null);
             }
-            catch (Exception)
+            catch(Exception ex)
             {
-                return;
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -75,19 +76,19 @@ namespace Pantry.pages
         }
         
      
-        public void Update(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs args)
+        public void Update(object sender, EventArgs args)
         {
-            IOrderedEnumerable<Product> ordered =
+            IOrderedEnumerable<IProduct> ordered =
                             from product in DataHandler.productList
-                            where product.productName.ToLower().StartsWith(SearchFilter.Text)
+                            where product.ProductName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
                             select product;
 
             if (selectedTypeString != null && startDate != null && endDate != null)
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
-                IEnumerable<IProduct> filteredByDateAndType = from product in ordered
-                                                                where product.expiryDate >= startDate && product.expiryDate <= endDate && product.type == selectedType
+                IEnumerable<Product> filteredByDateAndType = from product in ordered
+                                                                where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate && product.ProductType == selectedType
                                                                 select product;
 
                 itemCollectionView.ItemsSource = filteredByDateAndType;
@@ -97,7 +98,7 @@ namespace Pantry.pages
             else if (selectedTypeString != null)
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
-                IEnumerable<Product> filteredByType = from product in ordered
+                IEnumerable<IProduct> filteredByType = from product in ordered
                                                         where product.type == selectedType
                                                         select product;
 
@@ -105,7 +106,7 @@ namespace Pantry.pages
             }
             else if (startDate != null && endDate != null)
             {
-                IEnumerable<Product> filteredByDate = from product in ordered
+                IEnumerable<IProduct> filteredByDate = from product in ordered
                                                         where product.expiryDate >= startDate && product.expiryDate <= endDate
                                                         select product;
 
