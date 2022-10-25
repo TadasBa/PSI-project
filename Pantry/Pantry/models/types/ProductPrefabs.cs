@@ -31,8 +31,8 @@ namespace Pantry.models.types
                 case ProductType.GRAINS:            product = new Grains(); break;
                 default:                            product = new Product(); break;
             }
-            product.productName = name;
-            product.expiryDate = date;
+            product.ProductName = name;
+            product.ExpiryDate = date;
             return product;
         }
     }

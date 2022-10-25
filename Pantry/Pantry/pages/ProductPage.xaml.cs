@@ -78,8 +78,8 @@ namespace Pantry.pages
      
         public void Update(object sender, EventArgs args)
         {
-            IOrderedEnumerable<IProduct> ordered =
-                            from product in DataHandler.productList
+            IOrderedEnumerable<Product> ordered =
+                            from product in DataHandler.ProductList
                             where product.ProductName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
                             select product;
@@ -98,16 +98,16 @@ namespace Pantry.pages
             else if (selectedTypeString != null)
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
-                IEnumerable<IProduct> filteredByType = from product in ordered
-                                                        where product.type == selectedType
+                IEnumerable<Product> filteredByType = from product in ordered
+                                                        where product.ProductType == selectedType
                                                         select product;
 
                 itemCollectionView.ItemsSource = filteredByType;
             }
             else if (startDate != null && endDate != null)
             {
-                IEnumerable<IProduct> filteredByDate = from product in ordered
-                                                        where product.expiryDate >= startDate && product.expiryDate <= endDate
+                IEnumerable<Product> filteredByDate = from product in ordered
+                                                        where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate
                                                         select product;
 
                 itemCollectionView.ItemsSource = filteredByDate;

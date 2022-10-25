@@ -15,14 +15,13 @@ namespace Pantry.models.types
             RICE,
             OATS,
             BUCKWHEAT
-
         }
 
         public ESubType DubType { get; set; }
         public Grains()
         {
             ProductType = ProductType.GRAINS;
-            ImageSource = ProductType.ToString().ToLower() + ".jpg";
+            ImageSource = ProductType.ToString().ToLower() + ".png";
         }
     }
 }
