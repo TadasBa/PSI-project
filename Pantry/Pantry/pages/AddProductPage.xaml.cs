@@ -51,14 +51,14 @@ namespace Pantry.pages
             else
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-                Product tempProd = new Product() { ProductName = ProductName.Text, ExpiryDate = ExpiryDate.Date, ProductColor = SelectColor.SetColor(ExpiryDate.Date), DaysLeft = SelectColor.DisplayDaysLeft() };
+                Product product = ProductPrefabs.CreateProduct(selectedType, ProductName.Text, ExpiryDate.Date);
 
                 //Reflectoins used to call generic method with type selectedType
 
                 if (Regex.IsMatch(productName, @"^[a-zA-Z\s]+$") == true)
                 {
 
-                    DataHandler.AddProduct(tempProd);
+                    DataHandler.AddProduct(product);
 
                     Dismiss(ExpiryDate.Date);
 
