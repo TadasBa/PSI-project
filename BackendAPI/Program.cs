@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using BackendAPI.Data;
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ProductDBContext>(
     o => o.UseSqlServer(builder.Configuration.GetConnectionString("mssql")));
 
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
+
 var app = builder.Build();
 
+app.UseForwardedHeaders();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

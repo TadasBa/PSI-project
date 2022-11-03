@@ -18,9 +18,10 @@ namespace BackendAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Product>> Get()
+        public async Task<IActionResult> Get(int id)
         {
-            return await _dbContext.Products.ToListAsync();
+            var product = await _dbContext.Products.ToListAsync();
+            return product == null ? NotFound() : Ok(product);
         }
 
         [HttpGet("id")]
@@ -30,16 +31,18 @@ namespace BackendAPI.Controllers
             return product == null ? NotFound() : Ok(product);
         }
 
-        [HttpGet("UsrID")]
+        [HttpGet("usrid")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetByUsrId(int usrid)
         {
-            var product = await _dbContext.Products.W;
-            return product == null ? NotFound() : Ok(product);
+            var product = _dbContext.Products.Where(product => product.UsrID == usrid);
+            return product == null ? NoContent() : Ok(product);
         }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> CreateUser(Product product)
+        public async Task<IActionResult> CreateProduct(Product product)
         {
             await _dbContext.Products.AddAsync(product);
             await _dbContext.SaveChangesAsync();
