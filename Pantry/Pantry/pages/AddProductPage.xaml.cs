@@ -24,8 +24,11 @@ namespace Pantry.pages
 {
     public partial class AddProductPage : Popup
     {
+
+        IDataHandler dataHandler;
         public AddProductPage()
         {
+            dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
             InitializeComponent();
             TypePicker.ItemsSource = ProductTypeHandler.Values;
             ExpiryDate.MinimumDate = DateTime.Now;
@@ -58,7 +61,7 @@ namespace Pantry.pages
                 if (Regex.IsMatch(productName, @"^[a-zA-Z\s]+$") == true)
                 {
 
-                    DataHandler.AddProduct(product);
+                    dataHandler.AddProduct(product);
 
                     Dismiss(ExpiryDate.Date);
 

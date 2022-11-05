@@ -15,6 +15,7 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductPage : ContentPage
     {
+        private IDataHandler _dataHandler;
         private string selectedTypeString = null;
         private DateTime? startDate = null;
         private DateTime? endDate = null;
@@ -22,6 +23,7 @@ namespace Pantry.pages
 
         public ProductPage()
         {
+            _dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
             LongPressItem = new Command(async (object s) =>
             {
                 string result = (string)await Navigation.ShowPopupAsync(new EditProduct((Product)s));
@@ -30,7 +32,7 @@ namespace Pantry.pages
                     bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).ProductName, "Delete", "Cancel");
                     if(res)
                     {
-                        DataHandler.RemoveProduct((Product)s);
+                        await _dataHandler.RemoveProduct((Product)s);
                     }
                 }
                 Update(this, null);
@@ -38,7 +40,7 @@ namespace Pantry.pages
 
             InitializeComponent();
             BindingContext = this;
-            DataHandler.ProductList.CollectionChanged += Update;
+            _dataHandler.ProductUpdated += Update;
             Update(this, null);
         }
         
@@ -79,7 +81,7 @@ namespace Pantry.pages
         public void Update(object sender, EventArgs args)
         {
             IOrderedEnumerable<Product> ordered =
-                            from product in DataHandler.ProductList
+                            from product in _dataHandler.ProductList
                             where product.ProductName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
                             select product;

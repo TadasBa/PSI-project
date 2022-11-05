@@ -18,7 +18,7 @@ namespace Pantry.models
 
         }
 
-        public static String SetColor(DateTime expiryDate)
+        public static string SetColor(DateTime expiryDate)
         {
             daysLeft = GetDaysLeft(expiryDate);
 
@@ -39,7 +39,7 @@ namespace Pantry.models
             }
         }
 
-        public static String DisplayDaysLeft()
+        public static string DisplayDaysLeft()
         {
             if(daysLeft <= 0)
             {

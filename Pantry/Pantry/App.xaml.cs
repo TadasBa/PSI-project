@@ -10,6 +10,8 @@ namespace Pantry
         {
             InitializeComponent();
 
+            DependencyService.Register<IDataHandler, DataHandlerAPI>();
+
             MainPage = new MainPage();
         }
 
