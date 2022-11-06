@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +11,7 @@ namespace Pantry
         {
             InitializeComponent();
 
+            DependencyService.Register<HttpClient>();
             DependencyService.Register<IDataHandler, DataHandlerAPI>();
 
             MainPage = new MainPage();

@@ -1,6 +1,5 @@
 ﻿using Pantry.enums;
 using Pantry.models;
-using Pantry.models.types;
 using Plugin.LocalNotification;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -34,29 +33,27 @@ namespace Pantry.pages
             ExpiryDate.MinimumDate = DateTime.Now;
         }
 
-        private void BtnProductAddToList(object sender, EventArgs e)
+        private async void BtnProductAddToList(object sender, EventArgs e)
         {
             string productName = ProductName.Text;
             string value = (string)TypePicker.SelectedItem;
 
-            if (string.IsNullOrEmpty(productName) && String.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(productName) && string.IsNullOrEmpty(value))
             {
-                App.Current.MainPage.DisplayAlert("Invalid input", "Please fill all the fields", "Close");
+                await App.Current.MainPage.DisplayAlert("Invalid input", "Please fill all the fields", "Close");
 
             }else if (string.IsNullOrEmpty(productName))
             {
-                App.Current.MainPage.DisplayAlert("Invalid input", "Please enter product name", "Close");
+                await App.Current.MainPage.DisplayAlert("Invalid input", "Please enter product name", "Close");
             }
             else if (string.IsNullOrEmpty(value))
             {
-                App.Current.MainPage.DisplayAlert("Invalid input", "Please select product type", "Close");
+                await App.Current.MainPage.DisplayAlert("Invalid input", "Please select product type", "Close");
             }
             else
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-                Product product = ProductPrefabs.CreateProduct(selectedType, ProductName.Text, ExpiryDate.Date);
-
-                //Reflectoins used to call generic method with type selectedType
+                Product product = new Product(productName, selectedType, ExpiryDate.Date);
 
                 if (Regex.IsMatch(productName, @"^[a-zA-Z\s]+$") == true)
                 {
@@ -68,7 +65,7 @@ namespace Pantry.pages
                 }
                 else
                 {
-                    App.Current.MainPage.DisplayAlert("Invalid input", "Please enter letters only", "Close");
+                    await App.Current.MainPage.DisplayAlert("Invalid input", "Please enter letters only", "Close");
                 }
             }
 

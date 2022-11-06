@@ -6,10 +6,11 @@ namespace BackendAPI.Models
     {
         public int Id { get; set; }
 
+        [Required]
         public int UsrID { get; set; }
 
         [Required]
-        public string? Name { get; set; }
+        public string? ProductName { get; set; }
 
         [Required]
         public ProductType ProductType { get; set; }
