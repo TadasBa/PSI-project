@@ -27,8 +27,10 @@ namespace Pantry.pages
 
         public RecipeInfoPage(string name, string ingredients, string description, string source)
         {
-
+            
             InitializeComponent();
+
+            
             recipeTitle.Text = name;
             recipeIngredients.Text = ingredients;
             recipeDescription.Text = description;
