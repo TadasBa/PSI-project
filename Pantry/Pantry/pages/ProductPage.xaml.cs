@@ -81,7 +81,7 @@ namespace Pantry.pages
         public void Update(object sender, EventArgs args)
         {
             IOrderedEnumerable<Product> ordered =
-                            from product in _dataHandler.ProductList
+                            from product in _dataHandler.ProductList.GetAll()
                             where product.ProductName.ToLower().StartsWith(SearchFilter.Text)
                             orderby product
                             select product;

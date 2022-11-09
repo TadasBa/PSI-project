@@ -1,4 +1,5 @@
 FormsViewGroup.dll
+Pantry.dll
 Plugin.LocalNotification.dll
 Rg.Plugins.Popup.dll
 Xamarin.AndroidX.Activity.dll
@@ -110,4 +111,3 @@ androidx.asynclayoutinflater.asynclayoutinflater.aar
 androidx.legacy.legacy-support-core-ui.aar
 androidx.legacy.legacy-support-v4.aar
 androidx.browser.browser.aar
-Pantry.dll

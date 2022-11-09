@@ -1,44 +1,38 @@
 ﻿using Newtonsoft.Json;
 using Pantry.models;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.CommunityToolkit.Extensions;
-using Xamarin.CommunityToolkit.UI.Views.Options;
+using Pantry.Utilities;
 using Style = Pantry.models.Style;
+using Pantry.Utilities.Data.Events;
 
 namespace Pantry
 {
     internal class DataHandlerAPI : IDataHandler
     {
-        public List<Product> ProductList { get; private set; } = new List<Product>();
+        public ConcurrentHashSet<Product> ProductList { get; private set; } = new ConcurrentHashSet<Product>();
+        private HttpClient _client = DependencyService.Get<HttpClient>(DependencyFetchTarget.GlobalInstance);
 
-        HttpClient client = new HttpClient();
-
-        public event EventHandler ProductUpdated;
-
-        public void Notify()
+        public DataHandlerAPI()
         {
-            EventHandler eventHandler = ProductUpdated;
-
-            if (eventHandler != null)
-            {
-                eventHandler(this, EventArgs.Empty);
-            }
+            _client.BaseAddress = new Uri("http://elvinosas.lt");
         }
+
+        public event ProductUpdatedEventHandler ProductUpdated;
 
         public async Task AddProduct(Product product)
         {
             await AddProductDB(product);
-            Notify();
+            ProductUpdated(this, new ProductUpdatedApiArgs(_client.BaseAddress.AbsoluteUri));
         }
         public async Task RemoveProduct(Product product)
         {
             ProductList.Remove(product);
-            Notify();
+            ProductUpdated(this, new ProductUpdatedApiArgs(_client.BaseAddress.AbsoluteUri));
         }
 
         private async Task AddProductDB(Product product)
@@ -47,7 +41,7 @@ namespace Pantry
             {
                 Application.Current.MainPage.DisplayToastAsync("Creating product...", 1000);
                 StringContent c = new StringContent(JsonConvert.SerializeObject(product), UTF32Encoding.UTF8, "application/json");
-                HttpResponseMessage m = await client.PostAsync("http://elvinosas.lt/api/Product", c);
+                HttpResponseMessage m = await _client.PostAsync("http://elvinosas.lt/api/Product", c);
                 m.EnsureSuccessStatusCode();
                 Application.Current.MainPage.DisplayToastAsync(Style.ToastSuccess);
                 string result = await m.Content.ReadAsStringAsync();

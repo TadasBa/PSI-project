@@ -1,49 +1,33 @@
 ﻿using Pantry.models;
-using Plugin.LocalNotification;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
+using Pantry.Utilities.Data.Events;
+using Pantry.Utilities;
 
 namespace Pantry
 {
     public class DataHandlerFile : IDataHandler
     {
-        public List<Product> ProductList { get; private set; }
+        public ConcurrentHashSet<Product> ProductList { get; private set; }
 
         private string path;
 
-        public event EventHandler ProductUpdated;
-
-        public void Notify()
-        {
-            EventHandler eventHandler = ProductUpdated;
-
-            if(eventHandler != null)
-            {
-                eventHandler(this, EventArgs.Empty);
-            }
-        }
+        public event ProductUpdatedEventHandler ProductUpdated;
 
         public async Task AddProduct(Product product)
         {
             ProductList.Add(product);
             await WriteData();
-            Notify();
+            ProductUpdated(this, EventArgs.Empty);
         }
         public async Task RemoveProduct(Product product)
         {
             ProductList.Remove(product);
             Console.WriteLine("Removing");
             await WriteData();
-            Notify();
+            ProductUpdated(this, EventArgs.Empty);
         }
 
         public async Task UpdateProduct(Product product, string name, DateTime date)
@@ -70,16 +54,13 @@ namespace Pantry
                 {
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
-                    ProductList = (List<Product>)bformatter.Deserialize(stream);
-                    foreach (var product in ProductList)
-                    {
-                        product.Update();
-                    }
+                    ProductList = (ConcurrentHashSet<Product>)bformatter.Deserialize(stream);
+                    ProductList.ForEach((product) => product.Update());
                 }
             }
             catch (Exception ex)
             {
-                ProductList = new List<Product>();
+                ProductList = new ConcurrentHashSet<Product>();
             }
         }
 
