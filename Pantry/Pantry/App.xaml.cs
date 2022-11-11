@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Pantry.pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Pantry.models.Login;
 
 namespace Pantry
 {
@@ -10,7 +12,9 @@ namespace Pantry
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            DependencyService.Register<ILoginService, LoginService>(); 
+
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

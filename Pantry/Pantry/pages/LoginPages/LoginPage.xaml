@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Pantry.pages.LoginPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="40"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <Image
+                Margin="30"
+                HeightRequest="200"
+                Source="https://i.pinimg.com/564x/39/b0/c8/39b0c816d13fea4844e82bcefc1633b9.jpg"
+                WidthRequest="200" />
+            <Label Text="Username" />
+            <Entry x:Name="usernameEntry" />
+            <Label Text="Password" />
+            <Entry x:Name="passwordEntry" IsPassword="True" />
+            <Label
+                x:Name="lblWrongDetails"
+                HorizontalOptions="Center"
+                Text="Incorrect username or password."
+                TextColor="White" />
+            <Button
+                Margin="10"
+                BackgroundColor="#262322"
+                Clicked="BtnGoToMain"
+                CornerRadius="50"
+                Text="Login"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account? " />
+                        <Span
+                            FontAttributes="Bold"
+                            Text="Register"
+                            TextDecorations="Underline" />
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToRegister" />
+                </Label.GestureRecognizers>
+
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

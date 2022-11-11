@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Pantry.pages.RegisterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="40"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <Image
+                Margin="30"
+                HeightRequest="200"
+                Source="https://i.pinimg.com/564x/39/b0/c8/39b0c816d13fea4844e82bcefc1633b9.jpg"
+                WidthRequest="200" />
+            <Label Text="E-mail" />
+            <Entry x:Name="NewEmail" />
+            <Label Text="Username" />
+            <Entry x:Name="NewUsername" />
+            <Label Text="Password" />
+            <Entry x:Name="NewPassword" IsPassword="True" />
+            <Label
+                x:Name="lblRegisterFailed"
+                HorizontalOptions="Center"
+                Text="You haven't filled out  all the requirements."
+                TextColor="White" />
+            <Button
+                Margin="10"
+                BackgroundColor="#262322"
+                Clicked="BtnAddUser"
+                CornerRadius="50"
+                Text="Create Account"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label HorizontalOptions="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Already have an account? " />
+                        <Span
+                            FontAttributes="Bold"
+                            Text="Login"
+                            TextDecorations="Underline" />
+                    </FormattedString>
+                </Label.FormattedText>
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoToLogin" />
+                </Label.GestureRecognizers>
+
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
