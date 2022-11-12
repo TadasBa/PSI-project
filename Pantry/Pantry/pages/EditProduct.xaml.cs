@@ -13,6 +13,7 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditProduct : Popup
     {
+        IDataHandler dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
         public Product Product { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
@@ -32,11 +33,7 @@ namespace Pantry.pages
 
         public void OnConfirm(object sender, EventArgs args)
         {
-            Product.ProductName = Name;
-            Product.ExpiryDate = Date;
-            Product.ProductColor = SelectColor.SetColor(Date);
-            Product.DaysLeft = SelectColor.DisplayDaysLeft();
-            DataHandler.WriteData();
+            dataHandler.UpdateProduct(Product, Name, Date);
             ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
             Dismiss("Confirmed");
         }

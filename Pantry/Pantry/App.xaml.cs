@@ -1,5 +1,6 @@
 ﻿using Pantry.pages;
 using System;
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Pantry.models.Login;
@@ -11,10 +12,10 @@ namespace Pantry
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<ILoginService, LoginService>(); 
-
-            MainPage = new LoginPage();
+            DependencyService.Register<ILoginService, LoginService>();
+            DependencyService.Register<HttpClient>();
+            DependencyService.Register<IDataHandler, DataHandlerAPI>();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
