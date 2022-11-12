@@ -13,7 +13,7 @@ namespace Pantry.models.Login
 
         public bool CheckUserDetails(string username, string password)
         {
-            if (username == "admin" || password == "1234")
+            if (username == "admin" && password == "1234")
             {
                 return true;
             }

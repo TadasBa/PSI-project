@@ -49,10 +49,10 @@
     <EmbeddedResource Update="pages\LoginPages\RegisterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pages\Statistics.xaml">
+    <EmbeddedResource Update="pages\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pages\StatisticsPage.xaml">
+    <EmbeddedResource Update="pages\Statistics.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -4,13 +4,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Pantry.pages"
-    BarBackgroundColor="RosyBrown"
-    >
+    BarBackgroundColor="#262322">
 
 
     <local:ProductPage Title="Products" IconImageSource="product_icon.png" />
     <local:RecipePage Title="Recipes" IconImageSource="recipe_icon.png" />
-    <local:StatisticsPage Title="Statistics" IconImageSource="statistics_icon.png" />
+    <local:SettingsPage Title="Settings" IconImageSource="statistics_icon.png" />
 
 
 </TabbedPage>
