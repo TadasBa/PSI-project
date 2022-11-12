@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="Pantry.pages.RecipeInfoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pantry="clr-namespace:Pantry"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Size="350,500"
+    Color="Transparent">
+    <Frame CornerRadius="20" HasShadow="True">
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    x:Name="recipeImage"
+                    HeightRequest="100"
+                    WidthRequest="100" />
+                <Label x:Name="recipeTitle" FontSize="Large" />
+            </StackLayout>
+            <Label x:Name="recipeIngredients" />
+            <Label x:Name="recipeDescription" />
+        </StackLayout>
+    </Frame>
+</xct:Popup>
