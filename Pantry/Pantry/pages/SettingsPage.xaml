@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Pantry.pages.SettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    Margin="0,15,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="https://cdn.icon-icons.com/icons2/3054/PNG/512/account_profile_user_icon_190494.png"
+                    WidthRequest="30" />
+                <Label
+                    Margin="0,20,0,0"
+                    FontSize="Medium"
+                    Text="Account"
+                    TextColor="Black" />
+            </StackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+            <Label
+                Padding="0,10,0,0"
+                FontSize="Small"
+                Text="Change Username                                                                     &gt;" />
+            <Label
+                Padding="0,10,0,0"
+                FontSize="Small"
+                Text="Delete Account                                                                           &gt;" />
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    Margin="0,35,4,0"
+                    HeightRequest="20"
+                    HorizontalOptions="Start"
+                    Source="https://www.citypng.com/public/uploads/small/11640343342ezruhtak2eqlwlpjvcpusdulgnjntqoijktm8vfk5lbowzhwm6ufti9vdjag8t9cmwug2birxqxklbv1ykfpnntupqtdhizrrpfr.png"
+                    WidthRequest="20" />
+                <Label
+                    Margin="0,40,0,5"
+                    FontSize="Medium"
+                    Text="Notifications"
+                    TextColor="Black" />
+            </StackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Margin="0,3,0,0"
+                    Text="App Notifications"
+                    TextColor="Gray" />
+                <Switch HorizontalOptions="EndAndExpand" Scale="0.9" />
+            </StackLayout>
+
+            <StackLayout Padding="0,10,0,0" Orientation="Horizontal">
+                <Label
+                    Margin="0,3,0,0"
+                    Text="Warning Notifications"
+                    TextColor="Gray" />
+                <Switch HorizontalOptions="EndAndExpand" Scale="0.9" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    Margin="-6,36,0,0"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="https://static.thenounproject.com/png/4689399-200.png"
+                    WidthRequest="30" />
+                <Label
+                    Margin="0,40,0,0"
+                    FontSize="Medium"
+                    Text="More"
+                    TextColor="Black" />
+            </StackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+            <Label
+                BackgroundColor="Transparent"
+                FontSize="Small"
+                Text="About                                                                                            &gt;"
+                TextColor="Gray" />
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="EndAndExpand">
+                <Image
+                    Margin="0,-7,-18,0"
+                    HeightRequest="25"
+                    Source="https://www.iconpacks.net/icons/2/free-user-logout-icon-3056-thumb.png"
+                    WidthRequest="25" />
+                <Button
+                    BackgroundColor="Transparent"
+                    Clicked="GoToLogin"
+                    Text="LOGOUT"
+                    TextColor="Black" />
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
