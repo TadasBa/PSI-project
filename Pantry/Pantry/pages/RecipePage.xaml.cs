@@ -52,10 +52,12 @@ namespace Pantry.pages
 
         public void Update(object sender, EventArgs args)
         {
-            IEnumerable<Recipe> ordered =
+            IEnumerable<Recipe> searched =
                            from recipe in RecipeHandler.RecipeList 
                            where recipe.Title.ToLower().StartsWith(SearchFilter.Text)
                            select recipe;
+
+            recipeListView.ItemsSource = searched;
         }
     }
 }

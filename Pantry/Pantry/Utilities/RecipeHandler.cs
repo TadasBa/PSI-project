@@ -20,11 +20,6 @@ namespace Pantry.Utilities
 
             return RecipeTypes;
         }
-
-
-
-       
-
         
     }
 }
