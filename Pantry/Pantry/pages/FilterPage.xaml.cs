@@ -16,13 +16,13 @@ using Xamarin.Forms.Xaml;
 
 namespace Pantry.pages
 {
-    public partial class ProductFilterPage : Popup
+    public partial class FilterPage : Popup
     {
         private string typeValue = null;
         public DateTime? startDate = null;
         public DateTime? endDate = null;
 
-        public ProductFilterPage(string typeValue, DateTime? startDate, DateTime? endDate)
+        public FilterPage(string typeValue, DateTime? startDate, DateTime? endDate)
         {
             InitializeComponent();
             TypePicker.ItemsSource = ProductTypeHandler.Values;

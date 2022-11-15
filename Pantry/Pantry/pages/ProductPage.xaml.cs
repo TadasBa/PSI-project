@@ -64,7 +64,7 @@ namespace Pantry.pages
         {
             try
             {
-                List<object> items = (List<object>) await Navigation.ShowPopupAsync(new ProductFilterPage(selectedTypeString, startDate, endDate));
+                List<object> items = (List<object>) await Navigation.ShowPopupAsync(new FilterPage(selectedTypeString, startDate, endDate));
                 selectedTypeString = (string)items[0];
                 startDate = (DateTime?)items[1];
                 endDate = (DateTime?)items[2];
