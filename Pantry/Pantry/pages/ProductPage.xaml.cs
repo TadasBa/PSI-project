@@ -49,6 +49,12 @@ namespace Pantry.pages
             try
             {
                 DateTime result = (DateTime)await Navigation.ShowPopupAsync(new AddProductPage());
+
+                if (SelectColor.GetDaysLeft(result) < 1)
+                {
+                    LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(result, titleName: "WARNING", "You added product that will expire soon"));
+                }
+
             }
             catch (NullReferenceException ex)
             {

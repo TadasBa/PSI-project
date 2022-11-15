@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Pantry.models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Pantry.Utilities
 {
@@ -109,6 +111,11 @@ namespace Pantry.Utilities
             {
                 if (_lock.IsReadLockHeld) _lock.ExitWriteLock();
             }
+        }
+
+        internal void ForEach(Action<Product> value1, Func<object, Task<bool>> value2)
+        {
+            throw new NotImplementedException();
         }
     }
 }

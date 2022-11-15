@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading.Tasks;
 using Pantry.Utilities.Data.Events;
 using Pantry.Utilities;
+using Plugin.LocalNotification;
 
 namespace Pantry
 {
@@ -55,7 +56,12 @@ namespace Pantry
                     var bformatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
 
                     ProductList = (ConcurrentHashSet<Product>)bformatter.Deserialize(stream);
-                    ProductList.ForEach((product) => product.Update());
+                    ProductList.ForEach(
+                        (product) => product.Update()
+                    );
+                    ProductList.ForEach( 
+                        (product) => LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(product.ExpiryDate, titleName: "Notification"))
+                    );
                 }
             }
             catch (Exception ex)
