@@ -68,7 +68,6 @@ namespace Pantry.pages
                     await App.Current.MainPage.DisplayAlert("Invalid input", "Please enter letters only", "Close");
                 }
             }
-
         }
     }
 }
