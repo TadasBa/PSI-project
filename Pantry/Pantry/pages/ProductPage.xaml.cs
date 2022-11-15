@@ -49,6 +49,10 @@ namespace Pantry.pages
             try
             {
                 DateTime result = (DateTime)await Navigation.ShowPopupAsync(new AddProductPage());
+
+                SettingsPage settingsPage = new SettingsPage();
+                settingsPage.WarningsOn(result);
+
             }
             catch (NullReferenceException ex)
             {
