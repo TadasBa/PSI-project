@@ -28,6 +28,12 @@
     <Compile Update="pages\EditProduct.xaml.cs">
       <DependentUpon>EditProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Update="pages\FilterPages\ProductFilterPage.xaml.cs">
+      <DependentUpon>ProductFilterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="pages\FilterPages\RecipeFilterPage.xaml.cs">
+      <DependentUpon>RecipeFilterPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -37,7 +43,7 @@
     <EmbeddedResource Update="pages\EditProduct.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="pages\FilterPage.xaml">
+    <EmbeddedResource Update="pages\FilterPages\RecipeFilterPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="pages\LoginPages\LoginPage.xaml">
