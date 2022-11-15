@@ -59,9 +59,6 @@ namespace Pantry
                     ProductList.ForEach(
                         (product) => product.Update()
                     );
-                    ProductList.ForEach( 
-                        (product) => LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(product.ExpiryDate, titleName: "Notification"))
-                    );
                 }
             }
             catch (Exception ex)

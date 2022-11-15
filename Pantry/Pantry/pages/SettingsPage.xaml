@@ -61,7 +61,7 @@
                     Margin="0,3,0,0"
                     Text="Warning Notifications"
                     TextColor="Gray" />
-                <Switch HorizontalOptions="EndAndExpand" Scale="0.9" />
+                <Switch x:Name="warningSwitch"  HorizontalOptions="EndAndExpand" Scale="0.9" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Image
