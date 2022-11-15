@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup
+    x:Class="Pantry.pages.ProductFilterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pantry="clr-namespace:Pantry.models"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:pages="clr-namespace:Pantry.models"
+    Size="300,450"
+    Color="Transparent">
+    <Frame CornerRadius="20" HasShadow="True">
+        <StackLayout>
+            <Label
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="Filter Products" />
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="FilterByType" IsChecked="False" CheckedChanged="FilterByTypeCheckedChanged" Color="DarkGray" Margin="10, 10, 0, 0"/>
+                <Label
+                Margin="10, 15, 0, 0"
+                FontSize="Subtitle"
+                HorizontalTextAlignment="Start"
+                Text="Filter by product type"/>
+            </StackLayout>
+            <Picker x:Name="TypePicker" Title="ProductType" Margin="10, 0, 0, 0" IsEnabled="False"/>
+            <StackLayout Orientation="Horizontal">
+                <CheckBox x:Name="FilterByDate" IsChecked="False" CheckedChanged="FilterByDateCheckedChanged" Color="DarkGray" Margin="10, 5, 0, 0"/>
+                <Label
+                Margin="10, 10, 0, 0"
+                FontSize="Subtitle"
+                HorizontalTextAlignment="Start"
+                Text="Filter by expiry date"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    Margin="10, 10, 0, 0"
+                    FontSize="Subtitle"
+                    HorizontalTextAlignment="Start"
+                    Text="From: "/>
+                <DatePicker x:Name="StartDate" Margin="10, 0, 0, 0" IsEnabled="False"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Margin="10, 10, 0, 0"
+                    FontSize="Subtitle"
+                    HorizontalTextAlignment="Start"
+                    Text="To: "/>
+                <DatePicker x:Name="EndDate" Margin="20, 0, 0, 0" IsEnabled="false"/>
+            </StackLayout>
+            <Button
+                Margin="10, 10, 0, 0"
+                Clicked="BtnSetFilter"
+                Text="Filter" />
+            <Button
+                Margin="10, 0, 0, 0"
+                Clicked="BtnResetFilter"
+                Text="Reset filter" />
+        </StackLayout>
+    </Frame>
+</xct:Popup>

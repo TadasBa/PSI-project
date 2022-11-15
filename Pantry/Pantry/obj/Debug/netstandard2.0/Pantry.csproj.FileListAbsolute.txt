@@ -67,12 +67,10 @@ C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\StatisticsPage.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\AddProductPage.xaml.g.cs
-C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\DeleteConfirmationPage.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\MainPage.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\ProductPage.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipePage.xaml.g.cs
-C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\StatisticsPage.xaml.g.cs
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPage.xaml.g.cs
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\AddProductPage.xaml.g.cs
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
@@ -87,6 +85,18 @@ C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.A
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.CopyComplete
+<<<<<<< HEAD
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\LoginPages\LoginPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\LoginPages\RegisterPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipeInfo.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\SettingsPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.CopyComplete
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPages\ProductFilterPage.xaml.g.cs
+C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPages\RecipeFilterPage.xaml.g.cs
+=======
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\LoginPages\LoginPage.xaml.g.cs
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\LoginPages\RegisterPage.xaml.g.cs
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipeInfo.xaml.g.cs
@@ -95,3 +105,4 @@ C:\Univerity\PSI\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.pdb
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.xml
 C:\Univerity\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.CopyComplete
+>>>>>>> origin

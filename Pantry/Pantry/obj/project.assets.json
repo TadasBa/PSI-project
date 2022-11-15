@@ -1526,23 +1526,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\adminas\\.nuget\\packages\\": {},
+    "C:\\Users\\Erika\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+      "projectUniqueName": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
       "projectName": "Pantry",
-      "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
-      "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
-      "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\obj\\",
+      "projectPath": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+      "packagesPath": "C:\\Users\\Erika\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\adminas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Erika\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1608,8 +1608,16 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Erika\\source\\repos\\PSI-project\\Pantry\\Pantry\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

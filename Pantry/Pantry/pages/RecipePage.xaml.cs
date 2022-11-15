@@ -10,23 +10,25 @@ using Xamarin.Forms.Xaml;
 using System.Collections.ObjectModel;
 using Xamarin.CommunityToolkit.Extensions;
 using System.Security.Cryptography;
+using Pantry.Utilities;
 
 namespace Pantry.pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecipePage : ContentPage
     {
-        ObservableCollection<Recipe> recipeList = new ObservableCollection<Recipe>();
-        Lazy<LazyIngrientsInitialization> lazy = new Lazy<LazyIngrientsInitialization>();
+        public Lazy<LazyIngrientsInitialization> lazy = new Lazy<LazyIngrientsInitialization>();
 
         public RecipePage()
         {
             InitializeComponent();
 
-            recipeList.Add(new Recipe() { Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260" });
+            RecipeHandler.RecipeList.Add(new Recipe() { Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260" });
 
 
-            recipeListView.ItemsSource = recipeList;
+            recipeListView.ItemsSource = RecipeHandler.RecipeList;
+
+            Update(this, null);
         }
         string ingredients;
         public void OpenRecipeInfo(object sender, ItemTappedEventArgs e)
@@ -42,8 +44,18 @@ namespace Pantry.pages
 
             Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, recipe.Description, recipe.ImageSource));
 
+        }
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Update(this, null);
+        }
 
-
+        public void Update(object sender, EventArgs args)
+        {
+            IEnumerable<Recipe> ordered =
+                           from recipe in RecipeHandler.RecipeList 
+                           where recipe.Title.ToLower().StartsWith(SearchFilter.Text)
+                           select recipe;
         }
     }
 }

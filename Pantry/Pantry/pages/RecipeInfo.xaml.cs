@@ -1,6 +1,5 @@
 ﻿using Pantry.enums;
 using Pantry.models;
-//using Pantry.models.types;
 using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
