@@ -18,11 +18,9 @@ namespace Pantry.pages
         private DateTime? startDate = null;
         private DateTime? endDate = null;
         private IDataHandler dataHandler;
-
         public RecipePage()
         {
             dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
-            InitializeComponent();
 
             List<Ingredient> list = new List<Ingredient>()
             {
@@ -54,13 +52,13 @@ namespace Pantry.pages
                 }
             };
 
+            InitializeComponent();
             RecipeHandler.RecipeList.Add(new Recipe() { ID = 1, Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260", Ingredients = list});
             RecipeHandler.RecipeList.Add(new Recipe() { ID = 2, Title = "hello", Description = "...", Type = "veg", ImageSource = null, Ingredients = list2 });
 
-            RecipeHandler.SetProductsForRecipes();
-            //recipeCollectionView.ItemsSource = RecipeHandler.RecipeList;
-
             RecipeHandler.RecipeList.CollectionChanged += Update;
+            dataHandler.ProductUpdated += Update;
+
             Update(this, null);
         }
 
@@ -102,6 +100,7 @@ namespace Pantry.pages
 
         public void Update(object sender, EventArgs args)
         {
+            RecipeHandler.SetProductsForRecipes();
 
             IEnumerable<Recipe> ordered = from recipe in RecipeHandler.RecipeList
                                           where recipe.Title.ToLower().StartsWith(SearchFilter.Text)
