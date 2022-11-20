@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pantry.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
@@ -15,7 +16,10 @@ namespace Pantry.converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            throw new NotImplementedException();
+            Exception e = new NotImplementedException();
+            ExceptionLogger.LogExceptionToFile(e, "Convert back method is not implemented");
+            throw e;
+
         }
     }
 }
