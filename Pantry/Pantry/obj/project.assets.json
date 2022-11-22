@@ -1532,11 +1532,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+      "projectUniqueName": "C:\\Univerity\\III Semestras\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
       "projectName": "Pantry",
-      "projectPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+      "projectPath": "C:\\Univerity\\III Semestras\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
       "packagesPath": "C:\\Users\\adminas\\.nuget\\packages\\",
-      "outputPath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\obj\\",
+      "outputPath": "C:\\Univerity\\III Semestras\\PSI\\PSI-project\\Pantry\\Pantry\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

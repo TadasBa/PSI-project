@@ -53,7 +53,7 @@
                     Margin="0,3,0,0"
                     Text="App Notifications"
                     TextColor="Gray" />
-                <Switch HorizontalOptions="EndAndExpand" Scale="0.9" />
+                <Switch x:Name="notificationSwitch" HorizontalOptions="EndAndExpand" Scale="0.9" Toggled="notificationSwitch_Toggled" IsToggled="True"/>
             </StackLayout>
 
             <StackLayout Padding="0,10,0,0" Orientation="Horizontal">
@@ -61,8 +61,12 @@
                     Margin="0,3,0,0"
                     Text="Warning Notifications"
                     TextColor="Gray" />
-                <Switch x:Name="warningSwitch"  HorizontalOptions="EndAndExpand" Scale="0.9" />
+                
+                <Switch x:Name="warningSwitch" HorizontalOptions="EndAndExpand" Scale="0.9" Toggled="warningSwitch_Toggled" IsToggled="True"/>
+                
+                
             </StackLayout>
+            
             <StackLayout Orientation="Horizontal">
                 <Image
                     Margin="-6,36,0,0"

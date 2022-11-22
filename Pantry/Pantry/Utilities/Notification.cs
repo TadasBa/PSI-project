@@ -38,7 +38,6 @@ namespace Pantry.models
 
             NotificationRequest notification = new NotificationRequest
             {
-                BadgeNumber = 5,
                 Description = message,
                 Title = titleName,
                 NotificationId = random.Next(1, 10)

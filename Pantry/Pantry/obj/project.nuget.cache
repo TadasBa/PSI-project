@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QTTTAEmO0pVmN89SbwTtYgZPRmgSo9xaC96ISQPFYMH4pClBkgeev4xjZdLlHVTJ15hbCaRlfGDkGQH0f3vgHA==",
+  "dgSpecHash": "/gnNjhVA75FIfM/ZupOw6YLk1H+HpiQkxh7adTAJMdRCfuT6R5jJz81/Cug5WTad2nzhgc+MgnyGcqBuqdffSQ==",
   "success": true,
-  "projectFilePath": "C:\\Univerity\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
+  "projectFilePath": "C:\\Univerity\\III Semestras\\PSI\\PSI-project\\Pantry\\Pantry\\Pantry.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adminas\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\adminas\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
