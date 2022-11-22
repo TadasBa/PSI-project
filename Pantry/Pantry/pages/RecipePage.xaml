@@ -1,30 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Pantry.pages.RecipePage"
+    x:Name="recipePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Content>
-        <StackLayout>
-            <SearchBar
+        <StackLayout Padding="10,10,10,15">
+            <StackLayout Orientation="Horizontal">
+                <SearchBar
                 x:Name="SearchFilter"
                 Placeholder="Search for specific recipe"
                 Text=""
                 TextChanged="SearchBar_TextChanged" />
-            <ListView
-                x:Name="recipeListView"
-                ItemTapped="OpenRecipeInfo"
-                SelectedItem="{Binding selectedRecipe}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ImageCell
-                            Detail="{Binding Type}"
-                            ImageSource="{Binding ImageSource}"
-                            Text="{Binding Title}"
-                            TextColor="Black" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                <ImageButton Source="filter.jpg" HeightRequest="50" WidthRequest="50" Margin="-10, 0, 0, 0" Clicked="BtnRecipeFilter"/>
+            </StackLayout>
 
+            <CollectionView x:Name="recipeCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Frame CornerRadius="20" HasShadow="True"  BorderColor="DarkGray" Padding="10, 10, 10, 10">
+                                <StackLayout Orientation="Horizontal">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.TappedItem, Source = {x:Reference Name = recipePage}}" CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                      
+                                    <Image Source="{Binding ImageSource}" HeightRequest="60" WidthRequest="60"/>
+                                    <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
+                                        <Label Text ="{Binding Title}" FontSize="Medium"/>
+                                        <Label Text="{Binding Type}" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
