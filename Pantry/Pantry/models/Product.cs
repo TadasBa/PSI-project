@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml.Linq;
 using Newtonsoft.Json;
 using Pantry.models;
+using Pantry.pages;
 using Plugin.LocalNotification;
 using Xamarin.Forms;
 
@@ -49,7 +50,7 @@ namespace Pantry.models
         {
             ProductColor = SelectColor.SetColor(ExpiryDate);
             DaysLeft = SelectColor.DisplayDaysLeft();
-            LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(ExpiryDate, titleName: "Notification"));
+            SettingsPage.NotificationsOn(ExpiryDate);
         }
     }
 }

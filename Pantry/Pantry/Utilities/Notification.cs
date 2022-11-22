@@ -16,7 +16,7 @@ namespace Pantry.models
             int daysLimit2 = 3;
             Random random = new Random();
 
-            if(titleName.Equals("WARNING"))
+            if (titleName.Equals("WARNING"))
             {
                 message = defaultMessage;
             }
@@ -38,7 +38,6 @@ namespace Pantry.models
 
             NotificationRequest notification = new NotificationRequest
             {
-                BadgeNumber = 5,
                 Description = message,
                 Title = titleName,
                 NotificationId = random.Next(1, 10)
