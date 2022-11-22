@@ -115,7 +115,9 @@ namespace Pantry.Utilities
 
         internal void ForEach(Action<Product> value1, Func<object, Task<bool>> value2)
         {
-            throw new NotImplementedException();
+            Exception e = new NotImplementedException();
+            ExceptionLogger.LogExceptionToFile(e, "ForEach method not implemented");
+            throw e;
         }
     }
 }

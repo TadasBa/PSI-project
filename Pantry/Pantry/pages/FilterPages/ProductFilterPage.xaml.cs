@@ -19,8 +19,8 @@ namespace Pantry.pages
     public partial class ProductFilterPage : Popup
     {
         private string typeValue = null;
-        public DateTime? startDate = null;
-        public DateTime? endDate = null;
+        private DateTime? startDate = null;
+        private DateTime? endDate = null;
 
         public ProductFilterPage(string typeValue, DateTime? startDate, DateTime? endDate)
         {

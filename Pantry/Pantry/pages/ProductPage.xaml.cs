@@ -1,5 +1,6 @@
 ﻿using Pantry.enums;
 using Pantry.models;
+using Pantry.Utilities;
 using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
@@ -56,7 +57,7 @@ namespace Pantry.pages
             }
             catch (NullReferenceException ex)
             {
-                Console.WriteLine(ex.Message);
+                ExceptionLogger.LogExceptionToFile(ex, "Data from AddProductPage could not be trasferred");
             }
         }
 
@@ -72,7 +73,7 @@ namespace Pantry.pages
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                ExceptionLogger.LogExceptionToFile(ex, "Data from ProductFilterPage could not be trasferred");
             }
         }
 
@@ -94,8 +95,8 @@ namespace Pantry.pages
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
                 IEnumerable<Product> filteredByDateAndType = from product in ordered
-                                                                where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate && product.ProductType == selectedType
-                                                                select product;
+                                                             where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate && product.ProductType == selectedType
+                                                             select product;
 
                 itemCollectionView.ItemsSource = filteredByDateAndType;
 
@@ -105,16 +106,16 @@ namespace Pantry.pages
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(selectedTypeString);
                 IEnumerable<Product> filteredByType = from product in ordered
-                                                        where product.ProductType == selectedType
-                                                        select product;
+                                                      where product.ProductType == selectedType
+                                                      select product;
 
                 itemCollectionView.ItemsSource = filteredByType;
             }
             else if (startDate != null && endDate != null)
             {
                 IEnumerable<Product> filteredByDate = from product in ordered
-                                                        where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate
-                                                        select product;
+                                                      where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate
+                                                      select product;
 
                 itemCollectionView.ItemsSource = filteredByDate;
             }

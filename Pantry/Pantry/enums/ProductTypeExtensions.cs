@@ -1,4 +1,5 @@
 ﻿using Pantry.models;
+using Pantry.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +28,9 @@ namespace Pantry.enums
             }
             else
             {
-                throw new Exception();
+                Exception e = new Exception();
+                ExceptionLogger.LogExceptionToFile(e, "String to enum converstion failed");
+                throw e;
             }
         }
 

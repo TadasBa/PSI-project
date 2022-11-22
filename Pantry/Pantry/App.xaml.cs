@@ -4,6 +4,9 @@ using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Pantry.models.Login;
+using Android.Content.PM;
+using Android.OS;
+using Android;
 
 namespace Pantry
 {

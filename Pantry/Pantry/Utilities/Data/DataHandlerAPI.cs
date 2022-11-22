@@ -57,7 +57,7 @@ namespace Pantry
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine(e.Message);
+                ExceptionLogger.LogExceptionToFile(e);
             }
         }
         private async Task AddProductDB(Product product)
@@ -79,7 +79,7 @@ namespace Pantry
             }
             catch(HttpRequestException e)
             {
-                Console.WriteLine(e.Message);
+                ExceptionLogger.LogExceptionToFile(e);
             }
         }
         private async Task UpdateProductDB(Product product)
@@ -93,7 +93,7 @@ namespace Pantry
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine(e.Message);
+                ExceptionLogger.LogExceptionToFile(e);
             }
         }
 
@@ -118,7 +118,7 @@ namespace Pantry
             }
             catch (HttpRequestException e)
             {
-                Console.WriteLine(e.Message);
+                ExceptionLogger.LogExceptionToFile(e);
             }
         }
     }

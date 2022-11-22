@@ -11,17 +11,8 @@
             <Label
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
-                Text="Filter Products" />
+                Text="Filter Recipes" />
             <StackLayout Orientation="Horizontal">
-                <CheckBox x:Name="FilterByType" IsChecked="False" CheckedChanged="FilterByTypeCheckedChanged" Color="DarkGray" Margin="10, 10, 0, 0"/>
-                <Label
-                Margin="10, 15, 0, 0"
-                FontSize="Subtitle"
-                HorizontalTextAlignment="Start"
-                Text="Filter by recipe type"/>
-            </StackLayout>
-            <Picker x:Name="TypePicker" Title="ProductType" Margin="10, 0, 0, 0" IsEnabled="False"/>
-            <!--<StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="FilterByType" IsChecked="False" CheckedChanged="FilterByTypeCheckedChanged" Color="DarkGray" Margin="10, 10, 0, 0"/>
                 <Label
                 Margin="10, 15, 0, 0"
@@ -29,7 +20,7 @@
                 HorizontalTextAlignment="Start"
                 Text="Filter by product type"/>
             </StackLayout>
-            <Picker x:Name="TypePicker" Title="ProductType" Margin="10, 0, 0, 0" IsEnabled="False"/>
+            <Picker x:Name="TypePicker" Title="RecipeType" Margin="10, 0, 0, 0" IsEnabled="False"/>
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="FilterByDate" IsChecked="False" CheckedChanged="FilterByDateCheckedChanged" Color="DarkGray" Margin="10, 5, 0, 0"/>
                 <Label
@@ -60,7 +51,7 @@
             <Button
                 Margin="10, 0, 0, 0"
                 Clicked="BtnResetFilter"
-                Text="Reset filter" />-->
+                Text="Reset filter" />
         </StackLayout>
     </Frame>
-</xct:Popup>
+ </xct:Popup>
