@@ -18,9 +18,26 @@ namespace Pantry.pages
         private DateTime? startDate = null;
         private DateTime? endDate = null;
         private IDataHandler dataHandler;
+        public Command TappedItem { get; }
+
         public RecipePage()
         {
             dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
+            dataHandler.GetProducts(0);
+
+            TappedItem = new Command((object s) =>
+            {
+                string ingredients = null;
+                foreach (var item in lazy.Value.Ingredients)
+                {
+                    ingredients += item.Name + " " + item.Amount + ", ";
+                }
+                ingredients = ingredients.Remove(ingredients.Length - 2, 2);
+                var recipe = (Recipe)s;
+
+                Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, recipe.Description, recipe.ImageSource));
+            });
+
 
             List<Ingredient> list = new List<Ingredient>()
             {
@@ -52,31 +69,30 @@ namespace Pantry.pages
                 }
             };
 
-            InitializeComponent();
             RecipeHandler.RecipeList.Add(new Recipe() { ID = 1, Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260", Ingredients = list});
             RecipeHandler.RecipeList.Add(new Recipe() { ID = 2, Title = "hello", Description = "...", Type = "veg", ImageSource = null, Ingredients = list2 });
 
+            InitializeComponent();
+            BindingContext = this;
             RecipeHandler.RecipeList.CollectionChanged += Update;
             dataHandler.ProductUpdated += Update;
-
             Update(this, null);
         }
 
-        string ingredients;
-        public void OpenRecipeInfo(object sender, ItemTappedEventArgs e)
-        {
-            ingredients = null;
-            foreach (var item in lazy.Value.Ingredients)
-            {
+        //public void OpenRecipeInfo(object sender, ItemTappedEventArgs e)
+        //{
+        //    string ingredients = null;
+        //    foreach (var item in lazy.Value.Ingredients)
+        //    {
 
-                ingredients += item.Name + " " + item.Amount + ", ";
-            }
-            ingredients = ingredients.Remove(ingredients.Length - 2, 2);
-            var recipe = e.Item as Recipe;
+        //        ingredients += item.Name + " " + item.Amount + ", ";
+        //    }
+        //    ingredients = ingredients.Remove(ingredients.Length - 2, 2);
+        //    var recipe = e.Item as Recipe;
 
-            Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, recipe.Description, recipe.ImageSource));
+        //    Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, recipe.Description, recipe.ImageSource));
 
-        }
+        //}
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Update(this, null);

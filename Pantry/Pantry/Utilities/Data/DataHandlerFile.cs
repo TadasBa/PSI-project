@@ -20,14 +20,14 @@ namespace Pantry
         public async Task AddProduct(Product product)
         {
             ProductList.Add(product);
-            await WriteData();
+            await WriteData(0);
             ProductUpdated(this, EventArgs.Empty);
         }
         public async Task RemoveProduct(Product product)
         {
             ProductList.Remove(product);
             Console.WriteLine("Removing");
-            await WriteData();
+            await WriteData(0);
             ProductUpdated(this, EventArgs.Empty);
         }
 
@@ -37,7 +37,7 @@ namespace Pantry
             product.ExpiryDate = date;
         }
 
-        public async Task WriteData()
+        public async Task WriteData(int id)
         {
             using (var stream = new FileStream(path, FileMode.OpenOrCreate))
             {
@@ -47,7 +47,7 @@ namespace Pantry
             }
         }
 
-        public async Task ReadData()
+        public async Task GetProducts(int id)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace Pantry
         public DataHandlerFile()
         {
             path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "products.data");
-            ReadData();
+            GetProducts(0);
         }
 
     }

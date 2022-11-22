@@ -19,6 +19,7 @@ namespace Pantry.models
 
         public static void SetProductsForRecipes()
         {
+
             foreach (Recipe r in RecipeList)
             {
                 foreach (Ingredient i in r.Ingredients)

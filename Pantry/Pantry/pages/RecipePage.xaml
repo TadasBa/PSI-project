@@ -1,8 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Pantry.pages.RecipePage"
+    x:Name="recipePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
     <ContentPage.Content>
         <StackLayout Padding="10,10,10,15">
             <StackLayout Orientation="Horizontal">
@@ -20,6 +22,10 @@
                         <Grid Padding="10">
                             <Frame CornerRadius="20" HasShadow="True"  BorderColor="DarkGray" Padding="10, 10, 10, 10">
                                 <StackLayout Orientation="Horizontal">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding BindingContext.TappedItem, Source = {x:Reference Name = recipePage}}" CommandParameter="{Binding .}"/>
+                                    </StackLayout.GestureRecognizers>
+                      
                                     <Image Source="{Binding ImageSource}" HeightRequest="60" WidthRequest="60"/>
                                     <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
                                         <Label Text ="{Binding Title}" FontSize="Medium"/>

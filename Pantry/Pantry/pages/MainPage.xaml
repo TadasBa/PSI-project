@@ -8,7 +8,7 @@
 
 
     <local:ProductPage Title="Products" IconImageSource="product_icon.png" />
-    <local:RecipePage Title="Recipes" IconImageSource="recipe_icon.png" />
+    <local:RecipePage Title="Recipes" IconImageSource="recipe_icon.png"  />
     <local:SettingsPage Title="Settings" IconImageSource="statistics_icon.png" />
 
 
