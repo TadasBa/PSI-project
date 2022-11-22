@@ -51,8 +51,7 @@ namespace Pantry.pages
             {
                 DateTime result = (DateTime)await Navigation.ShowPopupAsync(new AddProductPage());
 
-                SettingsPage settingsPage = new SettingsPage();
-                settingsPage.WarningsOn(result);
+                SettingsPage.WarningsOn(result);
 
             }
             catch (NullReferenceException ex)
