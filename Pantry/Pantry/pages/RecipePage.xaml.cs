@@ -13,7 +13,7 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RecipePage : ContentPage
     {
-        public Lazy<LazyIngrientsInitialization> lazy = new Lazy<LazyIngrientsInitialization>();
+        
         private string selectedType = null;
         private DateTime? startDate = null;
         private DateTime? endDate = null;
@@ -28,14 +28,16 @@ namespace Pantry.pages
             TappedItem = new Command((object s) =>
             {
                 string ingredients = null;
-                foreach (var item in lazy.Value.Ingredients)
+                foreach (var item in WithLazy.Instance.Ingredients)
                 {
                     ingredients += item.Name + " " + item.Amount + ", ";
                 }
+                var description = WithLazy.Instance.Description;
+
                 ingredients = ingredients.Remove(ingredients.Length - 2, 2);
                 var recipe = (Recipe)s;
 
-                Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, recipe.Description, recipe.ImageSource));
+                Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, description, recipe.ImageSource));
             });
 
 

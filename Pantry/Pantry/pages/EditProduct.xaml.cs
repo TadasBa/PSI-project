@@ -33,9 +33,13 @@ namespace Pantry.pages
 
         public void OnConfirm(object sender, EventArgs args)
         {
-            dataHandler.UpdateProduct(Product, Name, Date);
-            ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
-            Dismiss("Confirmed");
+            if(Name != "")
+            {
+                dataHandler.UpdateProduct(Product, Name, Date);
+                ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
+                Dismiss("Confirmed");
+            }
+           
         }
 
         public void OnDelete(object sender, EventArgs args)

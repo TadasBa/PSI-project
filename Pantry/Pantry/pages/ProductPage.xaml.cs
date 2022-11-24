@@ -116,7 +116,7 @@ namespace Pantry.pages
                                                       where product.ExpiryDate >= startDate && product.ExpiryDate <= endDate
                                                       select product;
 
-                itemCollectionView.ItemsSource = filteredByDate;
+               itemCollectionView.ItemsSource = filteredByDate;
             }
             else
             {
