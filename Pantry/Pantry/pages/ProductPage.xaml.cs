@@ -27,16 +27,19 @@ namespace Pantry.pages
             _dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
             LongPressItem = new Command(async (object s) =>
             {
+
                 string result = (string)await Navigation.ShowPopupAsync(new EditProduct((Product)s));
-                if(result == "Delete")
+                if (result == "Delete")
                 {
                     bool res = await DisplayAlert("Delete", "Delete: " + ((Product)s).ProductName, "Delete", "Cancel");
-                    if(res)
+                    if (res)
                     {
                         await _dataHandler.RemoveProduct((Product)s);
                     }
                 }
+                ((Product)s).Update();
                 Update(this, null);
+              
             });
 
             InitializeComponent();
@@ -54,7 +57,7 @@ namespace Pantry.pages
                 SettingsPage.WarningsOn(result);
 
             }
-            catch (NullReferenceException ex)
+            catch(NullReferenceException ex)
             {
                 ExceptionLogger.LogExceptionToFile(ex, "Data from AddProductPage could not be trasferred");
             }
@@ -70,7 +73,7 @@ namespace Pantry.pages
                 endDate = (DateTime?)items[2];
                 Update(this, null);
             }
-            catch(Exception ex)
+            catch(NullReferenceException ex)
             {
                 ExceptionLogger.LogExceptionToFile(ex, "Data from ProductFilterPage could not be trasferred");
             }

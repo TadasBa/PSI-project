@@ -23,8 +23,6 @@ namespace Pantry
 
         protected override void OnStart()
         {
-            IDataHandler dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
-            dataHandler.GetProducts(0);
         }
 
         protected override void OnSleep()

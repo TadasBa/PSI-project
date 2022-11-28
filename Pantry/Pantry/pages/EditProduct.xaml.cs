@@ -1,12 +1,15 @@
-﻿using Pantry.models;
+﻿using Pantry.enums;
+using Pantry.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using static Android.Renderscripts.Sampler;
 
 namespace Pantry.pages
 {
@@ -17,31 +20,45 @@ namespace Pantry.pages
         public Product Product { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
+
+        public ProductType Type { get; set; }
         public EditProduct(Product product)
         {
             BindingContext = this;
             Product = product;
             Name = product.ProductName;
             Date = product.ExpiryDate;
-
+            Type = product.ProductType;
             InitializeComponent();
+            TypePicker.ItemsSource = ProductTypeHandler.Values;
+            TypePicker.SelectedItem = Type.ToDescriptionString();
         }
         public void OnCanceled(object sender, EventArgs args)
         {
             Dismiss("Canceled");
         }
 
-        public void OnConfirm(object sender, EventArgs args)
+        public async void OnConfirm(object sender, EventArgs args)
         {
-            if(Name != "")
+            if (Name != "")
             {
-                dataHandler.UpdateProduct(Product, Name, Date);
-                ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
-                Dismiss("Confirmed");
+                if (Regex.IsMatch(Name, @"^[a-zA-Z\s]+$") == true)
+                {
+                    Type = ProductTypeExtensions.StringToEnum((string)TypePicker.SelectedItem);
+                    dataHandler.UpdateProduct(Product, Name, Date, Type);
+                    ((MainPage)Application.Current.MainPage).DisplayToast("Saving changes");
+                    Dismiss("Confirmed");
+                }
+                else
+                {
+                    await App.Current.MainPage.DisplayAlert("Invalid input", "Please enter letters only", "Close");
+                }
             }
-           
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Invalid input", "Please enter product name", "Close");
+            }
         }
-
         public void OnDelete(object sender, EventArgs args)
         {
             Dismiss("Delete");

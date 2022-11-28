@@ -31,10 +31,11 @@ namespace Pantry
             ProductUpdated(this, EventArgs.Empty);
         }
 
-        public async Task UpdateProduct(Product product, string name, DateTime date)
+        public async Task UpdateProduct(Product product, string name, DateTime date, ProductType type)
         {
             product.ProductName = name;
             product.ExpiryDate = date;
+            product.ProductType = type;
         }
 
         public async Task WriteData(int id)
@@ -64,6 +65,7 @@ namespace Pantry
             catch (Exception ex)
             {
                 ProductList = new ConcurrentHashSet<Product>();
+                ExceptionLogger.LogExceptionToFile(ex);
             }
         }
 

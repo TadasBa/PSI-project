@@ -34,8 +34,7 @@
             <Label Text="• Product type" TextColor="Black" />
             <Picker
                 x:Name="TypePicker"
-                Title="ProductType"
-                Margin="3" />
+                Title="Product type"/>
             <Button
                 Margin="5"
                 BackgroundColor="#262322"

@@ -56,23 +56,23 @@ namespace Pantry.pages
                 }
             };
 
-            List<Ingredient> list2 = new List<Ingredient>()
-            {
-                new Ingredient()
-                {
-                    Name = "agurkas",
-                    Amount = "200g"
-                },
+            //List<Ingredient> list2 = new List<Ingredient>()
+            //{
+            //    new Ingredient()
+            //    {
+            //        Name = "agurkas",
+            //        Amount = "200g"
+            //    },
 
-                new Ingredient()
-                {
-                    Name = "ananasas",
-                    Amount = "200ml"
-                }
-            };
+            //    new Ingredient()
+            //    {
+            //        Name = "ananasas",
+            //        Amount = "200ml"
+            //    }
+            //};
 
             RecipeHandler.RecipeList.Add(new Recipe() { ID = 1, Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260", Ingredients = list});
-            RecipeHandler.RecipeList.Add(new Recipe() { ID = 2, Title = "hello", Description = "...", Type = "veg", ImageSource = null, Ingredients = list2 });
+            //RecipeHandler.RecipeList.Add(new Recipe() { ID = 2, Title = "hello", Description = "...", Type = "veg", ImageSource = null, Ingredients = list2 });
 
             InitializeComponent();
             BindingContext = this;
@@ -81,20 +81,6 @@ namespace Pantry.pages
             Update(this, null);
         }
 
-        //public void OpenRecipeInfo(object sender, ItemTappedEventArgs e)
-        //{
-        //    string ingredients = null;
-        //    foreach (var item in lazy.Value.Ingredients)
-        //    {
-
-        //        ingredients += item.Name + " " + item.Amount + ", ";
-        //    }
-        //    ingredients = ingredients.Remove(ingredients.Length - 2, 2);
-        //    var recipe = e.Item as Recipe;
-
-        //    Navigation.ShowPopup(new RecipeInfoPage(recipe.Title, ingredients, recipe.Description, recipe.ImageSource));
-
-        //}
         private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             Update(this, null);
@@ -110,7 +96,7 @@ namespace Pantry.pages
                 endDate = (DateTime?)items[2];
                 Update(this, null);
             }
-            catch (Exception ex)
+            catch (NullReferenceException ex)
             {
                 ExceptionLogger.LogExceptionToFile(ex, "Data from RecipeFilterPage could not be trasferred");
             }

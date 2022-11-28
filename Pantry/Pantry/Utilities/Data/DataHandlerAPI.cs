@@ -36,12 +36,13 @@ namespace Pantry
             await RemoveProductDB(product);
             ProductUpdated(this, new ProductUpdatedApiArgs(_client.BaseAddress.AbsoluteUri));
         }
-        public async Task UpdateProduct(Product product, string name, DateTime date)
+        public async Task UpdateProduct(Product product, string name, DateTime date, ProductType type)
         {
             product.ProductName = name;
             product.ExpiryDate = date;
             product.DaysLeft = SelectColor.DisplayDaysLeft();
             product.ProductColor = SelectColor.SetColor(date);
+            product.ProductType = type;
             await UpdateProductDB(product);
             ProductUpdated(this, EventArgs.Empty);
         }
@@ -80,6 +81,7 @@ namespace Pantry
             catch(HttpRequestException e)
             {
                 ExceptionLogger.LogExceptionToFile(e);
+                Application.Current.MainPage.DisplayToastAsync("Failed to create product...", 1000);
             }
         }
         private async Task UpdateProductDB(Product product)
