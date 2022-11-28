@@ -80,6 +80,7 @@ namespace Pantry
             catch(HttpRequestException e)
             {
                 ExceptionLogger.LogExceptionToFile(e);
+                Application.Current.MainPage.DisplayToastAsync("Failed to create product...", 1000);
             }
         }
         private async Task UpdateProductDB(Product product)

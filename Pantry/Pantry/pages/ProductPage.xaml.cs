@@ -54,7 +54,7 @@ namespace Pantry.pages
                 SettingsPage.WarningsOn(result);
 
             }
-            catch (NullReferenceException ex)
+            catch(NullReferenceException ex)
             {
                 ExceptionLogger.LogExceptionToFile(ex, "Data from AddProductPage could not be trasferred");
             }
@@ -70,7 +70,7 @@ namespace Pantry.pages
                 endDate = (DateTime?)items[2];
                 Update(this, null);
             }
-            catch(Exception ex)
+            catch(NullReferenceException ex)
             {
                 ExceptionLogger.LogExceptionToFile(ex, "Data from ProductFilterPage could not be trasferred");
             }

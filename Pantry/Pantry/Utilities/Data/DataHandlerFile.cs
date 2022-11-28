@@ -64,6 +64,7 @@ namespace Pantry
             catch (Exception ex)
             {
                 ProductList = new ConcurrentHashSet<Product>();
+                ExceptionLogger.LogExceptionToFile(ex);
             }
         }
 
