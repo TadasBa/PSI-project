@@ -56,3 +56,32 @@ C:\Univerity\III Semestras\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.
 C:\Univerity\III Semestras\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\refint\Pantry.dll
 C:\Univerity\III Semestras\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.pdb
 C:\Univerity\III Semestras\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\ref\Pantry.dll
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Pantry.deps.json
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Pantry.dll
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Pantry.pdb
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.dll
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.pdb
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\bin\Debug\netstandard2.0\Mono.Android.xml
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\AddProductPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditProduct.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPages\ProductFilterPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\FilterPages\RecipeFilterPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\LoginPages\LoginPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\LoginPages\RegisterPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\MainPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\ProductPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipeInfo.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\RecipePage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\SettingsPage.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.AssemblyInfo.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.csproj.CopyComplete
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.dll
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\refint\Pantry.dll
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.pdb
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\ref\Pantry.dll

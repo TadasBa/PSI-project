@@ -1,57 +1,84 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Pantry.pages.ProductPage"
-    x:Name="productPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:Pantry.converters" xmlns:pages="clr-namespace:Pantry.pages" xmlns:models="clr-namespace:Pantry.models"
-    xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    xmlns:converters="clr-namespace:Pantry.converters"
+    xmlns:models="clr-namespace:Pantry.models"
+    xmlns:pages="clr-namespace:Pantry.pages"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Name="productPage"
+    BackgroundColor="WhiteSmoke">
     <ContentPage.Resources>
         <converters:DateTimeToString x:Key="formatDate" />
     </ContentPage.Resources>
 
 
-    <StackLayout Padding="10,10,10,15">
+    <StackLayout Padding="10,10,10,5">
         <StackLayout Orientation="Horizontal">
             <SearchBar
-            x:Name="SearchFilter"
-            Placeholder="Search for specific product"
-            Text=""
-            TextChanged="SearchBar_TextChanged" />
-            <ImageButton Source="filter.jpg" HeightRequest="50" WidthRequest="50" Margin="-10, 0, 0, 0" Clicked="BtnProductFilter"/>
+                x:Name="SearchFilter"
+                Placeholder="Search for a specific product"
+                Text=""
+                TextChanged="SearchBar_TextChanged" />
+            <ImageButton
+                Margin="-10,0,0,0"
+                BackgroundColor="WhiteSmoke"
+                Clicked="BtnProductFilter"
+                HeightRequest="50"
+                Source="filtericon.png"
+                WidthRequest="40" />
         </StackLayout>
-
+        <BoxView
+            Margin="3"
+            HeightRequest="1.5"
+            Color="LightGray" />
         <CollectionView x:Name="itemCollectionView">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="10">
-                        <Frame CornerRadius="20" HasShadow="True"  BorderColor="DarkGray" Padding="10, 10, 10, 10">
-                            <StackLayout Orientation="Horizontal" xct:TouchEffect.LongPressCommand ="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}" xct:TouchEffect.LongPressCommandParameter="{Binding .}">
-                                <Image Source="{Binding ImageSource}" HeightRequest="60" WidthRequest="60"/>
-                                <StackLayout VerticalOptions="CenterAndExpand" Orientation="Vertical">
-                                    <Label Text="{Binding ProductName}" TextColor="{Binding ProductColor}" FontSize="Medium"/>
-                                    <Label Text="{Binding ExpiryDate, Converter={StaticResource formatDate}}" />
+                    <Grid Padding="5">
+                        <Frame
+                            Padding="10,8,12,5"
+                            xct:ShadowEffect.Opacity="100"
+                            BackgroundColor="WhiteSmoke"
+                            BorderColor="DarkGray"
+                            CornerRadius="27"
+                            HasShadow="True">
+                            <StackLayout
+                                xct:TouchEffect.LongPressCommand="{Binding BindingContext.LongPressItem, Source={x:Reference Name=productPage}}"
+                                xct:TouchEffect.LongPressCommandParameter="{Binding .}"
+                                Orientation="Horizontal">
+                                <Image
+                                    HeightRequest="60"
+                                    Source="{Binding ImageSource}"
+                                    WidthRequest="60" />
+                                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+                                    <Label
+                                        FontSize="Medium"
+                                        Text="{Binding ProductName}"
+                                        TextColor="Black" />
+                                    <Label Text="{Binding ExpiryDate, Converter={StaticResource formatDate}}" TextColor="{Binding ProductColor}" />
                                 </StackLayout>
                                 <Label
-                                        Text="{Binding DaysLeft}"
-                                        TextColor="{Binding ProductColor}"
-                                        VerticalOptions="Center"
-                                        HorizontalOptions="EndAndExpand"/>
+                                    HorizontalOptions="EndAndExpand"
+                                    Text="{Binding DaysLeft}"
+                                    TextColor="{Binding ProductColor}"
+                                    VerticalOptions="Center" />
                             </StackLayout>
                         </Frame>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        
         <ImageButton
+            Padding="0,0,2,2"
+            BackgroundColor="WhiteSmoke"
             Clicked="BtnProductAdd"
-            CornerRadius="50"
+            HeightRequest="70"
             HorizontalOptions="Center"
-            Source="pliusas.png"
+            Source="addbtn.png"
             VerticalOptions="Center"
-            WidthRequest="50" />
+            WidthRequest="70" />
 
     </StackLayout>
-
 </ContentPage>

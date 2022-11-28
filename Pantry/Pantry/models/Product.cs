@@ -50,6 +50,7 @@ namespace Pantry.models
         {
             ProductColor = SelectColor.SetColor(ExpiryDate);
             DaysLeft = SelectColor.DisplayDaysLeft();
+            ImageSource = ProductType.ToString().ToLower() + ".jpg";
             SettingsPage.NotificationsOn(ExpiryDate);
         }
     }
