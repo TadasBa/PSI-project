@@ -5,11 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:Pantry.models"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-<<<<<<< HEAD
     Size="300,550"
-=======
-    Size="300,450"
->>>>>>> origin
     Color="Transparent">
 
     <Frame CornerRadius="20" VerticalOptions="Center">
@@ -26,12 +22,9 @@
             <Entry Text="{Binding Name}" />
             <Label Text="• Product date" TextColor="Black" />
             <DatePicker Date="{Binding Date}" />
-<<<<<<< HEAD
             <Label Text="• Product type" TextColor="Black" />
             <Picker x:Name="TypePicker" Title="Product type"/>
-=======
->>>>>>> origin
-            <StackLayout Padding="0,20,0,0">
+                <StackLayout Padding="0,20,0,0">
                 <Button
                     Margin="2.5"
                     BackgroundColor="#262322"
