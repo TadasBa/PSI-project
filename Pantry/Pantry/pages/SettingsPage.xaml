@@ -3,7 +3,7 @@
     x:Class="Pantry.pages.SettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    BackgroundColor="White">
+    BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
         <StackLayout
             Padding="20"
@@ -53,7 +53,12 @@
                     Margin="0,3,0,0"
                     Text="App Notifications"
                     TextColor="Gray" />
-                <Switch x:Name="notificationSwitch" HorizontalOptions="EndAndExpand" Scale="0.9" Toggled="notificationSwitch_Toggled" IsToggled="True"/>
+                <Switch
+                    x:Name="notificationSwitch"
+                    HorizontalOptions="EndAndExpand"
+                    IsToggled="True"
+                    Scale="0.9"
+                    Toggled="notificationSwitch_Toggled" />
             </StackLayout>
 
             <StackLayout Padding="0,10,0,0" Orientation="Horizontal">
@@ -61,7 +66,12 @@
                     Margin="0,3,0,0"
                     Text="Warning Notifications"
                     TextColor="Gray" />
-                <Switch x:Name="warningSwitch" HorizontalOptions="EndAndExpand" Scale="0.9" Toggled="warningSwitch_Toggled" IsToggled="True"/>
+                <Switch
+                    x:Name="warningSwitch"
+                    HorizontalOptions="EndAndExpand"
+                    IsToggled="True"
+                    Scale="0.9"
+                    Toggled="warningSwitch_Toggled" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Image

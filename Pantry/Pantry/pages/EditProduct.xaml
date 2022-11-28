@@ -1,22 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
-           xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-           x:Class="Pantry.pages.EditProduct"
-           xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-           xmlns:models="clr-namespace:Pantry.models"
-           Size="300,400"
-           Color="Transparent">
+<xct:Popup
+    x:Class="Pantry.pages.EditProduct"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Pantry.models"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Size="300,550"
+    Color="Transparent">
 
-    <Frame VerticalOptions="CenterAndExpand" CornerRadius="20">
-        <StackLayout>
-            <Label Text="Edit Product"/>
-            <StackLayout VerticalOptions="CenterAndExpand">
-                <Entry HorizontalTextAlignment="Center" Text="{Binding Name}"/>
-                <DatePicker Date="{Binding Date}" HorizontalOptions="Center"/>
-                <Button Text="Confirm" CornerRadius="20" BackgroundColor="Green" Clicked="OnConfirm"/>
-                <Button Text="Cancel" CornerRadius="20" BackgroundColor="IndianRed" Clicked="OnCanceled"/>
+    <Frame CornerRadius="20" VerticalOptions="Center">
+        <StackLayout Margin="10">
+            <Label
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Edit your product"
+                TextColor="Black" />
+            <Label
+                Padding="0,10,0,0"
+                Text="• Product name"
+                TextColor="Black" />
+            <Entry Text="{Binding Name}" />
+            <Label Text="• Product date" TextColor="Black" />
+            <DatePicker Date="{Binding Date}" />
+            <Label Text="• Product type" TextColor="Black" />
+            <Picker x:Name="TypePicker" Title="Product type"/>
+            <StackLayout Padding="0,20,0,0">
+                <Button
+                    Margin="2.5"
+                    BackgroundColor="#262322"
+                    Clicked="OnConfirm"
+                    CornerRadius="20"
+                    Text="Confirm"
+                    TextColor="White" />
+                <Button
+                    Margin="2.5"
+                    BackgroundColor="#262322"
+                    Clicked="OnCanceled"
+                    CornerRadius="20"
+                    Text="Cancel"
+                    TextColor="White" />
+                <Button
+                    Margin="2.5"
+                    BackgroundColor="#262322"
+                    Clicked="OnDelete"
+                    CornerRadius="20"
+                    Text="Delete"
+                    TextColor="White"
+                    VerticalOptions="End" />
             </StackLayout>
-            <Button Text="Delete" CornerRadius="20" BackgroundColor="Red" Clicked="OnDelete" VerticalOptions="End"/>
         </StackLayout>
     </Frame>
 

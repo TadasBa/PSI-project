@@ -12,23 +12,37 @@
             <Label
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
-                Text="Add item to your product list" />
+                Text="Add product"
+                TextColor="Black" />
+            <Label Text="• Product name" TextColor="Black" Padding="0,5,0,0"/>
             <Entry
                 x:Name="ProductName"
-                Margin="10"
-                Placeholder="Enter the product" />
+                Margin="3"
+                Placeholder="Enter the product"
+                TextColor="Black" />
             <!--<Label
                 x:Name="lblCorrect"
                 HorizontalOptions="Center"
                 IsVisible="false"
                 Text="Enter only letters/"
                 TextColor="Red" />-->
-            <DatePicker x:Name="ExpiryDate" Margin="10"/>
-            <Picker x:Name="TypePicker" Title="ProductType" Margin="10" />
+            <Label Text="• Product date" TextColor="Black" />
+            <DatePicker
+                x:Name="ExpiryDate"
+                Margin="3"
+                TextColor="Black" />
+            <Label Text="• Product type" TextColor="Black" />
+            <Picker
+                x:Name="TypePicker"
+                Title="Product type"
+                Margin="3" />
             <Button
-                Margin="10"
+                Margin="5"
+                BackgroundColor="#262322"
                 Clicked="BtnProductAddToList"
-                Text="Add Product" />
+                CornerRadius="20"
+                Text="Add Product"
+                TextColor="White" />
         </StackLayout>
     </Frame>
 </xct:Popup>

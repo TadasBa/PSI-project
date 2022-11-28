@@ -11,7 +11,7 @@ namespace Pantry
         ConcurrentHashSet<Product> ProductList { get; }
         Task AddProduct(Product product);
         Task RemoveProduct(Product product);
-        Task UpdateProduct(Product product, string name, DateTime date);
+        Task UpdateProduct(Product product, string name, DateTime date, ProductType type);
 
         Task GetProducts(int id);
 
