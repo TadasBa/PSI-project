@@ -50,8 +50,13 @@
                                             Source="{Binding ImageSource}"
                                             WidthRequest="60" />
                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
+<<<<<<< HEAD
                                             <Label FontSize="Medium" Text="{Binding Title}" TextColor="Black"/>
                                             <Label Text="{Binding Type}"/>
+=======
+                                            <Label FontSize="Medium" Text="{Binding Title}" />
+                                            <Label Text="{Binding Type}" />
+>>>>>>> origin
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

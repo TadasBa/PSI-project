@@ -40,9 +40,9 @@ namespace Pantry.pages
 
         public async void OnConfirm(object sender, EventArgs args)
         {
-            if(Name != "")
+            if (Name != "")
             {
-                if(Regex.IsMatch(Name, @"^[a-zA-Z\s]+$") == true)
+                if (Regex.IsMatch(Name, @"^[a-zA-Z\s]+$") == true)
                 {
                     Type = ProductTypeExtensions.StringToEnum((string)TypePicker.SelectedItem);
                     dataHandler.UpdateProduct(Product, Name, Date, Type);
@@ -59,7 +59,6 @@ namespace Pantry.pages
                 await App.Current.MainPage.DisplayAlert("Invalid input", "Please enter product name", "Close");
             }
         }
-
         public void OnDelete(object sender, EventArgs args)
         {
             Dismiss("Delete");
