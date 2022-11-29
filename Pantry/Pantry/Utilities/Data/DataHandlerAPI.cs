@@ -13,7 +13,7 @@ using System.Collections.Generic;
 
 namespace Pantry
 {
-    internal class DataHandlerAPI : IDataHandler
+    internal class DataHandlerAPI : IDataHandler<EventArgs>
     {
         public ConcurrentHashSet<Product> ProductList { get; private set; } = new ConcurrentHashSet<Product>();
         private HttpClient _client = DependencyService.Get<HttpClient>(DependencyFetchTarget.GlobalInstance);
@@ -24,7 +24,7 @@ namespace Pantry
             _ = GetProducts(0);
         }
 
-        public event ProductUpdatedEventHandler ProductUpdated;
+        public event ProductUpdatedEventHandler<EventArgs> ProductUpdated;
 
         public async Task AddProduct(Product product)
         {

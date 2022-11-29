@@ -9,13 +9,13 @@ using Plugin.LocalNotification;
 
 namespace Pantry
 {
-    public class DataHandlerFile : IDataHandler
+    public class DataHandlerFile : IDataHandler<EventArgs>
     {
         public ConcurrentHashSet<Product> ProductList { get; private set; }
 
         private string path;
 
-        public event ProductUpdatedEventHandler ProductUpdated;
+        public event ProductUpdatedEventHandler<EventArgs> ProductUpdated;
 
         public async Task AddProduct(Product product)
         {

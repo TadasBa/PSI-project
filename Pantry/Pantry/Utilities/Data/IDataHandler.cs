@@ -5,8 +5,8 @@ using Pantry.Utilities;
 
 namespace Pantry
 {
-    public delegate void ProductUpdatedEventHandler(object sender, EventArgs args);
-    public interface IDataHandler
+    public delegate void ProductUpdatedEventHandler<TEArgs>(object sender, TEArgs args) where TEArgs : EventArgs;
+    public interface IDataHandler<TEArgs> where TEArgs : EventArgs
     {
         ConcurrentHashSet<Product> ProductList { get; }
         Task AddProduct(Product product);
@@ -15,6 +15,6 @@ namespace Pantry
 
         Task GetProducts(int id);
 
-        event ProductUpdatedEventHandler ProductUpdated;
+        event ProductUpdatedEventHandler<TEArgs> ProductUpdated;
     }
 }
