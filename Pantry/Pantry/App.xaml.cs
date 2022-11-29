@@ -17,7 +17,7 @@ namespace Pantry
             InitializeComponent();
             DependencyService.Register<ILoginService, LoginService>();
             DependencyService.Register<HttpClient>();
-            DependencyService.Register<IDataHandler, DataHandlerAPI>();
+            DependencyService.Register<IDataHandler<EventArgs>, DataHandlerAPI>();
             MainPage = new MainPage();
         }
 

@@ -9,14 +9,13 @@ using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using static Android.Renderscripts.Sampler;
 
 namespace Pantry.pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditProduct : Popup
     {
-        IDataHandler dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
+        IDataHandler<EventArgs> dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
         public Product Product { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }

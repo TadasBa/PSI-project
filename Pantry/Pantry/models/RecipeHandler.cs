@@ -15,7 +15,7 @@ namespace Pantry.models
         public static ObservableCollection<Recipe> RecipeList = new ObservableCollection<Recipe>();
         private static List<string> recipeTypes = new List<string>();
         public static DictionaryWrapper RecipeProducts = new DictionaryWrapper(new Dictionary<int, List<DateTime>>());
-        private static IDataHandler dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
+        private static IDataHandler<EventArgs> dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
 
         public static void SetProductsForRecipes()
         {

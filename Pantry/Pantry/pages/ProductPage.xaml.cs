@@ -16,7 +16,7 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductPage : ContentPage
     {
-        private IDataHandler _dataHandler;
+        private IDataHandler<EventArgs> _dataHandler;
         private string selectedTypeString = null;
         private DateTime? startDate = null;
         private DateTime? endDate = null;
@@ -24,7 +24,7 @@ namespace Pantry.pages
 
         public ProductPage()
         {
-            _dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
+            _dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
             LongPressItem = new Command(async (object s) =>
             {
 

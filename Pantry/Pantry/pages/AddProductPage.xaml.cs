@@ -24,10 +24,10 @@ namespace Pantry.pages
     public partial class AddProductPage : Popup
     {
 
-        IDataHandler dataHandler;
+        IDataHandler<EventArgs> dataHandler;
         public AddProductPage()
         {
-            dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
+            dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
             InitializeComponent();
             TypePicker.ItemsSource = ProductTypeHandler.Values;
             ExpiryDate.MinimumDate = DateTime.Now;

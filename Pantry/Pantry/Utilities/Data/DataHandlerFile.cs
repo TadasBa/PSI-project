@@ -36,6 +36,7 @@ namespace Pantry
             product.ProductName = name;
             product.ExpiryDate = date;
             product.ProductType = type;
+            await WriteData(0);
         }
 
         public async Task WriteData(int id)

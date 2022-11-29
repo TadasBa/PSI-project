@@ -17,12 +17,12 @@ namespace Pantry.pages
         private string selectedType = null;
         private DateTime? startDate = null;
         private DateTime? endDate = null;
-        private IDataHandler dataHandler;
+        private IDataHandler<EventArgs> dataHandler;
         public Command TappedItem { get; }
 
         public RecipePage()
         {
-            dataHandler = DependencyService.Get<IDataHandler>(DependencyFetchTarget.GlobalInstance);
+            dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
             dataHandler.GetProducts(0);
 
             TappedItem = new Command((object s) =>
