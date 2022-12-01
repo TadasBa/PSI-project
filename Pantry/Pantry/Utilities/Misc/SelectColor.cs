@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Pantry.models
 {
-    static class SelectColor
+    public class SelectColor
     {
         private const int daysLimit1 = 1;
         private const int daysLimit2 = 3;
