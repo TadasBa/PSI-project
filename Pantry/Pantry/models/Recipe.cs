@@ -9,7 +9,6 @@ namespace Pantry.models
 
     public class Recipe
     {
-
         public int ID { get; set; }
         public string Title { get; set; }
         //public string Ingredients { get; set; }
