@@ -21,7 +21,7 @@
                 TextColor="Black" />
             <Entry Text="{Binding Name}" />
             <Label Text="• Product date" TextColor="Black" />
-            <DatePicker Date="{Binding Date}" />
+            <DatePicker x:Name="ExpiryDate" Date="{Binding Date}" TextColor="Black" />
             <Label Text="• Product type" TextColor="Black" />
             <Picker x:Name="TypePicker" Title="Product type"/>
                 <StackLayout Padding="0,20,0,0">
