@@ -20,12 +20,6 @@
                 Margin="3"
                 Placeholder="Enter the product"
                 TextColor="Black" />
-            <!--<Label
-                x:Name="lblCorrect"
-                HorizontalOptions="Center"
-                IsVisible="false"
-                Text="Enter only letters/"
-                TextColor="Red" />-->
             <Label Text="• Product date" TextColor="Black" />
             <DatePicker
                 x:Name="ExpiryDate"
