@@ -18,6 +18,7 @@ namespace Pantry
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         public void DisplayToast(string message)

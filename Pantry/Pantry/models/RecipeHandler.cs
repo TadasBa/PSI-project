@@ -13,18 +13,20 @@ namespace Pantry.models
     public static class RecipeHandler
     {
         public static ObservableCollection<Recipe> RecipeList = new ObservableCollection<Recipe>();
-        private static List<string> recipeTypes = new List<string>();
-        public static DictionaryWrapper RecipeProducts = new DictionaryWrapper(new Dictionary<int, List<DateTime>>());
+        public static List<string> RecipeTypes = new List<string>();
+        private static RecipeDictionary RecipeProducts = new RecipeDictionary();
         private static IDataHandler<EventArgs> dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
 
         public static void SetProductsForRecipes()
         {
 
+            var products = dataHandler.ProductList.GetAll();
+
             foreach (Recipe r in RecipeList)
             {
                 foreach (Ingredient i in r.Ingredients)
                 {
-                    foreach (Product p in dataHandler.ProductList.GetAll())
+                    foreach (Product p in products)
                     {
                         if (i.Name.ToLower() == p.ProductName.ToLower())
                         {
@@ -36,14 +38,12 @@ namespace Pantry.models
             }
         }
 
-        public static List<string> GetTypes()
+        public static void SetTypes()
         {
             foreach (Recipe recipe in RecipeList)
             {
-                recipeTypes.Add(recipe.Type);
+                RecipeTypes.Add(recipe.Type);
             }
-
-            return recipeTypes;
         }
 
         public static DateTime? GetMinExpiryDate(Recipe r)
@@ -52,7 +52,7 @@ namespace Pantry.models
             {
                 if(key == r.ID)
                 {
-                    return RecipeProducts[key].Max(date => date);
+                    return RecipeProducts[key].Min(date => date);
                 }
             }
             return null;
@@ -64,7 +64,7 @@ namespace Pantry.models
             {
                 if (key == r.ID)
                 {
-                    return RecipeProducts[key].Min(date => date);
+                    return RecipeProducts[key].Max(date => date);
                 }
             }
             return null;
