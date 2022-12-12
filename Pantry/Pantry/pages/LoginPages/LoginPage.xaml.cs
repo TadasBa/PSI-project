@@ -1,4 +1,5 @@
-﻿using Pantry.models.Login;
+﻿using Pantry.models;
+using Pantry.models.Login;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,17 +14,12 @@ namespace Pantry.pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        LoginService _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
+        LoginService _loginService;
 
         public LoginPage()
         {
+            _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
             InitializeComponent();
-            _loginService = new LoginService();
-        }
-
-        public bool CheckUserDetails(string username, string password)
-        {
-            return _loginService.CheckUserDetails(username, password);
         }
 
         private void GoToRegister(object sender, EventArgs e)
@@ -31,9 +27,12 @@ namespace Pantry.pages
             Application.Current.MainPage = new RegisterPage();
         }
 
-        private void BtnGoToMain(object sender, EventArgs e)
+        private async void BtnGoToMain(object sender, EventArgs e)
         {
-            if(CheckUserDetails(usernameEntry.Text,passwordEntry.Text) == true)
+            User user = new User("N/A", passwordEntry.Text, emailEntry.Text);
+            var result = await _loginService.Login(user);
+
+            if (result)
             {
                 lblWrongDetails.TextColor = Color.White;
                 Application.Current.MainPage = new MainPage();

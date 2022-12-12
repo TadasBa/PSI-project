@@ -4,14 +4,16 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:pages="clr-namespace:Pantry.models"
-    Size="300,450"
+    Size="300,470"
     Color="Transparent">
     <Frame CornerRadius="20" HasShadow="True">
         <StackLayout>
             <Label
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
-                Text="Filter Recipes" />
+                Text="Filter Recipes" 
+                TextColor="Black" />
+            <Label Text="Check the box you want to filter by" TextColor="Black" HorizontalOptions="Center" />
             <StackLayout Orientation="Horizontal">
                 <CheckBox x:Name="FilterByType" IsChecked="False" CheckedChanged="FilterByTypeCheckedChanged" Color="DarkGray" Margin="10, 10, 0, 0"/>
                 <Label
@@ -27,31 +29,38 @@
                 Margin="10, 10, 0, 0"
                 FontSize="Subtitle"
                 HorizontalTextAlignment="Start"
-                Text="Filter by expiry date"/>
+                Text="Filter by expiry date"
+                TextColor="Black"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label
                     Margin="10, 10, 0, 0"
                     FontSize="Subtitle"
                     HorizontalTextAlignment="Start"
-                    Text="From: "/>
+                    Text="From: "
+                    TextColor="Black"/>
                 <DatePicker x:Name="StartDate" Margin="10, 0, 0, 0" IsEnabled="False"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Margin="10, 10, 0, 0"
                     FontSize="Subtitle"
                     HorizontalTextAlignment="Start"
-                    Text="To: "/>
+                    Text="To: "
+                    TextColor="Black"/>
                 <DatePicker x:Name="EndDate" Margin="20, 0, 0, 0" IsEnabled="false"/>
             </StackLayout>
             <Button
                 Margin="10, 10, 0, 0"
                 Clicked="BtnSetFilter"
-                Text="Filter" />
+                Text="Filter"
+                BackgroundColor="#262322"
+                TextColor="White"/>
             <Button
                 Margin="10, 0, 0, 0"
                 Clicked="BtnResetFilter"
-                Text="Reset filter" />
+                Text="Reset filter" 
+                BackgroundColor="#262322"
+                TextColor="White"/>
         </StackLayout>
     </Frame>
  </xct:Popup>

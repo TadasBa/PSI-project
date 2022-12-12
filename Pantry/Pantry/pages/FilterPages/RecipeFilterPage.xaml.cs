@@ -17,7 +17,7 @@ namespace Pantry.pages
         public RecipeFilterPage(string typeValue, DateTime? startDate, DateTime? endDate)
         {
             InitializeComponent();
-            TypePicker.ItemsSource = RecipeHandler.GetTypes();
+            TypePicker.ItemsSource = RecipeHandler.RecipeTypes;
             GetValues(typeValue, startDate, endDate);
         }
 

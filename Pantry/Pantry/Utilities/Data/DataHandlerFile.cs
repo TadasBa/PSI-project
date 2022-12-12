@@ -49,7 +49,7 @@ namespace Pantry
             }
         }
 
-        public async Task GetProducts(int id)
+        public async Task GetProducts()
         {
             try
             {
@@ -73,7 +73,7 @@ namespace Pantry
         public DataHandlerFile()
         {
             path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "products.data");
-            GetProducts(0);
+            GetProducts();
         }
 
     }

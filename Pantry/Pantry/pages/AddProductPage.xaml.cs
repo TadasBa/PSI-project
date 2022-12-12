@@ -1,5 +1,6 @@
 ﻿using Pantry.enums;
 using Pantry.models;
+using Pantry.models.Login;
 using Plugin.LocalNotification;
 using Rg.Plugins.Popup.Services;
 using System;
@@ -25,9 +26,11 @@ namespace Pantry.pages
     {
 
         IDataHandler<EventArgs> dataHandler;
+        LoginService loginService;
         public AddProductPage()
         {
             dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
+            loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
             InitializeComponent();
             TypePicker.ItemsSource = ProductTypeHandler.Values;
             ExpiryDate.MinimumDate = DateTime.Now;
@@ -53,7 +56,7 @@ namespace Pantry.pages
             else
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-                Product product = new Product(productName, selectedType, ExpiryDate.Date);
+                Product product = new Product(productName, selectedType, ExpiryDate.Date, loginService.currentUser.Id);
 
                 if (Regex.IsMatch(productName, @"^[a-zA-Z\s]+$") == true)
                 {
