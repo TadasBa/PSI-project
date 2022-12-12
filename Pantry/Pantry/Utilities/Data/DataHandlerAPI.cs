@@ -10,6 +10,7 @@ using Pantry.Utilities;
 using Style = Pantry.models.Style;
 using Pantry.Utilities.Data.Events;
 using System.Collections.Generic;
+using Pantry.models.Login;
 
 namespace Pantry
 {
@@ -17,11 +18,14 @@ namespace Pantry
     {
         public ConcurrentHashSet<Product> ProductList { get; private set; } = new ConcurrentHashSet<Product>();
         private HttpClient _client = DependencyService.Get<HttpClient>(DependencyFetchTarget.GlobalInstance);
+        private LoginService _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
+       
 
         public DataHandlerAPI()
         {
             _client.BaseAddress = new Uri("http://elvinosas.lt");
-            _ = GetProducts(0);
+            _ = GetProducts();
+            
         }
 
         public event ProductUpdatedEventHandler<EventArgs> ProductUpdated;
@@ -99,10 +103,11 @@ namespace Pantry
             }
         }
 
-        public async Task GetProducts(int id)
+        public async Task GetProducts()
         {
             try
             {
+                int id = _loginService.currentUser.Id;
                 HttpResponseMessage m = await _client.GetAsync("http://elvinosas.lt/api/Product/usrid?usrid="+ id);
                 m.EnsureSuccessStatusCode();
 

@@ -13,7 +13,7 @@ namespace Pantry
         Task RemoveProduct(Product product);
         Task UpdateProduct(Product product, string name, DateTime date, ProductType type);
 
-        Task GetProducts(int id);
+        Task GetProducts();
 
         event ProductUpdatedEventHandler<TEArgs> ProductUpdated;
     }

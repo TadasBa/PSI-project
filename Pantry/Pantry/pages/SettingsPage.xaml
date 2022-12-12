@@ -2,7 +2,7 @@
 <ContentPage
     x:Class="Pantry.pages.SettingsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:pages="clr-namespace:Pantry.pages" x:DataType="pages:SettingsPage"
     BackgroundColor="WhiteSmoke">
     <ContentPage.Content>
         <StackLayout
@@ -27,12 +27,20 @@
             <Label
                 Padding="0,10,0,0"
                 FontSize="Small"
-                Text="Change Username                                                                     &gt;" />
+                Text="Edit account                                                                                 &gt;">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnEditAccount" />
+                </Label.GestureRecognizers>
+            </Label>
             <Label
                 Padding="0,10,0,0"
                 FontSize="Small"
-                Text="Delete Account                                                                           &gt;" />
-            <StackLayout Orientation="Horizontal">
+                Text="Delete Account                                                                           &gt;" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnDeleteAccount" />
+                </Label.GestureRecognizers>
+            </Label>
+                <StackLayout Orientation="Horizontal">
                 <Image
                     Margin="0,35,4,0"
                     HeightRequest="20"

@@ -1,6 +1,7 @@
 ﻿using Android.OS;
 using Pantry.enums;
 using Pantry.models;
+using Pantry.models.Login;
 using Pantry.Utilities;
 using Plugin.LocalNotification;
 using System;
@@ -88,7 +89,8 @@ namespace Pantry.pages
         
      
         public void Update(object sender, EventArgs args)
-        { 
+        {
+
             IOrderedEnumerable<Product> ordered =
                             from product in _dataHandler.ProductList.GetAll()
                             where product.ProductName.ToLower().StartsWith(SearchFilter.Text)

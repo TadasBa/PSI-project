@@ -30,7 +30,7 @@ namespace Pantry.models
                     {
                         if (i.Name.ToLower() == p.ProductName.ToLower())
                         {
-                            RecipeProducts.Add(r.ID, p.ExpiryDate);
+                            RecipeProducts.Add(r.Id, p.ExpiryDate);
 
                         }
                     }
@@ -50,7 +50,7 @@ namespace Pantry.models
         {
             foreach (int key in RecipeProducts.Keys)
             {
-                if(key == r.ID)
+                if(key == r.Id)
                 {
                     return RecipeProducts[key].Min(date => date);
                 }
@@ -62,7 +62,7 @@ namespace Pantry.models
         {
             foreach (int key in RecipeProducts.Keys)
             {
-                if (key == r.ID)
+                if (key == r.Id)
                 {
                     return RecipeProducts[key].Max(date => date);
                 }

@@ -16,7 +16,7 @@ namespace Pantry.models
         [JsonProperty]
         public int Id { get; set; }
         [JsonProperty]
-        public int UsrID { get; private set; } = 0;
+        public int UsrID { get; private set; }
         [JsonProperty]
         public string ProductName { get; set; }
         [JsonProperty]
@@ -33,8 +33,9 @@ namespace Pantry.models
         [JsonIgnore]
         public string ImageSource { get; set; }
 
-        public Product(string name, ProductType type, DateTime expiryDate)
+        public Product(string name, ProductType type, DateTime expiryDate, int userID)
         {
+            UsrID = userID;
             ProductName = name;
             ProductType = type;
             ExpiryDate = expiryDate;

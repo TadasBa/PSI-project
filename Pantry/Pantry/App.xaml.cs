@@ -15,10 +15,10 @@ namespace Pantry
         public App()
         {
             InitializeComponent();
-            DependencyService.Register<ILoginService, LoginService>();
+            DependencyService.Register<LoginService, LoginService>();
             DependencyService.Register<HttpClient>();
             DependencyService.Register<IDataHandler<EventArgs>, DataHandlerAPI>();
-            MainPage = new MainPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

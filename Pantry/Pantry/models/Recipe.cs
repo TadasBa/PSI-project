@@ -9,7 +9,7 @@ namespace Pantry.models
 
     public class Recipe
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Title { get; set; }
         //public string Ingredients { get; set; }
         public List<Ingredient> Ingredients { get; set; }
@@ -24,7 +24,7 @@ namespace Pantry.models
 
         public Recipe(int ID, string title, string description, string type, string imageSource, List<Ingredient> ingredients)
         {
-            this.ID = ID;
+            this.Id = ID;
             this.Title = title;
             this.Description = description;
             this.Type = type;
