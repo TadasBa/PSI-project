@@ -40,8 +40,8 @@ namespace Pantry
         {
             product.ProductName = name;
             product.ExpiryDate = date;
-            product.DaysLeft = SelectColor.DisplayDaysLeft();
-            product.ProductColor = SelectColor.SetColor(date);
+            product.DaysLeft = SelectColor.DisplayDaysLeft(date, DateTime.Now);
+            product.ProductColor = SelectColor.SetColor(date, DateTime.Now);
             product.ProductType = type;
             await UpdateProductDB(product);
             ProductUpdated(this, EventArgs.Empty);

@@ -20,11 +20,13 @@ namespace Pantry.models
         public static void SetProductsForRecipes()
         {
 
+            var products = dataHandler.ProductList.GetAll();
+
             foreach (Recipe r in RecipeList)
             {
                 foreach (Ingredient i in r.Ingredients)
                 {
-                    foreach (Product p in dataHandler.ProductList.GetAll())
+                    foreach (Product p in products)
                     {
                         if (i.Name.ToLower() == p.ProductName.ToLower())
                         {

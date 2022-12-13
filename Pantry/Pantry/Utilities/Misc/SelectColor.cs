@@ -10,17 +10,17 @@ namespace Pantry.models
         private const int daysLimit2 = 3;
         private static int daysLeft;
 
-        public static int GetDaysLeft(DateTime expiryDate)
+        public static int GetDaysLeft(DateTime expiryDate, DateTime currentDate)
         {
-            TimeSpan interval = expiryDate - DateTime.Now;
+            TimeSpan interval = expiryDate - currentDate;
 
             return (int) Math.Ceiling(interval.TotalDays);
 
         }
 
-        public static string SetColor(DateTime expiryDate)
+        public static string SetColor(DateTime expiryDate, DateTime currentDate)
         {
-            daysLeft = GetDaysLeft(expiryDate);
+            daysLeft = GetDaysLeft(expiryDate, currentDate);
 
 
             if (daysLeft <= daysLimit1)
@@ -39,9 +39,11 @@ namespace Pantry.models
             }
         }
 
-        public static string DisplayDaysLeft()
+        public static string DisplayDaysLeft(DateTime expiryDate, DateTime currentDate)
         {
-            if(daysLeft <= 0)
+            daysLeft = GetDaysLeft(expiryDate, currentDate);
+
+            if (daysLeft <= 0)
             {
                 return "Product expired";
             }
@@ -50,7 +52,6 @@ namespace Pantry.models
                 return "Days left: " + daysLeft.ToString();
             }
         }
-
 
     }
 }

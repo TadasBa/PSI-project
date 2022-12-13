@@ -8,7 +8,6 @@ namespace Pantry.models
 {
     static class Notification
     {
-
         public static NotificationRequest ProductExpirationNotification(DateTime expiryDate, string titleName, string defaultMessage = "Check your fridge")
         {
             string message;
@@ -21,12 +20,12 @@ namespace Pantry.models
                 message = defaultMessage;
             }
 
-            else if (SelectColor.GetDaysLeft(expiryDate) < daysLimit1)
+            else if (SelectColor.GetDaysLeft(expiryDate, DateTime.Now) < daysLimit1)
             {
                 message = "You have an expired product";
             }
 
-            else if (SelectColor.GetDaysLeft(expiryDate) >= daysLimit1 && SelectColor.GetDaysLeft(expiryDate) <= daysLimit2)
+            else if (SelectColor.GetDaysLeft(expiryDate, DateTime.Now) >= daysLimit1 && SelectColor.GetDaysLeft(expiryDate, DateTime.Now) <= daysLimit2)
             {
                 message = "Your product will expire soon";
             }

@@ -35,7 +35,7 @@ namespace Pantry.pages
         {
             if (wSwitch.IsToggled)
             {
-                if (SelectColor.GetDaysLeft(t) < 1)
+                if (SelectColor.GetDaysLeft(t, DateTime.Now) < 1)
                 {
                     LocalNotificationCenter.Current.Show(Notification.ProductExpirationNotification(expiryDate: t, titleName: "WARNING", "You added product that will expire soon"));
                 }
