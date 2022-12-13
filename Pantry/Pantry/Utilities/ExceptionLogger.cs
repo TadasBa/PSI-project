@@ -46,8 +46,8 @@ namespace Pantry.Utilities
                 sw.Close();
             }
 
-            string text = File.ReadAllText(file);
-            Debug.WriteLine(text);
+            //string text = File.ReadAllText(file);
+            //Debug.WriteLine(text);
         }
     }
 }

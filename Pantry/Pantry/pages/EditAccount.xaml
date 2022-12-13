@@ -1,0 +1,46 @@
+﻿<xct:Popup
+    x:Class="Pantry.pages.EditAccount"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit" xmlns:pages="clr-namespace:Pantry.pages" x:DataType="pages:EditAccount"
+    Size="300, 500"
+    Color="Transparent">
+    <Frame CornerRadius="20" HasShadow="True">
+        <StackLayout>
+            <Label
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Edit account"
+                TextColor="Black" />
+            <Label
+                Padding="0,10,0,0"
+                Text="• Account name"
+                TextColor="Black" />
+            <Entry Text="{Binding Name}" />
+            <Label
+                Padding="0,10,0,0"
+                Text="• Email"
+                TextColor="Black" />
+            <Entry Text="{Binding Email}" />
+            <Label
+                Padding="0,10,0,0"
+                Text="• Password"
+                TextColor="Black" />
+            <Entry Text="{Binding Password}" IsPassword="True" />
+            <Button
+                    Margin="2.5"
+                    BackgroundColor="#262322"
+                    Clicked="BtnUpdate"
+                    CornerRadius="20"
+                    Text="Update"
+                    TextColor="White" />
+            <Button
+                    Margin="2.5"
+                    BackgroundColor="#262322"
+                    Clicked="BtnCancel"
+                    CornerRadius="20"
+                    Text="Cancel"
+                    TextColor="White" />
+        </StackLayout>
+    </Frame>
+</xct:Popup>

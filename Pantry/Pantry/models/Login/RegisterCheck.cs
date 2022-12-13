@@ -8,10 +8,8 @@ namespace Pantry.models.Login
 {
     public class RegisterCheck
     {
-        public void NewUserData(string email, string username, string password)
-        {
+       LoginService _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
 
-        }
         public bool CheckIfEmailCorrect(string email)
         {
             if(Regex.IsMatch(email, "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$") == true)
@@ -27,17 +25,6 @@ namespace Pantry.models.Login
         public bool CheckIfEntriesAreNotNull(string email, string username, string password)
         {
             if (email == null || username == null || password == null)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        public bool CheckIfUserIsNotTaken(string username)
-        {
-            if (username == "admin")
             {
                 return false;
             }

@@ -1,4 +1,6 @@
-﻿using Pantry.models;
+﻿using Android.Telephony;
+using Pantry.models;
+using Pantry.models.Login;
 using Plugin.LocalNotification;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Input;
+using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,9 +21,11 @@ namespace Pantry.pages
     {
         static Switch wSwitch = new Switch();
         static Switch nSwitch = new Switch();
+        private LoginService _loginService;
 
         public SettingsPage()
         {
+            _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
             InitializeComponent();
         }
 
@@ -59,6 +64,21 @@ namespace Pantry.pages
         private void notificationSwitch_Toggled(object sender, ToggledEventArgs e)
         {
             nSwitch.IsToggled = e.Value;
+        }
+
+        private async void OnEditAccount(object sender, EventArgs e)
+        {
+            _ = await Navigation.ShowPopupAsync(new EditAccount(_loginService.currentUser));
+        }
+
+        private async void OnDeleteAccount(object sender, EventArgs e)
+        {
+            bool result = await App.Current.MainPage.DisplayAlert("Delete account", "The account will be deleted", "Delete", "Close");
+            if (result)
+            {
+                _loginService.RemoveUser(_loginService.currentUser);
+                Application.Current.MainPage = new LoginPage();
+            }
         }
     }
 }

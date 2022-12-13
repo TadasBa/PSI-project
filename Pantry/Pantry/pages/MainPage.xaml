@@ -6,9 +6,8 @@
     xmlns:local="clr-namespace:Pantry.pages"
     BarBackgroundColor="#262322">
 
-
-    <local:ProductPage Title="Products" IconImageSource="product.png" />
-    <local:RecipePage Title="Recipes" IconImageSource="recipe_icon.png" />
+    <local:ProductPage Title="Products" IconImageSource="product.png"/>
+    <local:RecipePage Title="Recipes" IconImageSource="recipe_icon.png"/>
     <local:SettingsPage Title="Settings" IconImageSource="statistics_icon.png" />
 
 

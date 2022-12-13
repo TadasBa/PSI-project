@@ -23,7 +23,7 @@ namespace Pantry.pages
         public RecipePage()
         {
             dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
-            dataHandler.GetProducts(0);
+            var products =  dataHandler.ProductList.GetAll();
 
             TappedItem = new Command((object s) =>
             {
@@ -56,28 +56,29 @@ namespace Pantry.pages
                 }
             };
 
-            //List<Ingredient> list2 = new List<Ingredient>()
-            //{
-            //    new Ingredient()
-            //    {
-            //        Name = "agurkas",
-            //        Amount = "200g"
-            //    },
+            List<Ingredient> list2 = new List<Ingredient>()
+            {
+                new Ingredient()
+                {
+                    Name = "agurkas",
+                    Amount = "200g"
+                },
 
-            //    new Ingredient()
-            //    {
-            //        Name = "ananasas",
-            //        Amount = "200ml"
-            //    }
-            //};
+                new Ingredient()
+                {
+                    Name = "ananasas",
+                    Amount = "200ml"
+                }
+            };
 
-            RecipeHandler.RecipeList.Add(new Recipe() { ID = 1, Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260", Ingredients = list});
-            //RecipeHandler.RecipeList.Add(new Recipe() { ID = 2, Title = "hello", Description = "...", Type = "veg", ImageSource = null, Ingredients = list2 });
+            RecipeHandler.RecipeList.Add(new Recipe() { Id = 1, Title = "Cheese sandwich", Description = "Spread 1/2 Tbsp of butter on one side of each slice of bread.\r\nSet a skillet over medium/low heat and place 2 slices of bread in the skillet with the butter-side-down.\r\nStack cheeses on one piece of toast: cheddar, havarti, then gouda. Once the breads are golden brown, closed the sandwich with the crisp sides on the outside.\r\nContinue cooking until the bread is a rich golden brown, flipping once and press down lightly to help the bread stick to the cheese. Total cooking time should one 5-6 minutes. Keep the heat on medium low for the breads to toast slowly, giving your cheese a chance to fully melt and adhere to the bread.", Type = "Vegetarian", ImageSource = "https://media.istockphoto.com/photos/close-up-shot-of-tomato-soup-with-a-grilled-cheese-sandwich-blue-and-picture-id898582260", Ingredients = list});
+            RecipeHandler.RecipeList.Add(new Recipe() { Id = 2, Title = "hello", Description = "...", Type = "veg", ImageSource = null, Ingredients = list2 });
+            RecipeHandler.SetTypes();
 
             InitializeComponent();
             BindingContext = this;
-            RecipeHandler.RecipeList.CollectionChanged += Update;
             dataHandler.ProductUpdated += Update;
+            RecipeHandler.RecipeList.CollectionChanged += Update;
             Update(this, null);
         }
 
@@ -104,49 +105,56 @@ namespace Pantry.pages
 
         public void Update(object sender, EventArgs args)
         {
-            RecipeHandler.SetProductsForRecipes();
-
-            IEnumerable<Recipe> ordered = from recipe in RecipeHandler.RecipeList
-                                          where recipe.Title.ToLower().StartsWith(SearchFilter.Text)
-                                          orderby RecipeHandler.GetMinExpiryDate(recipe)
-                                          select recipe;
-
-
-            if (selectedType != null && startDate != null && endDate != null)
+            if(dataHandler.ProductList.Count != 0)
             {
-                IEnumerable<Recipe> filteredByDateAndType = from recipe in ordered
-                                                            where recipe.Type == selectedType
-                                                                && RecipeHandler.GetMinExpiryDate(recipe) >= startDate
-                                                                && RecipeHandler.GetMaxExpiryDate(recipe) <= endDate
-                                                            select recipe;
+                RecipeHandler.SetProductsForRecipes();
 
-                recipeCollectionView.ItemsSource = filteredByDateAndType;
-
-            }
-            else if (selectedType != null)
-            {
-                IEnumerable<Recipe> filteredByType = from recipe in ordered
-                                                     where recipe.Type == selectedType
-                                                     select recipe;
-
-                recipeCollectionView.ItemsSource = filteredByType;
-
-            }
-            else if (startDate != null && endDate != null)
-            {
-                IEnumerable<Recipe> filteredByDate= from recipe in ordered
-                                                    where RecipeHandler.GetMinExpiryDate(recipe) >= startDate
-                                                        && RecipeHandler.GetMaxExpiryDate(recipe) <= endDate
-                                                    select recipe;
-
-                recipeCollectionView.ItemsSource = filteredByDate;
+                IEnumerable<Recipe> ordered = from recipe in RecipeHandler.RecipeList
+                                              where recipe.Title.ToLower().StartsWith(SearchFilter.Text)
+                                              orderby RecipeHandler.GetMinExpiryDate(recipe)
+                                              select recipe;
 
 
-            }
-            else
-            {
-                recipeCollectionView.ItemsSource = ordered;
+                if (selectedType != null && startDate != null && endDate != null)
+                {
+                    IEnumerable<Recipe> filteredByDateAndType = from recipe in ordered
+                                                                where recipe.Type == selectedType
+                                                                    && RecipeHandler.GetMinExpiryDate(recipe) >= startDate
+                                                                    && RecipeHandler.GetMaxExpiryDate(recipe) <= endDate
+                                                                select recipe;
+
+                    recipeCollectionView.ItemsSource = filteredByDateAndType;
+
+                }
+                else if (selectedType != null)
+                {
+                    IEnumerable<Recipe> filteredByType = from recipe in ordered
+                                                         where recipe.Type == selectedType
+                                                         select recipe;
+
+                    recipeCollectionView.ItemsSource = filteredByType;
+
+                }
+                else if (startDate != null && endDate != null)
+                {
+                    IEnumerable<Recipe> filteredByDate = from recipe in ordered
+                                                         where RecipeHandler.GetMinExpiryDate(recipe) >= startDate
+                                                             && RecipeHandler.GetMaxExpiryDate(recipe) <= endDate
+                                                         select recipe;
+
+                    recipeCollectionView.ItemsSource = filteredByDate;
+
+
+                }
+                else
+                {
+                    recipeCollectionView.ItemsSource = ordered;
+                }
             }
         }
+
     }
+            
+
+            
 }

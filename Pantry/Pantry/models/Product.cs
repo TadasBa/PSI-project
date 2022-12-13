@@ -33,9 +33,9 @@ namespace Pantry.models
         [JsonIgnore]
         public string ImageSource { get; set; }
 
-        public Product(string name, ProductType type, DateTime expiryDate, int usrID)
+        public Product(string name, ProductType type, DateTime expiryDate, int userID)
         {
-            UsrID = usrID;
+            UsrID = userID;
             ProductName = name;
             ProductType = type;
             ExpiryDate = expiryDate;

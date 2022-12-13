@@ -31,6 +31,7 @@ namespace Pantry.pages
             InitializeComponent();
             TypePicker.ItemsSource = ProductTypeHandler.Values;
             TypePicker.SelectedItem = Type.ToDescriptionString();
+            ExpiryDate.MinimumDate = DateTime.Now;
         }
         public void OnCanceled(object sender, EventArgs args)
         {
