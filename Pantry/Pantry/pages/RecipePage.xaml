@@ -27,7 +27,7 @@
                     WidthRequest="40" />
             </StackLayout>
             <BoxView
-                Margin="3"
+                Margin="0.5"
                 HeightRequest="1.5"
                 Color="LightGray" />
             <StackLayout>
@@ -37,6 +37,7 @@
                             <Grid Padding="10">
                                 <Frame
                                     Padding="10,10,10,10"
+                                    BackgroundColor="WhiteSmoke"
                                     BorderColor="DarkGray"
                                     CornerRadius="20"
                                     HasShadow="True">
@@ -50,8 +51,11 @@
                                             Source="{Binding ImageSource}"
                                             WidthRequest="60" />
                                         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-                                            <Label FontSize="Medium" Text="{Binding Title}" TextColor="Black"/>
-                                            <Label Text="{Binding Type}"/>
+                                            <Label
+                                                FontSize="Medium"
+                                                Text="{Binding Title}"
+                                                TextColor="Black" />
+                                            <Label Text="{Binding Type}" />
                                         </StackLayout>
                                     </StackLayout>
                                 </Frame>

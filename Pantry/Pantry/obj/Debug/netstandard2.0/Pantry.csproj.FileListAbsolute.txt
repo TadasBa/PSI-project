@@ -115,3 +115,4 @@ C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\refint
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\Pantry.pdb
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\ref\Pantry.dll
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditAccount.xaml.g.cs
+C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditAccount.xaml.g.cs
