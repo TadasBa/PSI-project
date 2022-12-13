@@ -69,6 +69,7 @@ namespace Pantry
         {
             try
             {
+                
                 Application.Current.MainPage.DisplayToastAsync("Creating product...", 1000);
 
                 StringContent c = new StringContent(JsonConvert.SerializeObject(product), UTF32Encoding.UTF8, "application/json");

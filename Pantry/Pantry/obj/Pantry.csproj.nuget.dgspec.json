@@ -53,7 +53,7 @@
             },
             "Plugin.LocalNotification": {
               "target": "Package",
-              "version": "[10.0.2, )"
+              "version": "[10.0.3, )"
             },
             "Rg.Plugins.Popup": {
               "target": "Package",
@@ -69,7 +69,7 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[5.0.0.2515, )"
+              "version": "[5.0.0.2545, )"
             }
           },
           "imports": [
