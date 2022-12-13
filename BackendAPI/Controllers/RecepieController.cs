@@ -18,7 +18,7 @@ namespace BackendAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get()
         {
             var recepie = await _dbContext.Recepies.ToListAsync();
             return recepie == null ? NotFound() : Ok(recepie);
@@ -33,7 +33,7 @@ namespace BackendAPI.Controllers
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        public async Task<IActionResult> CreateProduct(Recepie recepie)
+        public async Task<IActionResult> CreateRecepie(Recepie recepie)
         {
             await _dbContext.Recepies.AddAsync(recepie);
             await _dbContext.SaveChangesAsync();
@@ -42,7 +42,7 @@ namespace BackendAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update(int id, Recepie recepie)
         {
@@ -51,7 +51,7 @@ namespace BackendAPI.Controllers
             _dbContext.Entry(recepie).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id}")]
@@ -65,7 +65,7 @@ namespace BackendAPI.Controllers
             _dbContext.Recepies.Remove(recepie);
             await _dbContext.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
     }
 }
