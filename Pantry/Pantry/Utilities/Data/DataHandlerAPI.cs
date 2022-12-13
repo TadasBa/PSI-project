@@ -32,7 +32,9 @@ namespace Pantry
 
         public async Task AddProduct(Product product)
         {
+
             await AddProductDB(product);
+            await UpdateProduct(product,product.ProductName, product.ExpiryDate, product.ProductType);
             ProductUpdated(this, new ProductUpdatedApiArgs(_client.BaseAddress.AbsoluteUri));
         }
         public async Task RemoveProduct(Product product)

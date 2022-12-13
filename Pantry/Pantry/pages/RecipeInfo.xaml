@@ -5,19 +5,30 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pantry="clr-namespace:Pantry"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
-    Size="350,500"
+    Size="350,650"
     Color="Transparent">
     <Frame CornerRadius="20" HasShadow="True">
         <StackLayout Orientation="Vertical">
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Margin="15" Orientation="Horizontal">
                 <Image
                     x:Name="recipeImage"
                     HeightRequest="100"
                     WidthRequest="100" />
-                <Label x:Name="recipeTitle" FontSize="Large" />
+                <Label
+                    x:Name="recipeTitle"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    TextColor="Black"
+                    VerticalOptions="Center" />
             </StackLayout>
-            <Label x:Name="recipeIngredients" />
-            <Label x:Name="recipeDescription" />
+            <Label
+                x:Name="recipeIngredients"
+                Padding="0,0,0,20"
+                TextColor="Black" />
+            <Label
+                x:Name="recipeDescription"
+                TextColor="Black"
+                VerticalOptions="Center" />
         </StackLayout>
     </Frame>
 </xct:Popup>
