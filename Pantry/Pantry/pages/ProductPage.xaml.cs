@@ -27,6 +27,7 @@ namespace Pantry.pages
         public ProductPage()
         {
             _dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
+            _ = _dataHandler.GetProducts();
 
             LongPressItem = new Command(async (object s) =>
             {
