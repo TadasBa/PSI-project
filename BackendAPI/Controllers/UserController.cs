@@ -86,7 +86,7 @@ namespace BackendAPI.Controllers
             return product == null ? NotFound() : Ok(product);
         }
 
-        private string HashCode(string password)
+        public string HashCode(string password)
         {
             var passBytes = Encoding.Default.GetBytes(password);
 

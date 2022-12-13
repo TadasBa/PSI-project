@@ -36,7 +36,7 @@ namespace BackendAPI.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> GetByUsrId(int usrid)
         {
-            var product = _dbContext.Products.Where(product => product.UsrID == usrid);
+            var product = await _dbContext.Products.Where(product => product.UsrID == usrid).ToListAsync();
             return product == null ? NoContent() : Ok(product);
         }
 
@@ -51,7 +51,7 @@ namespace BackendAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update(int id, Product product)
         {
@@ -60,11 +60,11 @@ namespace BackendAPI.Controllers
             _dbContext.Entry(product).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Delete(int id)
         {
@@ -74,7 +74,7 @@ namespace BackendAPI.Controllers
             _dbContext.Products.Remove(productToDelete);
             await _dbContext.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
     }
 }
