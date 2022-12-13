@@ -18,7 +18,7 @@ namespace BackendAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get(int id)
+        public async Task<IActionResult> Get()
         {
             var product = await _dbContext.Products.ToListAsync();
             return product == null ? NotFound() : Ok(product);

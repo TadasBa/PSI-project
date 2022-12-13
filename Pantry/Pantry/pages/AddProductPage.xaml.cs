@@ -53,7 +53,7 @@ namespace Pantry.pages
             else
             {
                 ProductType selectedType = ProductTypeExtensions.StringToEnum(value);
-                Product product = new Product(productName, selectedType, ExpiryDate.Date);
+                Product product = new Product(productName, selectedType, ExpiryDate.Date, 0);
 
                 if (Regex.IsMatch(productName, @"^[a-zA-Z\s]+$") == true)
                 {
