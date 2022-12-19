@@ -28,4 +28,10 @@
     <ProjectReference Include="..\BackendAPI\BackendAPI.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="ControllerTests.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>
