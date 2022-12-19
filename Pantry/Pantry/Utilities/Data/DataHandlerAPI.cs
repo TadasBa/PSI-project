@@ -17,14 +17,13 @@ namespace Pantry
     internal class DataHandlerAPI : IDataHandler<EventArgs>
     {
         public ConcurrentHashSet<Product> ProductList { get; private set; } = new ConcurrentHashSet<Product>();
-        private HttpClient _client = DependencyService.Get<HttpClient>(DependencyFetchTarget.GlobalInstance);
+        private HttpClient _client = new HttpClient();
         private LoginService _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
        
 
         public DataHandlerAPI()
         {
             _client.BaseAddress = new Uri("http://elvinosas.lt");
-            _ = GetProducts();
             
         }
 
@@ -34,7 +33,6 @@ namespace Pantry
         {
 
             await AddProductDB(product);
-            await UpdateProduct(product,product.ProductName, product.ExpiryDate, product.ProductType);
             ProductUpdated(this, new ProductUpdatedApiArgs(_client.BaseAddress.AbsoluteUri));
         }
         public async Task RemoveProduct(Product product)

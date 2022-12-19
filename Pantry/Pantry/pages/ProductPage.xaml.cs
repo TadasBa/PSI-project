@@ -49,6 +49,7 @@ namespace Pantry.pages
             InitializeComponent();
             BindingContext = this;
             _dataHandler.ProductUpdated += Update;
+            _dataHandler.GetProducts();
             Update(this, null);
         }
         

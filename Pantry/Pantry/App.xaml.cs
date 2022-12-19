@@ -7,6 +7,8 @@ using Pantry.models.Login;
 using Android.Content.PM;
 using Android.OS;
 using Android;
+using Castle.DynamicProxy;
+using Pantry.Utilities.Interceptor;
 
 namespace Pantry
 {
@@ -15,9 +17,10 @@ namespace Pantry
         public App()
         {
             InitializeComponent();
+            var proxy = new ProxyGenerator();
             DependencyService.Register<LoginService, LoginService>();
             DependencyService.Register<HttpClient>();
-            DependencyService.Register<IDataHandler<EventArgs>, DataHandlerAPI>();
+            DependencyService.RegisterSingleton(proxy.CreateInterfaceProxyWithTarget<IDataHandler<EventArgs>>(new DataHandlerAPI(), new DataHandlerInterceptor()));
             MainPage = new LoginPage();
         }
 

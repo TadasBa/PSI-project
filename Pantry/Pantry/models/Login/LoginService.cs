@@ -20,7 +20,6 @@ namespace Pantry.models.Login
         public LoginService()
         {
             _client.BaseAddress = new Uri("http://elvinosas.lt");
-
         }
         
         public async Task<bool> Login(User user)

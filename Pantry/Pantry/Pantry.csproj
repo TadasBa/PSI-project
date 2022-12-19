@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Plugin.LocalNotification" Version="10.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
