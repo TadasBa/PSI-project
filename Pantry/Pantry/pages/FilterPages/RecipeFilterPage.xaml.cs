@@ -6,6 +6,7 @@ using Xamarin.Forms;
 using System;
 using Android.Util;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Pantry.pages
 {
@@ -17,7 +18,7 @@ namespace Pantry.pages
         public RecipeFilterPage(string typeValue, DateTime? startDate, DateTime? endDate)
         {
             InitializeComponent();
-            TypePicker.ItemsSource = RecipeHandler.GetTypes();
+            TypePicker.ItemsSource = RecipeHandler.RecipeTypes.ToList();
             GetValues(typeValue, startDate, endDate);
         }
 

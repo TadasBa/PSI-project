@@ -16,11 +16,20 @@
   </ItemGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <PackageReference Include="Castle.Core" Version="5.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+>>>>>>> a68378e41ff6f10bfaeca2b700d11361f24b675e
     <PackageReference Include="Plugin.LocalNotification" Version="10.0.3" />
     <PackageReference Include="Rg.Plugins.Popup" Version="2.1.0" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.5" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
+<<<<<<< HEAD
     <PackageReference Include="Xamarin.Essentials" Version="1.7.4" />
+=======
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+>>>>>>> a68378e41ff6f10bfaeca2b700d11361f24b675e
   </ItemGroup>
 
   <ItemGroup>
@@ -49,6 +58,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="pages\FilterPages\RecipeFilterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="pages\EditAccount.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="pages\LoginPages\LoginPage.xaml">

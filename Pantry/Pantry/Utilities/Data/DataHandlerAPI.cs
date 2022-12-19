@@ -10,24 +10,28 @@ using Pantry.Utilities;
 using Style = Pantry.models.Style;
 using Pantry.Utilities.Data.Events;
 using System.Collections.Generic;
+using Pantry.models.Login;
 
 namespace Pantry
 {
     internal class DataHandlerAPI : IDataHandler<EventArgs>
     {
         public ConcurrentHashSet<Product> ProductList { get; private set; } = new ConcurrentHashSet<Product>();
-        private HttpClient _client = DependencyService.Get<HttpClient>(DependencyFetchTarget.GlobalInstance);
+        private HttpClient _client = new HttpClient();
+        private LoginService _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
+       
 
         public DataHandlerAPI()
         {
             _client.BaseAddress = new Uri("http://elvinosas.lt");
-            _ = GetProducts(0);
+            
         }
 
         public event ProductUpdatedEventHandler<EventArgs> ProductUpdated;
 
         public async Task AddProduct(Product product)
         {
+
             await AddProductDB(product);
             ProductUpdated(this, new ProductUpdatedApiArgs(_client.BaseAddress.AbsoluteUri));
         }
@@ -65,6 +69,7 @@ namespace Pantry
         {
             try
             {
+                
                 Application.Current.MainPage.DisplayToastAsync("Creating product...", 1000);
 
                 StringContent c = new StringContent(JsonConvert.SerializeObject(product), UTF32Encoding.UTF8, "application/json");
@@ -99,10 +104,11 @@ namespace Pantry
             }
         }
 
-        public async Task GetProducts(int id)
+        public async Task GetProducts()
         {
             try
             {
+                int id = _loginService.currentUser.Id;
                 HttpResponseMessage m = await _client.GetAsync("http://elvinosas.lt/api/Product/usrid?usrid="+ id);
                 m.EnsureSuccessStatusCode();
 

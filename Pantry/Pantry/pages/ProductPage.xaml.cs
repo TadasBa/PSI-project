@@ -1,5 +1,7 @@
-﻿using Pantry.enums;
+﻿using Android.OS;
+using Pantry.enums;
 using Pantry.models;
+using Pantry.models.Login;
 using Pantry.Utilities;
 using Plugin.LocalNotification;
 using System;
@@ -25,6 +27,8 @@ namespace Pantry.pages
         public ProductPage()
         {
             _dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
+            _ = _dataHandler.GetProducts();
+
             LongPressItem = new Command(async (object s) =>
             {
 
@@ -45,6 +49,7 @@ namespace Pantry.pages
             InitializeComponent();
             BindingContext = this;
             _dataHandler.ProductUpdated += Update;
+            _dataHandler.GetProducts();
             Update(this, null);
         }
         
@@ -87,6 +92,7 @@ namespace Pantry.pages
      
         public void Update(object sender, EventArgs args)
         {
+
             IOrderedEnumerable<Product> ordered =
                             from product in _dataHandler.ProductList.GetAll()
                             where product.ProductName.ToLower().StartsWith(SearchFilter.Text)

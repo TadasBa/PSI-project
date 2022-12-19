@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Pantry.models;
 using Pantry.models.Login;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,9 +15,11 @@ namespace Pantry.pages
     public partial class RegisterPage : ContentPage
     {
         public RegisterCheck CheckDetails = new RegisterCheck();
+        LoginService _loginService;
 
         public RegisterPage()
         {
+            _loginService = DependencyService.Get<LoginService>(DependencyFetchTarget.GlobalInstance);
             InitializeComponent();
         }
 
@@ -24,7 +27,6 @@ namespace Pantry.pages
         {
             Application.Current.MainPage = new LoginPage();
         }
-
         private void BtnAddUser(object sender, EventArgs e)
         {
             if (CheckDetails.CheckIfEntriesAreNotNull(NewEmail.Text, NewUsername.Text, NewPassword.Text) == false)
@@ -32,19 +34,15 @@ namespace Pantry.pages
                 lblRegisterFailed.TextColor = Color.Red;
                 lblRegisterFailed.Text = "You haven't filled out  all the requirements";
             }
-            else if (CheckDetails.CheckIfEmailCorrect(NewEmail.Text) == false) 
+            else if (CheckDetails.CheckIfEmailCorrect(NewEmail.Text) == false)
             {
                 lblRegisterFailed.TextColor = Color.Red;
                 lblRegisterFailed.Text = "Try again with a valid email adress";
             }
-            else if(CheckDetails.CheckIfUserIsNotTaken(NewUsername.Text)==false)
-            {
-                lblRegisterFailed.TextColor = Color.Red;
-                lblRegisterFailed.Text = "Username already taken";
-            }
             else
             {
-                CheckDetails.NewUserData(NewEmail.Text, NewUsername.Text, NewPassword.Text);
+                User user = new User(NewUsername.Text, NewPassword.Text, NewEmail.Text);
+                _loginService.AddUser(user);
                 Application.Current.MainPage = new LoginPage();
             }
 

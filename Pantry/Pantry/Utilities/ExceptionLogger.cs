@@ -8,6 +8,7 @@ using Xamarin.CommunityToolkit.Converters;
 using Android;
 using System.Reflection;
 using Stream = System.IO.Stream;
+using System.Threading.Tasks;
 
 namespace Pantry.Utilities
 {
@@ -17,7 +18,18 @@ namespace Pantry.Utilities
         private static int line;
 
 
-        public static void LogExceptionToFile(Exception e, String eMessage = "no specified message")
+        public static void Log(string message)
+        {
+            string file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "DataHandlerLog.txt");
+            using (StreamWriter sw = new StreamWriter(file, true))
+            {
+                sw.WriteLine(message);
+                sw.Flush();
+                sw.Close();
+            }
+        }
+
+        public static void LogExceptionToFile(Exception e, string eMessage = "no specified message")
         {
             StackTrace st = new StackTrace(e, true);
             StackFrame sf = st.GetFrame(0);
@@ -46,8 +58,8 @@ namespace Pantry.Utilities
                 sw.Close();
             }
 
-            string text = File.ReadAllText(file);
-            Debug.WriteLine(text);
+            //string text = File.ReadAllText(file);
+            //Debug.WriteLine(text);
         }
     }
 }
