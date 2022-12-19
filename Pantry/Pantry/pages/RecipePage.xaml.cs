@@ -153,6 +153,8 @@ namespace Pantry.pages
                 "3 pounds" }, new Ingredient() { Name = "Onion powder", Amount = "1 tablespoon" }, new Ingredient() { Name = "Butter or margarine", Amount = "0,5 cup" }, new Ingredient() { Name = "Celery", Amount = "1" }}
             });
 
+            RecipeHandler.SetTypes();
+
             InitializeComponent();
             BindingContext = this;
             RecipeHandler.RecipeList.CollectionChanged += Update;
