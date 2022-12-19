@@ -16,7 +16,7 @@ namespace Pantry.Tests
         public void Add_ShouldReturnTrueIfItemAdded()
         {
 
-            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
+            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
             ConcurrentHashSet<Product> ProductList = new ConcurrentHashSet<Product>();
             ProductList.Add(p);
 
@@ -27,9 +27,9 @@ namespace Pantry.Tests
         public void Count_ShouldReturnTrueIfListContainsNumberOfItems()
         {
 
-            Product a = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
-            Product b = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
-            Product c = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
+            Product a = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
+            Product b = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
+            Product c = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
             ConcurrentHashSet<Product> ProductList = new ConcurrentHashSet<Product>();
             ProductList.Add(a);
             ProductList.Add(b);
@@ -43,7 +43,7 @@ namespace Pantry.Tests
         public void Clear_ShouldReturnTrueIfListIsEmpty()
         {
 
-            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
+            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
             ConcurrentHashSet<Product> ProductList = new ConcurrentHashSet<Product>();
             ProductList.Add(p);
             ProductList.Clear();
@@ -55,7 +55,7 @@ namespace Pantry.Tests
         public void Contains_ShouldReturnTrueIfListContainsItem()
         {
 
-            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
+            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
             ConcurrentHashSet<Product> ProductList = new ConcurrentHashSet<Product>();
             ProductList.Add(p);
             bool actual = ProductList.Contains(p);
@@ -67,7 +67,7 @@ namespace Pantry.Tests
         public void Remove_ShouldReturnTrueIfItemRemoved()
         {
 
-            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
+            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
             ConcurrentHashSet<Product> ProductList = new ConcurrentHashSet<Product>();
             ProductList.Add(p);
             ProductList.Remove(p);
@@ -77,3 +77,4 @@ namespace Pantry.Tests
 
     }
 }
+

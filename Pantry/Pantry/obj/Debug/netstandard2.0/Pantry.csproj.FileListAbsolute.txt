@@ -117,3 +117,4 @@ C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\ref\Pa
 C:\Users\Erika\source\repos\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditAccount.xaml.g.cs
 C:\Users\User\Desktop\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditAccount.xaml.g.cs
 C:\Users\eitvi\source\repos\Pantry\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditAccount.xaml.g.cs
+C:\Univerity\III Semestras\PSI\PSI-project\Pantry\Pantry\obj\Debug\netstandard2.0\pages\EditAccount.xaml.g.cs
