@@ -13,7 +13,7 @@ namespace Pantry.models
     public static class RecipeHandler
     {
         public static ObservableCollection<Recipe> RecipeList = new ObservableCollection<Recipe>();
-        public static List<string> RecipeTypes = new List<string>();
+        public static HashSet<string> RecipeTypes = new HashSet<string>();
         private static RecipeDictionary RecipeProducts = new RecipeDictionary();
         private static IDataHandler<EventArgs> dataHandler = DependencyService.Get<IDataHandler<EventArgs>>(DependencyFetchTarget.GlobalInstance);
 
@@ -45,7 +45,6 @@ namespace Pantry.models
                 RecipeTypes.Add(recipe.Type);
             }
         }
-
         public static DateTime? GetMinExpiryDate(Recipe r)
         {
             foreach (int key in RecipeProducts.Keys)

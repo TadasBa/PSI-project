@@ -13,7 +13,7 @@ using Xamarin.Forms;
 
 namespace Pantry.models.Login
 {
-    public class LoginService
+    public class LoginService : ILoginService
     {
         public User currentUser { get; set; }
         private HttpClient _client = new HttpClient();
