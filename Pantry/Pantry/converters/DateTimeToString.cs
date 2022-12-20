@@ -1,13 +1,38 @@
 ﻿using Pantry.Utilities;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Pantry.converters
 {
-    internal class DateTimeToString : IValueConverter
+    /*public class DateTimeToString //: IValueConverter
+    {
+        public String ConvertDateTimeToString(DateTime date)
+        {
+
+             return (date).ToString("yyyy-MM-dd");
+            
+
+        }
+
+        public DateTime ConvertStringToDateTime(String value)
+        {
+            DateTime date;
+
+              if (String.IsNullOrEmpty(value))
+              {
+                  date = new DateTime(0001, 01, 01);
+              }
+              else
+              {
+                  date = DateTime.ParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture);
+              }
+
+              return date;
+        
+    }*/
+
+    public class DateTimeToString : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -22,4 +47,5 @@ namespace Pantry.converters
 
         }
     }
+
 }

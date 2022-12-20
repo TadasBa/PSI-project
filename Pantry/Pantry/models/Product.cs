@@ -24,7 +24,7 @@ namespace Pantry.models
 
         private DateTime _date;
         [JsonProperty]
-        public DateTime ExpiryDate { get { return _date; } set { _date = value; ProductColor = SelectColor.SetColor(value); } }
+        public DateTime ExpiryDate { get { return _date; } set { _date = value; ProductColor = SelectColor.SetColor(value, DateTime.Now); } }
 
         [JsonIgnore]
         public string ProductColor { get; set; }
@@ -49,8 +49,8 @@ namespace Pantry.models
         }
         public void Update()
         {
-            ProductColor = SelectColor.SetColor(ExpiryDate);
-            DaysLeft = SelectColor.DisplayDaysLeft();
+            ProductColor = SelectColor.SetColor(ExpiryDate, DateTime.Now);
+            DaysLeft = SelectColor.DisplayDaysLeft(ExpiryDate, DateTime.Now);
             ImageSource = ProductType.ToString().ToLower() + ".jpg";
             SettingsPage.NotificationsOn(ExpiryDate);
         }
