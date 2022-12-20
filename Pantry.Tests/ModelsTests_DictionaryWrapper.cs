@@ -11,7 +11,7 @@ namespace Pantry.Tests
 {
     public class ModelsTests_DictionaryWrapper
     {
-        [Theory]
+        /*[Theory]
         [InlineData(1)]
         public void Add_ShouldAddValueToDictionary(int key)
         {
@@ -26,6 +26,6 @@ namespace Pantry.Tests
             testClass.Add(key, list);
             
             Assert.True(testClass.Count == 1);
-        }
+        }*/
     }
 }

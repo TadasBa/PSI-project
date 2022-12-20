@@ -49,7 +49,7 @@ namespace Pantry.Tests
             Assert.False(testClass.CheckIfEntriesAreNotNull("1", null, "1"));
         }
 
-        [Theory]
+        /*[Theory]
         [InlineData("admin1")]
         public void CheckIfUserIsNotTaken_ShouldReturnTrue(string username)
         {
@@ -63,6 +63,6 @@ namespace Pantry.Tests
         {
             RegisterCheck testClass = new RegisterCheck();
             Assert.False(testClass.CheckIfUserIsNotTaken(username));
-        }
+        }*/
     }
 }

@@ -11,7 +11,7 @@ namespace Pantry.Tests
 {
     public class ModelsTests_Login_LoginService
     {
-        [Theory]
+        /*[Theory]
         [InlineData("admin", "1234")]
         public void CheckUserDetails_ShouldReturnTrue(string username, string password)
         {
@@ -26,7 +26,7 @@ namespace Pantry.Tests
         {
             LoginService testClass = new LoginService();
             Assert.False(testClass.CheckUserDetails(username, password));
-        }
+        }*/
 
 
     }

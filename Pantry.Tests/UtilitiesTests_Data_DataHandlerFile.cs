@@ -17,7 +17,7 @@ namespace Pantry.Tests
         //[Fact]
         public void AddProduct_ShouldAddProductToList()
         {
-            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12));
+            Product p = new Product("morka", ProductType.VEGETABLES, new DateTime(2022, 12, 12), 1);
             ConcurrentHashSet<Product> ProductList = new ConcurrentHashSet<Product>();
             ProductList.Add(p);
 
