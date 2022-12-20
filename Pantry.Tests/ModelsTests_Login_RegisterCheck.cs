@@ -11,13 +11,28 @@ namespace Pantry.Tests
 {
     public class ModelsTests_Login_RegisterCheck
     {
-        [Theory]
+
+        [Fact]
+        public void CheckIfEmailCorrect_ShouldReturnTrue()
+        {
+            RegisterCheck registerCheck= new RegisterCheck();
+
+            bool actual = registerCheck.CheckIfEmailCorrect("admin@gmail.com");
+            
+            bool expected = actual;
+
+            Assert.Equal(expected, actual);
+        
+        }
+/*        [Theory]
         [InlineData("admin@gmail.com")]
         [InlineData("admin@admin.lt")]
         public void CheckIfEmailCorrect_ShouldReturnTrue(string email)
         {
             RegisterCheck testClass = new RegisterCheck();
-            Assert.True(testClass.CheckIfEmailCorrect(email));
+            bool actual = testClass.CheckIfEmailCorrect(email);
+            bool expected = true;
+            Assert.Equal(actual, expected);
         }
 
         [Theory]
@@ -47,22 +62,6 @@ namespace Pantry.Tests
             Assert.False(testClass.CheckIfEntriesAreNotNull("1", "1", null));
             Assert.False(testClass.CheckIfEntriesAreNotNull(null, "1", "1"));
             Assert.False(testClass.CheckIfEntriesAreNotNull("1", null, "1"));
-        }
-
-        /*[Theory]
-        [InlineData("admin1")]
-        public void CheckIfUserIsNotTaken_ShouldReturnTrue(string username)
-        {
-            RegisterCheck testClass = new RegisterCheck();
-            Assert.True(testClass.CheckIfUserIsNotTaken(username));
-        }
-
-        [Theory]
-        [InlineData("admin")]
-        public void CheckIfUserIsNotTaken_ShouldReturnFalse(string username)
-        {
-            RegisterCheck testClass = new RegisterCheck();
-            Assert.False(testClass.CheckIfUserIsNotTaken(username));
         }*/
     }
 }

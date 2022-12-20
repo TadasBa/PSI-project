@@ -147,8 +147,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EnumsTests_ProductTypeExtensions.cs" />
-    <Compile Include="ModelsTests_DictionaryWrapper.cs" />
-    <Compile Include="ModelsTests_Login_LoginService.cs" />
     <Compile Include="ModelsTests_Login_RegisterCheck.cs" />
     <Compile Include="ModelsTests_Product.cs" />
     <Compile Include="ModelsTests_RecipeHandler.cs" />
